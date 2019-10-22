@@ -1,0 +1,84 @@
+/*footer{
+    background-color: #2E323B;
+    height: 100px;
+    width: 100%;
+}
+header{
+    background-color: #2E323B;
+    height: 100px;
+    width: 100%;
+}
+
+*/
+.bodyPage4 {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 200%;
+    text-align: center;
+    color: #2E323B;
+
+}
+input {
+    width: 80%;
+    height: 30%;
+    margin: 1%;
+    background-color: rgba(245,245,245, 0.5);
+}
+
+textarea {
+    height: 15em;
+    width: 80%;
+    margin: 1%;
+    background-color: rgba(245,245,245,0.5);
+}
+.rating a {
+    float: right;
+    color: #2E323B;
+    text-decoration: none;
+    font-size: 3em;
+    transition: color .4s;
+    margin: 0.2em 0.4em;
+}
+.rating a:hover,
+.rating a:focus,
+.rating a:hover ~ a,
+.rating a:focus ~ a {
+    color: #25C1BB;
+    cursor: pointer;
+}
+
+.submitGift {
+    width: 18%;
+    color: white;
+    background-color: rgba(47, 217, 240, 0.5);
+    font-weight: bolder;
+}
+.submitListe{
+    width: 18%;
+    color: white;
+    background-color: rgba(47, 217, 240, 0.5);
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 761px) {
+    h1 {
+        font-size: 300%;
+    }
+    .submitGift {
+        width: 18%;
+        height: 3em;
+    }
+    .submitListe{
+        width: 18%;
+        height: 3em;
+    }
+    input{
+        height: 2em;
+    }
+}
