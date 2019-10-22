@@ -1,8 +1,6 @@
 package com.wildcodeschool.giftmefive.model;
 
 public class Gifts {
-
-
     private Long id;
     private String name;
     private String urlImage;
@@ -10,14 +8,32 @@ public class Gifts {
     private String description;
     private double price;
 
+    public String getUrlImage() {
+        return urlImage;
+    }
 
-    public Gifts(Long id,String name, String url_image, String url_article, String description, double prix) {
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+    public Long getListGiftsId() {
+        return listGiftsId;
+    }
+
+    public void setListGiftsId(Long listGiftsId) {
+        this.listGiftsId = listGiftsId;
+    }
+
+    private Long listGiftsId;
+
+
+    public Gifts(Long id, Long listGiftsId, String name, String urlImage, String urlArticle, String description, double price) {
         this.id = id;
+        this.listGiftsId=listGiftsId;
         this.name = name;
-        this.urlImage = url_image;
-        this.urlArticle = url_article;
+        this.urlImage = urlImage;
+        this.urlArticle = urlArticle;
         this.description = description;
-        this.price = prix;
+        this.price = price;
     }
     public Long getId() {
         return id;
@@ -35,13 +51,6 @@ public class Gifts {
         this.name = name;
     }
 
-    public String getUrl_image() {
-        return urlImage;
-    }
-
-    public void setUrl_image(String url_image) {
-        this.urlImage = url_image;
-    }
 
     public String getUrlArticle() {
         return urlArticle;
