@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class FriendsViewController {
 
     @GetMapping("/friendsView")
-    public String page10(Model out, @RequestParam(name = "idListe", defaultValue = "1", required = false) Long id) {
+    public String friendsView(Model out, @RequestParam(name = "idListe", defaultValue = "1", required = false) Long id) {
         GiftsRepository repository = new GiftsRepository();
         ListGiftsRepository repo =new ListGiftsRepository();
         out.addAttribute("gifts", repository.findByListGiftsId(id));
