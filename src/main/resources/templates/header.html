@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
@@ -8,11 +7,24 @@
     <title>Gift Me 5</title>
 </head>
 <body>
-    <header th:fragment="header">
-        <a href="">@</a>
-        <a href="index.html">GIFT ME 5</a>
-        <img class="avatar" src="images/user.png"></a>
-
-    </header>
+<header th:fragment="header">
+    <nav id="navigation-mobile">
+        <div id="menuToggle">
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">S'identifier</a></li>
+                <li><a href="#">Mon compte</a></li>
+                <li><a href="#">Mes listes</a></li>
+                <li><a href="#">Partager</a></li>
+            </ul>
+        </div>
+    </nav>
+    <a class="titre" href="index.html">GIFT ME 5</a>
+    <img class="avatar" src="images/user.png"></a>
+</header>
 </body>
 </html>

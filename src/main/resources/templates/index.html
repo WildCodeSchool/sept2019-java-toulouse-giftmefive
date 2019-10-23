@@ -8,35 +8,28 @@
     <title>Gift Me 5</title>
 </head>
 <body>
-    <header th:replace="header :: header"></header>
-    <div class="banniere-container">
-        <img src="images/banniere1.jpg">
-        <h1 class="slogan">Les plus beaux yeux sont ceux d'une femme<br>qui reçoit un cadeau.</h1>
-        <a class="button">CREER MA LISTE</a>
-
+<header th:replace="header :: header"></header>
+<div class="banniere-container">
+    <img src="images/banniere1.jpg">
+</div>
+<article class="article-container">
+    <div class="article">
+        <img class="imagesarticles" src="images/parties.jpg">
+        <p>Créer une liste pour tous vos événements : Anniversaire, Noël, Mariage.</p>
     </div>
-    <article class="article-container">
-        <div class="article">
-            <img class="imagesarticles" src="images/parties.jpg">
-            <p>Créer une liste pour tous vos événements : Anniversaire, Noël, Mariage.</p>
-        </div>
-        <div class="article">
-            <img class="imagesarticles" src="images/list.jpg">
-            <p>Créer et partager vos listes avec vos amis gratuitement !</p>
-        </div>
-        <div class="article">
-            <img class="imagesarticles" src="images/gift.jpg">
-            <p>Ne recevez plus de cadeaux qui ne sont pas à votre goût !</p>
-        </div>
-        <div class="article">
-            <img class="imagesarticles" src="images/friend.jpg">
-            <p>Aidez vos amis à trouver facilement le cadeau qui vous fera plaisir ! </p>
-        </div>
-    </article>
-
-
-
-
-    <footer th:replace="footer :: footer"></footer>
+    <div class="article">
+        <img class="imagesarticles" src="images/list.jpg">
+        <p>Créer et partager vos listes avec vos amis gratuitement !</p>
+    </div>
+    <div class="article">
+        <img class="imagesarticles" src="images/gift.jpg">
+        <p>Ne recevez plus de cadeaux qui ne sont pas à votre goût !</p>
+    </div>
+    <div class="article">
+        <img class="imagesarticles" src="images/friend.jpg">
+        <p>Aidez vos amis à trouver facilement le cadeau qui vous fera plaisir ! </p>
+    </div>
+</article>
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>
