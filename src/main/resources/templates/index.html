@@ -3,31 +3,50 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
-    <link href="/style.css" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Gift Me 5</title>
 </head>
 <body>
 <header th:replace="header :: header"></header>
-<div class="banniere-container">
-    <img src="images/banniere1.jpg">
+<div class="banner-container">
+    <img src="/images/banner1.jpg">
 </div>
+<a href=""><p class="createbutton">CREER VOTRE LISTE !</p></a>
 <article class="article-container">
     <div class="article">
-        <img class="imagesarticles" src="images/parties.jpg">
-        <p>Créer une liste pour tous vos événements : Anniversaire, Noël, Mariage.</p>
+        <div class="imagearticles-container">
+            <img class="imagesarticles" src="images/parties.jpg">
+        </div>
+        <div class="paragrapharticles-container">
+            <p class="articlestext">Créer une liste pour chaque événement :
+                Anniversaire, Mariage ou Noël !</p>
+        </div>
     </div>
     <div class="article">
-        <img class="imagesarticles" src="images/list.jpg">
-        <p>Créer et partager vos listes avec vos amis gratuitement !</p>
+        <div class="imagearticles-container">
+            <img class="imagesarticles" src="images/list.jpg">
+        </div>
+        <div class="paragrapharticles-container">
+            <p class="articlestext">Créer et partager vos listes avec vos amis
+                gratuitement !</p>
+        </div>
     </div>
     <div class="article">
-        <img class="imagesarticles" src="images/gift.jpg">
-        <p>Ne recevez plus de cadeaux qui ne sont pas à votre goût !</p>
+        <div class="imagearticles-container">
+            <img class="imagesarticles" src="images/gift.jpg">
+        </div>
+        <div class="paragrapharticles-container">
+            <p class="articlestext">Ne recevez plus de cadeaux qui ne sont pas à
+                votre goût !</p>
+        </div>
     </div>
     <div class="article">
-        <img class="imagesarticles" src="images/friend.jpg">
-        <p>Aidez vos amis à trouver facilement le cadeau qui vous fera plaisir ! </p>
+        <div class="imagearticles-container"><img class="imagesarticles" src="images/friend.jpg">
+        </div>
+        <div class="paragrapharticles-container"><p class="articlestext">Aidez vos amis à trouver facilement le
+            cadeau qui vous fera plaisir ! </p></div>
     </div>
 </article>
 <footer th:replace="footer :: footer"></footer>

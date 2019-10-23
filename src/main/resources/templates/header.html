@@ -2,29 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
-    <link href="/style.css" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Gift Me 5</title>
 </head>
 <body>
 <header th:fragment="header">
     <nav id="navigation-mobile">
         <div id="menuToggle">
-            <input type="checkbox"/>
+            <input class="checkboxbuger" type="checkbox"/>
             <span></span>
             <span></span>
             <span></span>
             <ul id="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">S'identifier</a></li>
-                <li><a href="#">Mon compte</a></li>
-                <li><a href="#">Mes listes</a></li>
-                <li><a href="#">Partager</a></li>
+                <li class="title-desktop"><a href="#">GIFT ME 5</a></li>
+                <li><a href="#">S'IDENTIFIER</a></li>
+                <li><a href="#">MON COMPTE</a></li>
+                <li><a href="#">MES LISTES</a></li>
+                <li><a href="#">PARTAGER</a></li>
             </ul>
         </div>
     </nav>
-    <a class="titre" href="index.html">GIFT ME 5</a>
-    <img class="avatar" src="images/user.png"></a>
+    <a class="title" href="index.html">GIFT ME 5</a>
+    <div class="avatar-container">
+    <a class="avatarlink" href="#"><img class="avatar" src="images/userguest.png"></a>
+    </div>
 </header>
 </body>
 </html>
