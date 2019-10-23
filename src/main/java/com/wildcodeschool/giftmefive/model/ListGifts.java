@@ -1,11 +1,17 @@
 package com.wildcodeschool.giftmefive.model;
 
 public class ListGifts {
-
     private Long id;
     private String name;
     private String description;
     private String urlImage;
+
+    public ListGifts(Long id, String name, String description, String urlImage) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.urlImage = urlImage;
+    }
 
     public String getName() {
         return name;
@@ -38,14 +44,4 @@ public class ListGifts {
     public void setId(Long id) {
         this.id = id;
     }
-
-
-    public ListGifts(Long id,String name, String description, String urlImage ) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.urlImage = urlImage;
-    }
-
-
 }

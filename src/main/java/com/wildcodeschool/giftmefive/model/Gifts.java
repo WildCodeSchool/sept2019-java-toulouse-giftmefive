@@ -7,24 +7,7 @@ public class Gifts {
     private String urlArticle;
     private String description;
     private double price;
-
-    public String getUrlImage() {
-        return urlImage;
-    }
-
-    public void setUrlImage(String urlImage) {
-        this.urlImage = urlImage;
-    }
-    public Long getListGiftsId() {
-        return listGiftsId;
-    }
-
-    public void setListGiftsId(Long listGiftsId) {
-        this.listGiftsId = listGiftsId;
-    }
-
     private Long listGiftsId;
-
 
     public Gifts(Long id, Long listGiftsId, String name, String urlImage, String urlArticle, String description, double price) {
         this.id = id;
@@ -35,6 +18,23 @@ public class Gifts {
         this.description = description;
         this.price = price;
     }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
+    public Long getListGiftsId() {
+        return listGiftsId;
+    }
+
+    public void setListGiftsId(Long listGiftsId) {
+        this.listGiftsId = listGiftsId;
+    }
+
     public Long getId() {
         return id;
     }
@@ -50,7 +50,6 @@ public class Gifts {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getUrlArticle() {
         return urlArticle;
@@ -75,6 +74,4 @@ public class Gifts {
     public void setPrice(double price) {
         this.price = price;
     }
-
-
 }
