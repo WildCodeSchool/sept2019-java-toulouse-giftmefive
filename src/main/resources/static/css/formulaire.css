@@ -47,15 +47,12 @@ textarea {
     margin: 0.2em 0.4em;
 }
 
-.rating a:hover,
-.rating a:focus,
-.rating a:hover ~ a,
-.rating a:focus ~ a {
+.rating a:hover, .rating a:focus, .rating a:hover ~ a, .rating a:focus ~ a {
     color: #25C1BB;
     cursor: pointer;
 }
 
-.submitGift, .submitListe, .connection, .signUp {
+.submitGift, .submitList, .connection, .signUp {
     width: auto;
     height: 3em;
     color: white;
@@ -77,7 +74,7 @@ textarea {
         font-size: 300%;
     }
 
-    .signUp, .connection, .submitListe, .submitGift, .button-signUp {
+    .signUp, .connection, .submitList, .submitGift, .button-signUp {
         font-size: 1.5em;
     }
 
