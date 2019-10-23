@@ -8,6 +8,14 @@ p {
     font-size: 2em;
 }
 
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
 /* HEADER */
 
 header {
@@ -20,9 +28,9 @@ header {
 
 a.title {
     text-decoration: none;
-    color: white;
+    color: #25C1BB;
     font-family: Oswald, sans-serif;
-    font-size: 1em;
+    font-size: 1.2em;
     align-self: center;
     letter-spacing: .5em;
 }
@@ -42,15 +50,6 @@ div.banner-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-}
-
-img {
-    width: 100%;
-}
-
-a {
-    text-decoration: none;
 }
 
 p.createbutton {
@@ -61,7 +60,6 @@ p.createbutton {
     font-size: 1.5em;
     margin: .5em;
     padding: .5em 2em;
-    text-decoration: none;
 }
 
 /* ARTICLES */
@@ -91,12 +89,10 @@ div.article p {
     text-align: justify;
     color: #2E323B;
     font-size: 1em;
-    font-family: Oswald, sans-serif;
 }
 
 .imagesarticles {
     border-radius: 20px;
-    width: 100%;
 }
 
 /* FOOTER */
@@ -109,23 +105,38 @@ footer {
 }
 
 footer a {
-    text-decoration: none;
     color: white;
     font-family: Oswald, sans-serif;
     font-size: 1em;
 }
 
-/* MOBILE VERSION FOR BURGER MENU */
+footer a:hover {
+    color: #25C1BB;
+}
 
-@media screen and (max-width:761px) {
+/* MOBILE VERSION (FOR BURGER MENU) */
+
+@media screen and (max-width: 761px) {
+
+    /* HEADER */
+    .title-desktop {
+        display: none;
+    }
+
+    .bannerdesktop {
+        display: none;
+    }
 
     /* BURGER MENU */
+    div.title-container {
+        align-self: center;
+    }
 
     ul#menu a {
         text-decoration: none;
         color: #2E323B;
         font-family: Oswald, sans-serif;
-        font-size: 2em;
+        font-size: 1.5em;
         align-self: center;
     }
 
@@ -133,7 +144,6 @@ footer a {
         text-decoration: none;
         color: #25C1BB;
         font-family: Oswald, sans-serif;
-        font-size: 2em;
         align-self: center;
     }
 
@@ -224,56 +234,106 @@ footer a {
     #menuToggle input:checked ~ ul {
         transform: none;
     }
-
 }
 
 /* DESKTOP VERSION */
 
-@media screen and (min-width:761px) {
+@media screen and (min-width: 761px) {
 
-    /*HEADER */
-
-    nav#navigation-mobile {
-        align-self: center;
+    /*HEADER DESKTOP */
+    .home-mobile {
+        display: none;
     }
 
     a.title {
-       display: none;
+        display: none;
     }
 
     input.checkboxbuger {
         display: none;
     }
 
+    nav#navigation-mobile {
+        align-self: center;
+    }
+
     ul#menu {
         list-style-type: none;
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
-    ul#menu a {
+    a.link-desktop {
         text-decoration: none;
         color: white;
         font-family: Oswald, sans-serif;
         font-size: 1.5em;
         align-self: center;
-        margin-right: 1em;
+        margin-right: 2em;
     }
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        padding: 2em;
-        background-color: #2E323B;
-        font-family: Oswald, sans-serif;
+    a.title-desktop {
+        letter-spacing: .5em;
+        font-size: 2em;
+        color: #25C1BB;
+        margin-right: 1.5em;
+    }
+
+    a.link-desktop:hover {
+        color: #25C1BB;
     }
 
     img.avatar {
         width: 50%;
     }
 
-    li.title-desktop {
-        letter-spacing: .5em;
+    /* BANNIERE DESKTOP */
+    div.banner-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .banner {
+        display: none;
+    }
+
+    p.createbutton {
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        background-color: #25C1BB;
         font-size: 1.5em;
+        text-decoration: none;
+        border-radius: 10px;
+    }
+
+    /* ARTICLES DESKTOP */
+    article.article-container {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        background-color: whitesmoke;
+    }
+
+    div.article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1em;
+        width: 50%;
+    }
+
+    div.imagearticles-container, div.paragrapharticles-container {
+        width: 70%;
+        margin: .5em;
+    }
+
+    div.article p {
+        text-align: justify;
+        color: #2E323B;
+        font-size: 1em;
+        font-family: Oswald, sans-serif;
     }
 }
