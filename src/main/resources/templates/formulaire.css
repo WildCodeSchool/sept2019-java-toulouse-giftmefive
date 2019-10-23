@@ -1,24 +1,14 @@
-/*footer{
-    background-color: #2E323B;
-    height: 100px;
-    width: 100%;
-}
-header{
-    background-color: #2E323B;
-    height: 100px;
-    width: 100%;
-}
 
-*/
 .bodyPage4 {
 
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: lightgray;
+    font-family: 'Oswald', sans-serif;
 }
 
 h1 {
-    font-family: 'Oswald', sans-serif;
     font-size: 200%;
     text-align: center;
     color: #2E323B;
@@ -30,19 +20,20 @@ h1 {
     padding: 1em;
     border-radius: 50%;
     margin-bottom: 2em;
+    box-shadow: #2E323B 1em 1em 1em;
 }
 input {
     width: 80%;
     height: 30%;
     margin: 1%;
-    background-color: rgba(245, 245, 245, 0.5);
+    background-color: rgba(255,255,255,0.8);
 }
 
 textarea {
     height: 15em;
     width: 80%;
     margin: 1%;
-    background-color: rgba(245, 245, 245, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .rating a {
@@ -62,24 +53,31 @@ textarea {
     cursor: pointer;
 }
 
-.submitGift, .submitListe, .connection, .signUp, .lienPage6 {
-    width: 30%;
+.submitGift, .submitListe, .connection, .signUp{
+    width: auto;
     height: 3em;
     color: white;
-    background-color: rgb(47, 217, 240);
+    background-color: rgba(47, 217, 240, 0.3);
     font-weight: bolder;
+    box-shadow: #2E323B 0.5em 0.5em 0.5em;
+    font-size: 1em;
+    margin-top: 2em;
 }
-
+.signUpLink, .alreadySignIn{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1em;
+}
 @media screen and (min-width: 761px) {
     h1 {
         font-size: 300%;
     }
-
-    .signUp, .connection, .submitListe, .submitGift, .lienPage6 {
-        width: 18%;
-        height: 3em;
+    .signUp, .connection, .submitListe, .submitGift, .button-signUp {
+        font-size: 1.5em;
     }
-
+    .signUpLink, .alreadySignIn {
+        font-size: 1.5em;
+    }
     input {
         height: 2em;
     }
