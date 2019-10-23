@@ -24,4 +24,9 @@ public class ListGiftsRepository {
             add(new ListGifts(2L, "Aniv", "Mes cadeaux", "http://via.placeholder.com/540x260"));
         }
     };
+
+    public static void registerInList (String name, String description, String urlImage) {
+        Long id = myList.size()+1L;
+        myList.add(new ListGifts(id, name, description, urlImage));
+    }
 }
