@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="../static/css/formulaire.css">
+<link href="../static/css/formulaire.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
@@ -10,18 +10,18 @@
 <h1>DESCRIPTION DU CADEAU</h1>
 <!TODO Rajouter un thymleaf pour Creation/modification!>
 
-<input type="url" class="urlImage" placeholder="Lien vers l'image">
-<input type="url" class="urlArticle" placeholder="Lien vers le cadeau">
-<input type="text" class="giftName" placeholder="nom du cadeau">
+<input class="urlImage" placeholder="Lien vers l'image" type="url">
+<input class="urlArticle" placeholder="Lien vers le cadeau" type="url">
+<input class="giftName" placeholder="nom du cadeau" type="text">
 <textarea class="descriptifGift" placeholder="Descriptif du cadeau"></textarea>
 <div class="rating"><!--
    --><a href="#3" title="Donner 3 étoiles">★</a><!--
    --><a href="#2" title="Donner 2 étoiles">★</a><!--
    --><a href="#1" title="Donner 1 étoile">★</a>
 </div>
-<input type="text" class="prix" placeholder="Prix du cadeau">
+<input class="prix" placeholder="Prix du cadeau" type="text">
 
-    <input type="submit" class="submitGift" value="FINI !">
+<input class="submitGift" type="submit" value="FINI !">
 
 </body>
 </html>
