@@ -1,0 +1,120 @@
+body, html {
+
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: Oswald,sans-serif;
+    font-size: 2em;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    background-color: #2E323B;
+    color: white;
+    font-family: Oswald, sans-serif;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-family: Oswald, sans-serif;
+    font-size: 2em;
+    align-self: center;
+    letter-spacing: .5em;
+}
+
+img.avatar {
+    color: white;
+    width: 7%;
+}
+
+
+/* BANNIERE */
+
+div.banniere-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+a.button {
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    background-color: #25C1BB;
+    color: white;
+    font-size: 2em;
+    font-family: Oswald, sans-serif;
+    padding: 0 2em 0 2em;
+}
+
+h1.slogan {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color: white;
+    font-size: 3.2em;
+    font-family: Tangerine, sans-serif;
+}
+
+
+img {
+    width: 100%;
+}
+
+/* ARTICLES */
+
+article.article-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgray;
+    padding-top: 1em;
+}
+
+div.article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+div.article p {
+    text-align: justify;
+    color: #2E323B;
+    font-size: 2em;
+    font-family: Oswald, sans-serif;
+    border-radius: 10px;
+}
+
+.imagesarticles {
+    border-radius: 20px;
+    width: 45%;
+    margin: 1em;
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    background-color: #2E323B;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+    font-family: Oswald, sans-serif;
+    font-size: 2em;
+}
+
+/* DESKTOP VERSION */
