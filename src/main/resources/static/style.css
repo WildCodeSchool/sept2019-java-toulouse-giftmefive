@@ -1,0 +1,173 @@
+body {
+    background-color: #FDFDFD;
+    color: #2E323B;
+    margin:0;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    clear:both;
+}
+
+a{
+    text-decoration: none;
+    color: #2E323B;
+}
+
+.material-icons {
+    font-size: 7vw;
+    color: rgb(37,193,187);
+}
+
+li {
+    list-style: none;
+}
+
+/*****GIFT LIST*****/
+
+.myGifts {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.giftTitlePage {
+    text-align: center;
+    margin-bottom: 7vw;
+}
+
+.createNewGift {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.newGift {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 7vw;
+}
+
+.newGift i {
+    font-size: 6rem;
+}
+
+.existingGift {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2E323B;
+    margin-bottom: 3vw;
+}
+
+.delete {
+    text-align: right;
+}
+
+.alreadyBought {
+    text-align: right;
+}
+
+.underGiftTitle {
+    width: 30%;
+    color: rgb(37,193,187);
+}
+
+.existingGift img {
+    margin: 5vw 0;
+}
+
+.filter ul {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    border: 1px solid #2E323B;
+    align-items: center;
+    font-size: 20px;
+}
+
+.priceStars ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+.priceStars ul li {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (min-width: 761px) {
+    /*****Gift List*****/
+    .createNewGift {
+        flex-direction: row;
+    }
+
+    .newGift {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin-right: 0.7vw;
+        margin-top: 2vw;
+        padding: 8vw;
+    }
+
+    .newGift > i {
+        font-size: 250px;
+    }
+
+    .newGift i:hover, .delete i:hover {
+        color: #2E323B;
+    }
+
+    .delete i {
+        font-size: 3em;
+    }
+
+    .alreadyBought i {
+        font-size: 3em;
+    }
+
+    .existingGift {
+        margin-right: 0.7vw;
+        padding: 2vw;
+    }
+
+    .filter ul {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .filter ul li {
+        padding: 1vw;
+        font-weight: bold;
+        color: #FDFDFD;
+        font-size: 20px;
+    }
+
+    .filter {
+        position: fixed;
+        background-color: #2E323B;
+        color: #FDFDFD;
+        width: 10%;
+        height: 30vw;
+        display: flex;
+    }
+
+    .filter ul li i {
+        color: #FDFDFD;
+        font-size: 40px;
+    }
+
+    .priceStars ul {
+        justify-content: space-between;
+    }
+
+    .priceStars ul li i {
+        font-size: 2em;
+    }
+}
