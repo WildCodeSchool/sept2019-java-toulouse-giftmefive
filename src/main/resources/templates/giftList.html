@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link th:href="@{css/style.css}" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Liste de cadeaux</title>
 </head>
 <body>
+<header th:replace="header :: header"></header>
 <section class="filter">
     <ul>
         <li>A-Z</li>
@@ -72,5 +74,6 @@
         </section>
     </div>
 </div>
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>
