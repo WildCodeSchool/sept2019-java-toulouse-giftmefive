@@ -4,10 +4,9 @@ body {
     margin:0;
     font-size: 1em;
     font-family: 'Oswald', sans-serif;
-    clear:both;
 }
 
-a{
+a {
     text-decoration: none;
     color: #2E323B;
 }
@@ -102,7 +101,9 @@ li {
 }
 
 @media screen and (min-width: 761px) {
+
     /*****Gift List*****/
+
     .createNewGift {
         flex-direction: row;
     }
@@ -140,13 +141,15 @@ li {
     .filter ul {
         flex-direction: column;
         justify-content: space-evenly;
+        border: transparent;
+        text-align: left;
     }
 
     .filter ul li {
-        padding: 1vw;
         font-weight: bold;
         color: #FDFDFD;
-        font-size: 20px;
+        font-size: 1em;
+        margin-right: 3vw;
     }
 
     .filter {
@@ -169,5 +172,9 @@ li {
 
     .priceStars ul li i {
         font-size: 2em;
+    }
+
+    .priceStars ul li:first-child {
+        margin-right: 5.5vw;
     }
 }
