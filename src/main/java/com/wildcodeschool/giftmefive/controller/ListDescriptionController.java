@@ -4,9 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class DescriptionCadeauController {
-    @GetMapping("/descriptionCadeau")
-    public String descriptionListe() {
-        return "descriptionCadeau.html";
+public class ListDescriptionController {
+    @GetMapping("/list-description")
+    public String listDescription() {
+        return "listMaker";
     }
 }

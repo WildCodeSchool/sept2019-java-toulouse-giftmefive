@@ -10,13 +10,13 @@ import java.util.List;
 
 @Controller
 public class ListGiftController {
-    @GetMapping("/registerList")
+    @GetMapping("/register-list")
     public String registerList
             (@RequestParam(name="urlImage", required = false, defaultValue = "http") String urlImage,
              @RequestParam(name = "listName", required = true) String listName,
-             @RequestParam(name = "descriptifList", required = true) String descriptifList) {
+             @RequestParam(name = "descriptionList", required = true) String descriptionList) {
         ListGiftsRepository repository = new ListGiftsRepository();
-        repository.registerInList(urlImage, listName, descriptifList);
+        repository.registerInList(urlImage, listName, descriptionList);
         return "/";
         // TODO Ajout Lien de la page de nouvelleListe
     }
