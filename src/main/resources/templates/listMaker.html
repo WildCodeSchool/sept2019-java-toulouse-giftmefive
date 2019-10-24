@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <link href="css/formulaire.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
     <head>
@@ -7,6 +7,7 @@
         <title>Description de la liste</title>
     </head>
     <body class="bodyPage4">
+    <header th:replace="header :: header"></header>
         <h1>DESCRIPTION DE LA LISTE</h1>
         <!TODO Rajouter un thymleaf pour Creation/modification!>
         <form action="/registerList" class="form">
@@ -15,5 +16,6 @@
             <textarea class="descriptionList" name="descriptionList" placeholder="Descriptif de la liste"></textarea>
             <input class="submitList" type="submit" value="FINI !">
         </form>
+    <footer th:replace="footer :: footer"></footer>
     </body>
 </html>
