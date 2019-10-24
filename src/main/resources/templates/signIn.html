@@ -7,6 +7,7 @@
     <title>Page4</title>
 </head>
 <body class="bodyPage4">
+<header th:replace="header :: header"></header>
 <h1>S'IDENTIFIER</h1>
 <img class="avatar" src="images/avatar.jpg">
 <input class="Pseudo" placeholder="Pseudo" type="text">
@@ -15,6 +16,6 @@
 <input class="connection" type="submit" value="Connexion">
 <p>OU</p>
 <a class="signUpLink" th:href="@{/signUp}">Sign up!</a>
-
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>
