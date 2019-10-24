@@ -10,7 +10,7 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-.titre{
+.titre {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -19,7 +19,7 @@ body {
     align-content: center;
 }
 
-.page{
+.page {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -47,22 +47,22 @@ body {
     padding: 1rem;
 }
 
-.filter img{
-   height: auto;
+.filter img {
+    height: auto;
     width: 10%;
 }
 
-.filter_text{
+.filter_text {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     align-content: stretch;
-padding: 1rem;
+    padding: 1rem;
 }
 
-.filter_text p{
+.filter_text p {
     margin: 0.5rem;
 }
 
@@ -79,22 +79,22 @@ padding: 1rem;
     padding: 1rem;
 }
 
-.button_link_gifts{
+.button_link_gifts {
     border-style: solid;
     border-color: #25C1BB;
     border-width: 1px;
     text-decoration: none;
-    color:  #25C1BB;;
+    color: #25C1BB;;
     padding: 0.5rem;
     width: 50%;
 }
 
-.button_link_gifts:hover{
-    background-color:#25C1BB;
+.button_link_gifts:hover {
+    background-color: #25C1BB;
     color: white;
 }
 
-p{
+p {
     text-align: left;
 }
 
@@ -121,13 +121,13 @@ p{
     background-color: #25C1BB;
 }
 
-.button:hover{
+.button:hover {
     color: #25C1BB;
     background-color: white;
 }
 
 @media screen and (min-width: 761px) {
-    .page{
+    .page {
         display: grid;
         grid-template-columns: 20% 80%;
     }
@@ -140,17 +140,17 @@ p{
         justify-content: start;
     }
 
-    .filter img{
+    .filter img {
         width: auto;
     }
 
-    .filter_text{
+    .filter_text {
         flex-direction: column;
         justify-content: flex-start;
         align-items: baseline;
     }
 
-    .filter_text p:hover{
+    .filter_text p:hover {
         color: #25C1BB;
     }
 
@@ -174,11 +174,11 @@ p{
         align-content: stretch;
     }
 
-    .button_share input{
+    .button_share input {
         width: 20%;
     }
 
-    .button{
+    .button {
         width: 80%;
         padding: 1rem;
     }
