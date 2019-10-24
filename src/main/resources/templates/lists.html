@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <meta charset="UTF-8">
     <title>Listes</title>
 </head>
 <body>
+    <header th:replace="header :: header"></header>
     <div class="myLists">
             <h2 class="listTitlePage">MES LISTES</h2>
         <div class="createNewList">
@@ -47,5 +48,6 @@
             </section>
         </div>
     </div>
+    <footer th:replace="footer :: footer"></footer>
 </body>
 </html>
