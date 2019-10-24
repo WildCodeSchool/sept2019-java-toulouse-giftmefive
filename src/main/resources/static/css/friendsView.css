@@ -49,7 +49,7 @@ body {
 
 .filter img{
    height: auto;
-    width: 10%;
+   width: 10%;
 }
 
 .filter_text{
@@ -59,7 +59,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     align-content: stretch;
-padding: 1rem;
+    padding: 1rem;
 }
 
 .filter_text p{
