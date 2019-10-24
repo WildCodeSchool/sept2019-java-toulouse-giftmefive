@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <link href="css/formulaire.css" rel="stylesheet">
+    <link href="../static/css/formulary.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
     <head>
         <meta charset="UTF-8">
@@ -10,7 +11,7 @@
     <header th:replace="header :: header"></header>
         <h1>DESCRIPTION DU CADEAU</h1>
         <!TODO Rajouter un thymleaf pour Creation/modification!>
-        <form action="registerGift" class="form">
+        <form action="registerGift" class="formForm">
             <input class="urlImage" placeholder="Lien vers l'image" type="url">
             <input class="urlArticle" placeholder="Lien vers le cadeau" type="url">
             <input class="giftName" placeholder="nom du cadeau" type="text">

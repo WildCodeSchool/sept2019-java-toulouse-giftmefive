@@ -9,7 +9,7 @@ h1 {
     color: #2E323B;
 }
 
-.avatar {
+.avatar2 {
     height: 15%;
     width: 15%;
     background-color: rgba(37, 193, 187, 0.5);
@@ -19,7 +19,7 @@ h1 {
     box-shadow: #2E323B 1em 1em 1em;
 }
 
-.form {
+.formForm {
     display: flex;
     align-items: center;
     flex-direction: column;

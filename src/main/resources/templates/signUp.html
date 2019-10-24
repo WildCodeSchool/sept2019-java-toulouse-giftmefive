@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <link href="css/formulaire.css" rel="stylesheet">
+    <link href="../static/css/formulary.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
     <head>
         <meta charset="UTF-8">
@@ -9,14 +10,14 @@
     <body class="bodyPage4">
     <header th:replace="header :: header"></header>
         <h1>INSCRIPTION</h1>
-        <img class="avatar" src="images/avatar.jpg">
+        <img class="avatar2" src="images/avatar.jpg">
         <input class="pseudo" placeholder="Pseudo" type="text">
         <input class="password" placeholder="Password" type="password">
         <input class="passwordConfirmation" placeholder="Confirmation mot de passe" type="password">
         <input class="email" placeholder="Email" type="email">
         <input class="signUp" type="submit" value="S'INCRIRE!">
         <p>OU</p>
-        <a class="alreadySignIn" th:href="@{/signIn}">J'ai déjà un compte</a>
+        <a class="alreadySignIn" th:href="@{/sign-in}">J'ai déjà un compte</a>
     <footer th:replace="footer :: footer"></footer>
     </body>
 </html>
