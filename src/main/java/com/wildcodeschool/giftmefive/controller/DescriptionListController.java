@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class DescriptionListController {
-    @GetMapping("/descriptionList")
+    @GetMapping("/descriptionListe")
     public String descriptionListe() {
-        return "descriptionListe.html";
+        return "descriptionListe";
     }
 }
