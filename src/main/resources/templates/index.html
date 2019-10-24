@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Gift Me 5</title>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<div class="banner-container">
+    <img class="banner" src="/images/banner1.jpg">
+    <img class="bannerdesktop" src="/images/banner1desktop.jpg">
+</div>
+<a class="no-decoration" href=""><p class="createbutton">CREER VOTRE LISTE !</p></a>
+<article class="article-container">
+    <div class="article">
+        <div class="imagearticles-container">
+            <img class="imagesarticles" src="images/parties.jpg">
+        </div>
+        <div class="paragrapharticles-container">
+            <p class="articlestext">Créer une liste pour chaque événement :
+                Anniversaire, Mariage ou Noël !</p>
+        </div>
+    </div>
+    <div class="article">
+        <div class="imagearticles-container">
+            <img class="imagesarticles" src="images/list.jpg">
+        </div>
+        <div class="paragrapharticles-container">
+            <p class="articlestext">Créer et partager vos listes avec vos amis
+                gratuitement !</p>
+        </div>
+    </div>
+    <div class="article">
+        <div class="imagearticles-container">
+            <img class="imagesarticles" src="images/gift.jpg">
+        </div>
+        <div class="paragrapharticles-container">
+            <p class="articlestext">Ne recevez plus de cadeaux qui ne sont pas à
+                votre goût !</p>
+        </div>
+    </div>
+    <div class="article">
+        <div class="imagearticles-container"><img class="imagesarticles" src="images/friend.jpg">
+        </div>
+        <div class="paragrapharticles-container"><p class="articlestext">Aidez vos amis à trouver facilement le
+            cadeau qui vous fera plaisir ! </p></div>
+    </div>
+</article>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>
