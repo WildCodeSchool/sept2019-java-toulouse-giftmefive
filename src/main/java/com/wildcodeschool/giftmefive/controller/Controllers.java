@@ -19,7 +19,7 @@ public class Controllers {
 
     @GetMapping("/gift-list")
     public String giftList() {
-        return "giftList";
+        return "gift-list";
     }
 }
 
