@@ -17,7 +17,7 @@ public class Controllers {
         return "lists";
     }
 
-    @GetMapping("/giftList")
+    @GetMapping("/gift-list")
     public String giftList() {
         return "giftList";
     }
