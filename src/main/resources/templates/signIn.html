@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
     <link href="css/formulaire.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
     <head>
@@ -10,11 +11,12 @@
         <header th:replace="header :: header"></header>
         <h1>S'IDENTIFIER</h1>
         <img class="avatar" src="images/avatar.jpg">
-        <input class="Pseudo" placeholder="Pseudo" type="text">
+        <input class="pseudo" placeholder="Pseudo" type="text">
         <input class="password" placeholder="Password" type="password">
         <input class="connection" type="submit" value="Connexion">
         <p>OU</p>
-        <a class="signUpLink" th:href="@{/signUp}">S'INSCRIRE!</a>
+        <a class="signUpLink" th:href="@{/sign-up}">S'INSCRIRE!</a>
         <footer th:replace="footer :: footer"></footer>
     </body>
+
 </html>
