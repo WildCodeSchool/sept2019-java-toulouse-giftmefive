@@ -56,6 +56,7 @@ li {
 }
 
 .existingGift {
+    font-size: 2em;
     display: flex;
     flex-direction: column;
     border: 1px solid #2E323B;
@@ -104,10 +105,6 @@ li {
 
     /*****Gift List*****/
 
-    .createNewGift {
-        flex-direction: row;
-    }
-
     .newGift {
         flex-direction: column;
         justify-content: center;
@@ -121,20 +118,23 @@ li {
         font-size: 250px;
     }
 
+    .createNewGift {
+        flex-direction: row;
+    }
+
     .newGift i:hover, .delete i:hover {
         color: #2E323B;
     }
 
     .delete i {
-        font-size: 3em;
+        font-size: 1.5em;
     }
 
     .alreadyBought i {
-        font-size: 3em;
+        font-size: 1.5em;
     }
 
     .existingGift {
-        margin-right: 0.7vw;
         padding: 2vw;
     }
 
@@ -178,3 +178,4 @@ li {
         margin-right: 5.5vw;
     }
 }
+
