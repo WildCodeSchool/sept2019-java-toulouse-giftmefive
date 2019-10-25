@@ -126,6 +126,7 @@ h1.page-title {
 @media screen and (max-width: 761px) {
 
     /* HEADER */
+
     .title-desktop {
         display: none;
     }
@@ -248,6 +249,7 @@ h1.page-title {
 @media screen and (min-width: 761px) {
 
     /*HEADER DESKTOP */
+
     .home-mobile {
         display: none;
     }
