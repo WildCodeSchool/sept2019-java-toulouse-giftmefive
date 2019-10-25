@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="css/formulary.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+</head>
+<body class="bodyPage4">
+<header th:replace="header :: header"></header>
+<section class="sections">
+    <h1>INSCRIPTION</h1>
+    <img class="avatar2" src="images/avatar.jpg">
+    <div class="label">
+        <div class="displayrow">
+            <label for="pseudo">Pseudo :</label>
+            <input class="pseudo" id="pseudo" placeholder="Oki31" type="text">
+        </div>
+        <div class="displayrow">
+            <label for="password">Mot de passe :</label>
+            <input class="password" id="password" placeholder="*******" type="password">
+        </div>
+        <div class="displayrow">
+            <label for="passwordConfirmation">Confirmation du mot de passe :</label>
+            <input class="passwordConfirmation" id="passwordConfirmation" placeholder="********" type="password">
+        </div>
+        <div class="displayrow">
+            <label for="email">Email :</label>
+            <input class="email" id="email" placeholder="Email" type="email">
+        </div>
+    </div>
+    <input class="signUp" type="submit" value="S'INCRIRE!">
+    <p>OU</p>
+    <a class="alreadySignIn" th:href="@{/identification}">J'ai déjà un compte</a>
+</section>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>

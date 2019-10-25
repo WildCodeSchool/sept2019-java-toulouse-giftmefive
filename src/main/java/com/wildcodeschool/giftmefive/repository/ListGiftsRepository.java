@@ -1,9 +1,16 @@
 package com.wildcodeschool.giftmefive.repository;
+
 import com.wildcodeschool.giftmefive.model.ListGifts;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListGiftsRepository {
+
+    public static void registerInList(String name, String description, String urlImage) {
+        Long id = myList.size() + 1L;
+        myList.add(new ListGifts(id, name, description, urlImage));
+    }
 
     public List<ListGifts> findAll() {
         return myList;
@@ -24,4 +31,5 @@ public class ListGiftsRepository {
             add(new ListGifts(2L, "Anniversaire", "Mes super cadeaux pour mon Aniv", "http://via.placeholder.com/540x260"));
         }
     };
+
 }

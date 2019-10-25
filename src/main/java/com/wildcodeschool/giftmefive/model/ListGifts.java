@@ -2,23 +2,23 @@ package com.wildcodeschool.giftmefive.model;
 
 public class ListGifts {
     private Long id;
-    private String name;
+    private String listName;
     private String description;
     private String urlImage;
 
-    public ListGifts(Long id, String name, String description, String urlImage) {
+    public ListGifts(Long id, String listName, String description, String urlImage) {
         this.id = id;
-        this.name = name;
+        this.listName = listName;
         this.description = description;
         this.urlImage = urlImage;
     }
 
     public String getName() {
-        return name;
+        return listName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String listName) {
+        this.listName = listName;
     }
 
     public String getDescription() {

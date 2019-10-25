@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/formulary.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Description de la liste</title>
+</head>
+<body class="bodyPage4">
+<header th:replace="header :: header"></header>
+<section class="sections">
+    <h1>DESCRIPTION DE LA LISTE</h1>
+    <form action="register-list" method="post">
+        <div class="formForm">
+            <div>
+                <label for="urlImage">Lien vers l'image</label>
+                <input class="urlImage" id="urlImage" name="urlImage" placeholder="http://imagerepresentantlaliste.com"
+                       type="url">
+            </div>
+            <div>
+                <label for="listName">Nom de la liste</label>
+                <input class="listName" id="listName" name="listName" placeholder="Noël" type="text">
+            </div>
+        </div>
+        <div>
+            <label for="descriptionList">Description de la liste</label>
+            <textarea class="descriptionList" id="descriptionList" name="descriptionList"
+                      placeholder="Pour cette merveilleuse occasion"></textarea>
+        </div>
+        <input class="submitList" type="submit" value="FINI !">
+    </form>
+</section>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>

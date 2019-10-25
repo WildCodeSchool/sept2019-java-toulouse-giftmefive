@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
-    <link th:href="@{css/style.css}" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link href="../static/css/style.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
     <title>Gift Me 5</title>
 </head>
 <body>
@@ -17,10 +17,10 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <li><a class="title-desktop no-decoration" href="#">GIFT ME 5</a></li>
-                <li><a class="home-mobile" href="#">ACCUEIL</a></li>
-                <li><a class="link-desktop" href="#">S'IDENTIFIER</a></li>
-                <li><a class="link-desktop" href="#">MON COMPTE</a></li>
+                <li><a class="title-desktop" th:href="@{/}">GIFT ME 5</a></li>
+                <li><a class="home-mobile" th:href="@{/}">ACCUEIL</a></li>
+                <li><a class="link-desktop" th:href="@{/identification}">S'IDENTIFIER</a></li>
+                <li><a class="link-desktop" th:href="@{/inscription}">MON COMPTE</a></li>
                 <li><a class="link-desktop" th:href="@{/listes}">MES LISTES</a></li>
                 <li><a class="link-desktop" href="#">PARTAGER</a></li>
             </ul>
