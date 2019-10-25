@@ -114,6 +114,14 @@ footer a:hover {
     color: #25C1BB;
 }
 
+/* SHARING LIST PAGE */
+
+h1.page-title {
+    color: #25C1BB;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+}
+
 /* MOBILE VERSION (FOR BURGER MENU) */
 
 @media screen and (max-width: 761px) {

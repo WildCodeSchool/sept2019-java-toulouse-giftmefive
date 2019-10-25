@@ -10,5 +10,10 @@ public class Controllers {
     public String index() {
         return "index";
     }
+
+    @RequestMapping("/partager-liste")
+    public String listsharing() {
+        return "listsharing";
+    }
 }
 
