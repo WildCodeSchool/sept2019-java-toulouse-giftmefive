@@ -2,12 +2,12 @@ package com.wildcodeschool.giftmefive.model;
 
 public class Gifts {
     private Long id;
+    private Long listGiftsId;
     private String name;
     private String urlImage;
     private String urlArticle;
     private String description;
     private double price;
-    private Long listGiftsId;
 
     public Gifts(Long id, Long listGiftsId, String name, String urlImage, String urlArticle, String description, double price) {
         this.id = id;
