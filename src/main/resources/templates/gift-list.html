@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Liste de cadeaux</title>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<section class="filter">
+    <ul>
+        <li>A-Z</li>
+        <li>€</li>
+        <li><i class="material-icons">star_border</i></li>
+    </ul>
+</section>
+<div class="myGifts">
+    <h2 class="giftTitlePage">NOEL 2019</h2>
+    <div class="createNewGift">
+        <section class="newGift">
+            <a href=""><i class="material-icons">add_circle_outline</i></a>
+            <p>AJOUTER UN CADEAU</p>
+        </section>
+        <section class="existingGift">
+            <h3 class="giftTitle">Seiko Sport 5</h3>
+            <hr class="underGiftTitle">
+            <a href="https://placeholder.com"><img src="https://via.placeholder.com/250" alt=""></a>
+            <hr class="underGiftTitle">
+            <div class="priceStars">
+                <ul>
+                    <li>269<i class="material-icons">euro</i></li>
+                    <li><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="delete">
+                <a href=""><i class="material-icons">delete</i></a>
+            </div>
+        </section>
+        <section class="existingGift">
+            <h3 class="giftTitle">Porte Carte Secrid</h3>
+            <hr class="underGiftTitle">
+            <a href="https://placeholder.com"><img src="https://via.placeholder.com/250" alt=""></a>
+            <hr class="underGiftTitle">
+            <div class="priceStars">
+                <ul>
+                    <li>49.95<i class="material-icons">euro</i></li>
+                    <li><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="delete">
+                <a href=""><i class="material-icons">delete</i></a>
+            </div>
+        </section>
+        <section class="existingGift">
+            <h3 class="giftTitle">Adidas Marquee Boost</h3>
+            <hr class="underGiftTitle">
+            <a href="https://placeholder.com"><img src="https://via.placeholder.com/250" alt=""></a>
+            <hr class="underGiftTitle">
+            <div class="priceStars">
+                <ul>
+                    <li>149.95<i class="material-icons">euro</i></li>
+                    <li><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="alreadyBought">
+                <a href=""><i class="material-icons">card_giftcard</i></a>
+            </div>
+        </section>
+    </div>
+</div>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>
