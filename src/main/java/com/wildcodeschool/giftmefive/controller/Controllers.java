@@ -12,12 +12,12 @@ public class Controllers {
         return "index";
     }
 
-    @GetMapping("/lists")
+    @GetMapping("/listes")
     public String list() {
         return "lists";
     }
 
-    @GetMapping("/gift-list")
+    @GetMapping("/listes-cadeaux")
     public String giftList() {
         return "gift-list";
     }
