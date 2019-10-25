@@ -3,19 +3,6 @@
     padding: 0;
 }
 
-p {
-    font-family: Oswald, sans-serif;
-    font-size: 2em;
-}
-
-img {
-    width: 100%;
-}
-
-a {
-    text-decoration: none;
-}
-
 /* HEADER */
 
 header {
@@ -46,6 +33,10 @@ img.avatar {
 
 /* BANNIERE */
 
+img.banner {
+    width: 100%;
+}
+
 div.banner-container {
     display: flex;
     flex-direction: column;
@@ -60,6 +51,11 @@ p.createbutton {
     font-size: 1.5em;
     margin: .5em;
     padding: .5em 2em;
+    font-family: Oswald, sans-serif;
+}
+
+a.no-decoration {
+    text-decoration: none;
 }
 
 /* ARTICLES */
@@ -89,10 +85,12 @@ div.article p {
     text-align: justify;
     color: #2E323B;
     font-size: 1em;
+    font-family: Oswald, sans-serif;
 }
 
-.imagesarticles {
+img.imagesarticles {
     border-radius: 20px;
+    width: 100%;
 }
 
 /* FOOTER */
@@ -108,6 +106,7 @@ footer a {
     color: white;
     font-family: Oswald, sans-serif;
     font-size: 1em;
+    text-decoration: none;
 }
 
 footer a:hover {
@@ -315,6 +314,7 @@ h1.page-title {
         font-size: 1.5em;
         text-decoration: none;
         border-radius: 10px;
+        font-family: Oswald, sans-serif;
     }
 
     /* ARTICLES DESKTOP */
