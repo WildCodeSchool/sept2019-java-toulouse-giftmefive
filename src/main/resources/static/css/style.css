@@ -4,10 +4,10 @@
 }
 
 body {
-    background-color: #FDFDFD;
     color: #2E323B;
     font-size: 1em;
     font-family: 'Oswald', sans-serif;
+    background-color: whitesmoke;
 }
 
 a {
@@ -17,7 +17,7 @@ a {
 
 .material-icons {
     font-size: 7vw;
-    color: rgb(37,193,187);
+    color: rgb(37, 193, 187);
 }
 
 li {
@@ -146,7 +146,10 @@ footer a:hover {
 
 .listTitlePage {
     text-align: center;
-    margin-bottom: 7vw;
+    margin: 1em;
+    letter-spacing: .5em;
+    font-size: 2em;
+    color: #25C1BB;
 }
 
 .newList {
@@ -154,7 +157,7 @@ footer a:hover {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 7vw;
+    margin-bottom: 1em;
 }
 
 .newList i {
@@ -165,7 +168,7 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     border: 1px solid #2E323B;
-    margin-bottom: 3vw;
+    margin: 1em;
 }
 
 .createNewList {
@@ -174,24 +177,34 @@ footer a:hover {
     justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
+    margin-bottom: 1em;
 }
 
 .shareDelete {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin:5px;
+    margin: 5px;
 }
 
 .underListTitle {
-    margin : 30px 35% ;
+    margin: 30px 35%;
     width: 30%;
-    color: rgb(37,193,187);
+    color: rgb(37, 193, 187);
 }
 
-.existingLists  img {
+.existingLists img {
     margin: 3vw 0;
     width: 250px;
+}
+
+h3.listTitle {
+    text-align: center;
+    margin: 1em;
+    letter-spacing: .1em;
+    font-size: 1em;
+    color: #2E323B;
+    font-family: Oswald, sans-serif;
 }
 
 /*****GIFT LIST*****/
@@ -249,7 +262,7 @@ footer a:hover {
 .underGiftTitle {
     margin: 1em 35%;
     width: 30%;
-    color: rgb(37,193,187);
+    color: rgb(37, 193, 187);
 }
 
 .existingGift img {
@@ -502,8 +515,7 @@ footer a:hover {
         font-family: Oswald, sans-serif;
     }
 
-    /*****Gift List*****/
-
+    /* GIFT LIST DESKTOP */
     .newGift {
         flex-direction: column;
         justify-content: center;
@@ -580,19 +592,17 @@ footer a:hover {
         margin-right: 5.5vw;
     }
 
-    /*****Lists*****/
-
+    /* LIST DESKTOP */
     .createNewList {
         flex-direction: row;
+        width: 100%;
     }
 
     .newList {
         flex-direction: column;
         justify-content: center;
         flex-wrap: nowrap;
-        margin-right: 0.7vw;
-        margin-top: 2vw;
-        padding: 8vw;
+        width: 30%;
     }
 
     .newList > i {
@@ -608,9 +618,8 @@ footer a:hover {
     }
 
     .existingLists {
-        padding: 2vw;
-        width: 300px;
         font-size: 1.5em;
+        width: 30%;
     }
 
     .existingLists i {
