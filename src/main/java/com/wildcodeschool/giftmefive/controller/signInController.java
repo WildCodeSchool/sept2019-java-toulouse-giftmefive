@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class signInController {
-    @GetMapping("/sign-in")
+    @GetMapping("/identification")
     public String callSignIn() {
         return "signIn.html";
     }

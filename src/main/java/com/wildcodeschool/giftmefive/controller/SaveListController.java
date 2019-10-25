@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ListGiftController {
-    @PostMapping("/register-list")
+public class SaveListController {
+    @PostMapping("/enregistrer-liste")
     public String registerList
             (@RequestParam(name = "urlImage", required = false, defaultValue = "http") String urlImage,
              @RequestParam(name = "listName", required = false) String listName,
              @RequestParam(name = "descriptionList", required = false) String descriptionList) {
         ListGiftsRepository repository = new ListGiftsRepository();
         ListGiftsRepository.registerInList(urlImage, listName, descriptionList);
-        return "/index";
+        return "lists.html";
         // TODO Ajout Lien de la page de nouvelleListe
     }
-    @GetMapping("/register-list")
+    @GetMapping("/description-liste")
     public String showListForm(){
         return "listMaker";
     }
