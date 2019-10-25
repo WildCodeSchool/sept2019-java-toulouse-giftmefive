@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta content="width=device-width, user-scalable=no" name="viewport">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link href="../static/style.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}">
     <meta charset="UTF-8">
     <title>Listes</title>
 </head>
 <body>
+<header th:replace="header :: header"></header>
 <div class="myLists">
     <h2 class="listTitlePage">MES LISTES</h2>
     <div class="createNewList">
@@ -20,7 +22,7 @@
         <section class="existingLists">
             <h3 class="listTitle">NOEL 2019</h3>
             <hr class="underListTitle">
-            <a href="https://placeholder.com"><img alt="" src="https://via.placeholder.com/250"></a>
+            <a th:href="@{/giftList}"><img alt="" src="https://via.placeholder.com/250"></a>
             <div class="shareDelete">
                 <a href=""><i class="material-icons">share</i></a>
                 <a href=""><i class="material-icons">delete</i></a>
@@ -46,5 +48,6 @@
         </section>
     </div>
 </div>
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>
