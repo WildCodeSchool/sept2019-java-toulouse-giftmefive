@@ -3,10 +3,11 @@ package com.wildcodeschool.giftmefive.controller;
 import com.wildcodeschool.giftmefive.repository.ListGiftsRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 public class SaveGiftController {
-    @GetMapping("/listes-cadeaux")
+    @PostMapping("/listes-cadeaux")
     public String registerGift
             (@RequestParam(name = "urlImage", required = false, defaultValue = "http") String urlImage,
              @RequestParam(name = "urlArticle", required = false, defaultValue = "http") String urlArticle,
