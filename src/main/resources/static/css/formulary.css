@@ -34,7 +34,7 @@ h1 {
     align-items: center;
 }
 
-.label {
+.labelForm {
     font-size: 1em;
     color: #2E323B;
 }
@@ -95,7 +95,16 @@ textarea {
         font-size: 1.5em;
     }
 
-    .label {
+    .labelForm {
+        font-size: 1.5em;
+    }
+
+    .pseudo, .password, .passwordConfirmation, .email, .urlImage, .listName {
+        margin-top: 1em;
+        font-size: 2em;
+    }
+
+    textarea {
         font-size: 2em;
     }
 }
