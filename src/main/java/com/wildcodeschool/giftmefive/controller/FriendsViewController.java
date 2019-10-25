@@ -13,7 +13,7 @@ public class FriendsViewController {
     @GetMapping("/liste-partage")
     public String friendsView(Model out, @RequestParam(name = "id-liste", defaultValue = "1", required = false) Long id) {
         GiftsRepository repository = new GiftsRepository();
-        ListGiftsRepository repo =new ListGiftsRepository();
+        ListGiftsRepository repo = new ListGiftsRepository();
         out.addAttribute("gifts", repository.findByListGiftsId(id));
         out.addAttribute("nameList",repo.findById(id));
         return "friends-view";
