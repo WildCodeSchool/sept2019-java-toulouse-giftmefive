@@ -1,0 +1,108 @@
+.sections {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightgray;
+    font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+    font-size: 200%;
+    text-align: center;
+    color: #2E323B;
+    margin: 1em 1em;
+}
+
+.avatar2 {
+    height: 10%;
+    width: 10%;
+    background-color: rgba(37, 193, 187, 0.5);
+    padding: 1em;
+    border-radius: 50%;
+    margin-bottom: 2em;
+    box-shadow: #2E323B 1em 1em 1em;
+}
+
+.formForm{
+    max-width: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pseudo, .password, .passwordConfirmation, .email, .urlImage, .listName, .descriptionList {
+    margin: 1%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.label{
+    max-width: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    height: 15em;
+    width: 80%;
+    margin: 1%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.rating {
+    direction: rtl;
+}
+
+.rating a {
+    color: #2E323B;
+    text-decoration: none;
+    font-size: 3em;
+    transition: color .4s;
+    margin: 0.2em 0.4em;
+}
+
+.rating a:hover, .rating a:focus, .rating a:hover ~ a, .rating a:focus ~ a {
+    color: #25C1BB;
+    cursor: pointer;
+}
+
+.submitGift, .submitList, .connection, .signUp {
+    padding: 0.5em 2em;
+    color: white;
+    background-color: rgb(47, 217, 240);
+    font-weight: bolder;
+    font-size: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 0.5em 1em;
+}
+
+.signUpLink, .alreadySignIn {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+@media screen and (min-width: 761px) {
+    h1 {
+        font-size: 300%;
+    }
+
+    .signUp, .connection, .submitList, .submitGift, .button-signUp {
+        font-size: 1.5em;
+    }
+
+    .signUpLink, .alreadySignIn {
+        font-size: 1.5em;
+    }
+
+    input {
+        height: 2em;
+    }
+
+    .displayrow{
+       min-width: 20%
+    }
+}

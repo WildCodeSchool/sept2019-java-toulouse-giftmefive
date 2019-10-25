@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
+    <title>Gift Me 5</title>
+</head>
+<body>
+<header th:fragment="header">
+    <nav id="navigation-mobile">
+        <div id="menuToggle">
+            <input class="checkboxbuger" type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li><a class="title-desktop" th:href="@{/}">GIFT ME 5</a></li>
+                <li><a class="home-mobile" th:href="@{/}">ACCUEIL</a></li>
+                <li><a class="link-desktop" th:href="@{/identification}">S'IDENTIFIER</a></li>
+                <li><a class="link-desktop" th:href="@{/inscription}">MON COMPTE</a></li>
+                <li><a class="link-desktop" th:href="@{/listes}">MES LISTES</a></li>
+                <li><a class="link-desktop" href="#">PARTAGER</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="title-container">
+        <a class="title" href="index.html">GIFT ME 5</a></div>
+    <div class="avatar-container">
+        <a class="avatarlink" href="#"><img class="avatar" src="images/userguest.png"></a>
+    </div>
+</header>
+</body>
+</html>
