@@ -10,6 +10,7 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+
 .titre {
     display: flex;
     flex-direction: column;
@@ -45,6 +46,8 @@ body {
     align-items: center;
     align-content: stretch;
     padding: 1rem;
+    background-color: rgb(46, 50, 59);
+    color: white;
 }
 
 .filter img {
