@@ -69,9 +69,8 @@ textarea {
 .submitGift, .submitList, .connection, .signUp {
     padding: 0.5em 2em;
     color: white;
-    background-color: rgba(47, 217, 240, 0.3);
+    background-color: rgb(47, 217, 240);
     font-weight: bolder;
-    box-shadow: #2E323B 0.5em 0.5em 0.5em;
     font-size: 1em;
     margin-top: 2em;
     margin-bottom: 2em;

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 public class SaveGiftController {
-    @GetMapping("/gift-list")
+    @GetMapping("/listes-cadeaux")
     public String registerGift
             (@RequestParam(name = "urlImage", required = false, defaultValue = "http") String urlImage,
              @RequestParam(name = "urlArticle", required = false, defaultValue = "http") String urlArticle,
