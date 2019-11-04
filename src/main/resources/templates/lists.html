@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}">
     <meta charset="UTF-8">
     <title>Listes</title>
 </head>
 <body>
-    <div class="myLists">
-            <h2 class="listTitlePage">MES LISTES</h2>
-        <div class="createNewList">
-            <section class="newList">
-                <a href=""><i class="material-icons">add_circle_outline</i></a>
-                <p>CREER UNE NOUVELLE LISTE</p>
-            </section>
-            <section class="existingLists">
-                <h3 class="listTitle">NOEL 2019</h3>
-                <hr class="underListTitle">
-                <a href="https://placeholder.com"><img src="https://via.placeholder.com/250" alt=""></a>
-                <div class="shareDelete">
-                    <a href=""><i class="material-icons">share</i></a>
-                    <a href=""><i class="material-icons">delete</i></a>
-                </div>
-            </section>
-            <section class="existingLists">
-                <h3 class="listTitle">ANNIVERSAIRE 2018</h3>
-                <hr class="underListTitle">
-                <a href="https://placeholder.com"><img src="https://via.placeholder.com/250" alt=""></a>
-                <div class="shareDelete">
-                    <a href=""><i class="material-icons">share</i></a>
-                    <a href=""><i class="material-icons">delete</i></a>
-                </div>
-            </section>
-            <section class="existingLists">
-                <h3 class="listTitle">MARIAGE 2017</h3>
-                <hr class="underListTitle">
-                <a href="https://placeholder.com"><img src="https://via.placeholder.com/250" alt=""></a>
-                <div class="shareDelete">
-                    <a href=""><i class="material-icons">share</i></a>
-                    <a href=""><i class="material-icons">delete</i></a>
-                </div>
-            </section>
-        </div>
+<header th:replace="header :: header"></header>
+<div class="myLists">
+    <h2 class="listTitlePage">MES LISTES</h2>
+    <div class="createNewList">
+        <section class="newList">
+            <a th:href="@{/description-liste}"><i class="material-icons">add_circle_outline</i></a>
+            <p>CREER UNE NOUVELLE LISTE</p>
+        </section>
+        <section class="existingLists">
+            <h3 class="listTitle">NOEL 2019</h3>
+            <hr class="underListTitle">
+            <a th:href="@{/listes-cadeaux}"><img alt="" src="https://via.placeholder.com/250"></a>
+            <div class="shareDelete">
+                <a href=""><i class="material-icons">share</i></a>
+                <a href=""><i class="material-icons">delete</i></a>
+            </div>
+        </section>
+        <section class="existingLists">
+            <h3 class="listTitle">ANNIVERSAIRE 2018</h3>
+            <hr class="underListTitle">
+            <a href="https://placeholder.com"><img alt="" src="https://via.placeholder.com/250"></a>
+            <div class="shareDelete">
+                <a href=""><i class="material-icons">share</i></a>
+                <a href=""><i class="material-icons">delete</i></a>
+            </div>
+        </section>
+        <section class="existingLists">
+            <h3 class="listTitle">MARIAGE 2017</h3>
+            <hr class="underListTitle">
+            <a href="https://placeholder.com"><img alt="" src="https://via.placeholder.com/250"></a>
+            <div class="shareDelete">
+                <a href=""><i class="material-icons">share</i></a>
+                <a href=""><i class="material-icons">delete</i></a>
+            </div>
+        </section>
     </div>
+</div>
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>

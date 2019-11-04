@@ -3,6 +3,27 @@
     padding: 0;
 }
 
+body {
+    color: #2E323B;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    background-color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: #2E323B;
+}
+
+.material-icons {
+    font-size: 7vw;
+    color: rgb(37, 193, 187);
+}
+
+li {
+    list-style: none;
+}
+
 /* HEADER */
 
 header {
@@ -121,6 +142,163 @@ h1.page-title {
     font-family: Oswald, sans-serif;
 }
 
+/*****LIST*****/
+
+.myLists {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.listTitlePage {
+    text-align: center;
+    margin: 1em;
+    letter-spacing: .5em;
+    font-size: 2em;
+    color: #25C1BB;
+}
+
+.newList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.newList i {
+    font-size: 6rem;
+}
+
+.existingLists {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2E323B;
+    margin: 1em;
+}
+
+.createNewList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.shareDelete {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.underListTitle {
+    margin: 30px 35%;
+    width: 30%;
+    color: rgb(37, 193, 187);
+}
+
+.existingLists img {
+    margin: 3vw 0;
+    width: 250px;
+}
+
+h3.listTitle {
+    text-align: center;
+    margin: 1em;
+    letter-spacing: .1em;
+    font-size: 1em;
+    color: #2E323B;
+    font-family: Oswald, sans-serif;
+}
+
+/*****GIFT LIST*****/
+
+.myGifts {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.giftTitlePage {
+    text-align: center;
+    margin-bottom: 7vw;
+}
+
+.createNewGift {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.newGift {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 7vw;
+}
+
+.newGift i {
+    font-size: 6rem;
+}
+
+.existingGift {
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2E323B;
+    margin-bottom: 3vw;
+}
+
+.delete {
+    margin-top: 1em;
+    text-align: right;
+}
+
+.alreadyBought {
+    text-align: right;
+}
+
+.underGiftTitle {
+    margin: 1em 35%;
+    width: 30%;
+    color: rgb(37, 193, 187);
+}
+
+.existingGift img {
+    margin: 3vw 0;
+}
+
+.filter ul {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    border: 1px solid #2E323B;
+    align-items: center;
+    font-size: 20px;
+}
+
+.priceStars ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    padding: 1em;
+}
+
+.priceStars ul li {
+    display: flex;
+    align-items: center;
+}
+
 /* MOBILE VERSION (FOR BURGER MENU) */
 
 @media screen and (max-width: 761px) {
@@ -194,11 +372,11 @@ h1.page-title {
     }
 
     #menuToggle span:first-child {
-        transform-origin: 0% 0%;
+        transform-origin: 0 0;
     }
 
     #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
+        transform-origin: 0 100%;
     }
 
     #menuToggle input:checked ~ span {
@@ -220,11 +398,10 @@ h1.page-title {
         position: absolute;
         width: 10em;
         margin: -100px 0 0 -50px;
-        padding: 5em;
-        padding-top: 7em;
+        padding: 7em 5em 5em 5em;
         background: whitesmoke;
         list-style-type: none;
-        transform-origin: 0% 0%;
+        transform-origin: 0 0;
         transform: translate(-100%, 0);
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         box-shadow: #2E323B 0 .5em .5em 0;
@@ -345,5 +522,118 @@ h1.page-title {
         color: #2E323B;
         font-size: 1em;
         font-family: Oswald, sans-serif;
+    }
+
+    /* GIFT LIST DESKTOP */
+
+    .newGift {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin-right: 0.7vw;
+        margin-top: 2vw;
+        padding: 8vw;
+    }
+
+    .newGift > i {
+        font-size: 250px;
+    }
+
+    .createNewGift {
+        flex-direction: row;
+    }
+
+    .newGift i:hover, .delete i:hover {
+        color: #2E323B;
+    }
+
+    .delete i {
+        font-size: 1.5em;
+    }
+
+    .alreadyBought i {
+        font-size: 1.5em;
+    }
+
+    .existingGift {
+        padding: 2vw;
+        width: 300px;
+    }
+
+    .filter ul {
+        flex-direction: column;
+        justify-content: space-evenly;
+        border: transparent;
+        text-align: left;
+        margin-left: 2.5vw;
+    }
+
+    .filter ul li {
+        font-weight: bold;
+        color: #FDFDFD;
+        font-size: 1em;
+        margin-right: 3vw;
+    }
+
+    .filter {
+        position: fixed;
+        background-color: #2E323B;
+        color: #FDFDFD;
+        width: 10%;
+        height: 30vw;
+        display: flex;
+    }
+
+    .filter ul li i {
+        color: #FDFDFD;
+        font-size: 40px;
+    }
+
+    .priceStars ul {
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .priceStars ul li i {
+        font-size: 2em;
+    }
+
+    .priceStars ul li:first-child {
+        margin-right: 5.5vw;
+    }
+
+    /* LIST DESKTOP */
+
+    .createNewList {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .newList {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 30%;
+    }
+
+    .newList > i {
+        font-size: 250px;
+    }
+
+    .newList i:hover, .shareDelete i:hover {
+        color: #2E323B;
+    }
+
+    .shareDelete i {
+        font-size: 3em;
+    }
+
+    .existingLists {
+        font-size: 1.5em;
+        width: 30%;
+    }
+
+    .existingLists i {
+        font-size: 1.5em;
     }
 }
