@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-public class SaveGiftController {
-    @PostMapping("/listes-cadeaux")
+@Controller
+    public class SaveGiftController {
+    @PostMapping("/listes")
     public String registerGift
             (@RequestParam(name = "urlImage", required = false, defaultValue = "http") String urlImage,
              @RequestParam(name = "urlArticle", required = false, defaultValue = "http") String urlArticle,
@@ -20,6 +21,6 @@ public class SaveGiftController {
     }
         @GetMapping("/description-cadeau")
         public String giftDescription() {
-            return "giftMaker.html";
+            return "giftMaker";
         }
 }
