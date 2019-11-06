@@ -21,5 +21,9 @@ public class Controllers {
     public String giftList() {
         return "gift-list";
     }
-}
 
+    @GetMapping("/faq")
+    public String faq() {
+        return "faq";
+    }
+}
