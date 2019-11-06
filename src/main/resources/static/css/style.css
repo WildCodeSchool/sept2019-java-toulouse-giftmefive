@@ -182,7 +182,7 @@ h1.page-title {
 .createNewList {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     flex-wrap: wrap;
     margin-bottom: 1em;
@@ -673,7 +673,7 @@ h3.listTitle {
 
     .existingLists {
         font-size: 1.5em;
-        width: 30%;
+        width: 25%;
     }
 
     .existingLists i {
