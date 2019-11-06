@@ -13,7 +13,6 @@ public class ListsRepository {
     private final static String DB_PASSWORD = "Greg.321";
 
     public List<ListGift> findAll() {
-
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
