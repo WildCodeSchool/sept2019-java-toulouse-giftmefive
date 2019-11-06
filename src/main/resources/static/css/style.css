@@ -303,6 +303,7 @@ h3.listTitle {
     align-items: center;
 }
 
+
 /*****Gift List Friend View*****/
 
 .linkBuy {
@@ -347,6 +348,61 @@ h3.listTitle {
     text-align: center;
     flex-wrap: wrap;
 }
+
+
+
+/*****FAQ and CONTACT*****/
+
+.faqTitlePage, .contactFormTitle {
+    text-align: center;
+    margin: 1em;
+    letter-spacing: .5em;
+    font-size: 2em;
+    color: #25C1BB;
+}
+
+.questionAnswer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.question {
+    font-weight: bold;
+}
+
+.answer {
+    margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.contactFormTitle {
+    text-align: center;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.yourEmail, .yourQuestion {
+    width: 30%;
+    margin: 0.5em;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+.yourQuestion {
+    height: 5em;
+}
+
+.submitContact {
+    background-color: rgb(37, 193, 187);
+    color: #FDFDFD;
+    margin: 0.3em 0 1em 0;
+    padding: 0.7em 1.5em;
+    border-radius: 10px;
 
 /* SHARING POP UP */
 
@@ -393,6 +449,7 @@ h3.listTitle {
     padding: 0;
     border: none;
     background: none;
+
 }
 
 /* MOBILE VERSION (FOR BURGER MENU) */
