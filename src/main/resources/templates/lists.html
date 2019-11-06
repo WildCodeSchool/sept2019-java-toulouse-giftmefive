@@ -24,7 +24,8 @@
             <hr class="underListTitle">
             <a th:href="@{/listes-cadeaux}"><img alt="" src="https://via.placeholder.com/250"></a>
             <div class="shareDelete">
-                <button th:id="${lists.urlShare}" class="myBtn"><i class="material-icons">share</i></button>
+                <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
+                </button>
                 <a href=""><i class="material-icons">delete</i></a>
             </div>
         </section>
@@ -34,6 +35,8 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <p id="modal-text"></p>
+        <p id="modal-text1"></p>
+
     </div>
 </div>
 <footer th:replace="footer :: footer"></footer>
