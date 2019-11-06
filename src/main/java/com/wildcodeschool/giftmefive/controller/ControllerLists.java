@@ -15,5 +15,4 @@ public class ControllerLists {
         model.addAttribute("lists", listsRepository.findAll());
         return "lists";
     }
-
 }
