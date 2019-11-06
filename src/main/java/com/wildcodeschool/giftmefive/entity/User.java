@@ -1,4 +1,4 @@
-package com.wildcodeschool.entity;
+package com.wildcodeschool.giftmefive.entity;
 
 public class User {
     private int id_user;
