@@ -12,9 +12,9 @@ public class Controllers {
         return "index";
     }
 
-    @GetMapping("/listes")
-    public String list() {
-        return "lists";
+    @RequestMapping("/partager-liste")
+    public String listsharing() {
+        return "listsharing";
     }
 
     @GetMapping("/listes-cadeaux")

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SaveListController {
-    @PostMapping("/")
+    @PostMapping("/listes-cadeaux")
     public String registerList
             (@RequestParam(name = "urlImage", required = false, defaultValue = "http") String urlImage,
              @RequestParam(name = "listName", required = false) String listName,
