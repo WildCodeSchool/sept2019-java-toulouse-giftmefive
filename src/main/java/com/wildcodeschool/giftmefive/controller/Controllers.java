@@ -27,5 +27,3 @@ public class Controllers {
         return "faq";
     }
 }
-
-
