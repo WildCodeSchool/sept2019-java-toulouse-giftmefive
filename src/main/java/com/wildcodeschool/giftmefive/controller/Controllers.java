@@ -22,4 +22,3 @@ public class Controllers {
         return "gift-list";
     }
 }
-
