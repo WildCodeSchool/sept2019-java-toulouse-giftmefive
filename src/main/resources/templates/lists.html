@@ -26,7 +26,12 @@
             <div class="shareDelete">
                 <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
                 </button>
-                <a href=""><i class="material-icons">delete</i></a>
+                <form action="/listes/delete" method="get">
+                    <input type="hidden" name="id" id="id" th:value="${lists.idList}">
+                    <button type="submit" class="myBtn">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </form>
             </div>
         </section>
     </div>
