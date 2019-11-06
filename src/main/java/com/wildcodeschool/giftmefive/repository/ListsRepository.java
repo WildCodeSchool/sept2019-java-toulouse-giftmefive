@@ -1,6 +1,6 @@
 package com.wildcodeschool.giftmefive.repository;
 
-import com.wildcodeschool.giftmefive.entity.Lists;
+import com.wildcodeschool.giftmefive.entity.ListGift;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class ListsRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public List<Lists> findAll() {
+    public List<ListGift> findAll() {
 
         try {
             Connection connection = DriverManager.getConnection(
@@ -22,15 +22,15 @@ public class ListsRepository {
                     "SELECT * FROM list;"
             );
             ResultSet resultSet = statement.executeQuery();
-            List<Lists> lists = new ArrayList<Lists>();
+            List<ListGift> lists = new ArrayList<ListGift>();
             while (resultSet.next()) {
-                int id_list = resultSet.getInt("id_list");
-                String list_name = resultSet.getString("list_name");
+                int idList = resultSet.getInt("id_list");
+                String listName = resultSet.getString("list_name");
                 String description = resultSet.getString("description");
-                String url_image = resultSet.getString("url_image");
-                String url_share = resultSet.getString("url_share");
-                int id_user = resultSet.getInt("id_user");
-                lists.add(new Lists(id_list, list_name, description, url_image, url_share, id_user));
+                String urlImage = resultSet.getString("url_image");
+                String urlShare = resultSet.getString("url_share");
+                int idUser = resultSet.getInt("id_user");
+                lists.add(new ListGift(idList, listName, description, urlImage, urlShare, idUser));
             }
             return lists;
         } catch (SQLException e) {
