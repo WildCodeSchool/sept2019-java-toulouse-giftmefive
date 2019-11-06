@@ -1,36 +1,36 @@
 package com.wildcodeschool.giftmefive.entity;
 
 public class List {
-    private int id_list;
-    private String list_name;
+    private int idList;
+    private String listName;
     private String description;
-    private String url_image;
-    private String url_share;
-    private int id_user;
+    private String urlImage;
+    private String urlShare;
+    private int idUser;
 
-    public List(int id_list, String list_name, String description, String url_image, String url_share, int id_user) {
-        this.id_list = id_list;
-        this.list_name = list_name;
+    public List(int idList, String listName, String description, String urlImage, String urlShare, int idUser) {
+        this.idList = idList;
+        this.listName = listName;
         this.description = description;
-        this.url_image = url_image;
-        this.url_share = url_share;
-        this.id_user = id_user;
+        this.urlImage = urlImage;
+        this.urlShare = urlShare;
+        this.idUser = idUser;
     }
 
-    public int getId_list() {
-        return id_list;
+    public int getIdList() {
+        return idList;
     }
 
-    public void setId_list(int id_list) {
-        this.id_list = id_list;
+    public void setIdList(int idList) {
+        this.idList = idList;
     }
 
-    public String getList_name() {
-        return list_name;
+    public String getListName() {
+        return listName;
     }
 
-    public void setList_name(String list_name) {
-        this.list_name = list_name;
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 
     public String getDescription() {
@@ -41,27 +41,27 @@ public class List {
         this.description = description;
     }
 
-    public String getUrl_image() {
-        return url_image;
+    public String getUrlImage() {
+        return urlImage;
     }
 
-    public void setUrl_image(String url_image) {
-        this.url_image = url_image;
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 
-    public String getUrl_share() {
-        return url_share;
+    public String getUrlShare() {
+        return urlShare;
     }
 
-    public void setUrl_share(String url_share) {
-        this.url_share = url_share;
+    public void setUrlShare(String urlShare) {
+        this.urlShare = urlShare;
     }
 
-    public int getId_user() {
-        return id_user;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 }

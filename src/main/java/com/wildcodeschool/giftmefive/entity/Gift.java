@@ -1,43 +1,43 @@
 package com.wildcodeschool.giftmefive.entity;
 
 public class Gift {
-    private int id_gift;
-    private String gift_name;
+    private int idGift;
+    private String giftName;
     private String description;
     private float price;
     private int preference;
-    private String url_image;
-    private String url_website;
-    private int id_list;
-    private int id_friend;
+    private String urlImage;
+    private String urlWebsite;
+    private int idList;
+    private int idFriend;
 
-    public Gift(int id_gift, String gift_name, String description, float price, int preference, String url_image,
-                String url_website, int id_list, int id_friend) {
-        this.id_gift = id_gift;
-        this.gift_name = gift_name;
+    public Gift(int idGift, String giftName, String description, float price, int preference, String urlImage,
+                String urlWebsite, int idList, int idFriend) {
+        this.idGift = idGift;
+        this.giftName = giftName;
         this.description = description;
         this.price = price;
         this.preference = preference;
-        this.url_image = url_image;
-        this.url_website = url_website;
-        this.id_list = id_list;
-        this.id_friend = id_friend;
+        this.urlImage = urlImage;
+        this.urlWebsite = urlWebsite;
+        this.idList = idList;
+        this.idFriend = idFriend;
     }
 
-    public int getId_gift() {
-        return id_gift;
+    public int getIdGift() {
+        return idGift;
     }
 
-    public void setId_gift(int id_gift) {
-        this.id_gift = id_gift;
+    public void setIdGift(int idGift) {
+        this.idGift = idGift;
     }
 
-    public String getGift_name() {
-        return gift_name;
+    public String getGiftName() {
+        return giftName;
     }
 
-    public void setGift_name(String gift_name) {
-        this.gift_name = gift_name;
+    public void setGiftName(String giftName) {
+        this.giftName = giftName;
     }
 
     public String getDescription() {
@@ -64,35 +64,35 @@ public class Gift {
         this.preference = preference;
     }
 
-    public String getUrl_image() {
-        return url_image;
+    public String getUrlImage() {
+        return urlImage;
     }
 
-    public void setUrl_image(String url_image) {
-        this.url_image = url_image;
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 
-    public String getUrl_website() {
-        return url_website;
+    public String getUrlWebsite() {
+        return urlWebsite;
     }
 
-    public void setUrl_website(String url_website) {
-        this.url_website = url_website;
+    public void setUrlWebsite(String urlWebsite) {
+        this.urlWebsite = urlWebsite;
     }
 
-    public int getId_list() {
-        return id_list;
+    public int getIdList() {
+        return idList;
     }
 
-    public void setId_list(int id_list) {
-        this.id_list = id_list;
+    public void setIdList(int idList) {
+        this.idList = idList;
     }
 
-    public int getId_friend() {
-        return id_friend;
+    public int getIdFriend() {
+        return idFriend;
     }
 
-    public void setId_friend(int id_friend) {
-        this.id_friend = id_friend;
+    public void setIdFriend(int idFriend) {
+        this.idFriend = idFriend;
     }
 }
