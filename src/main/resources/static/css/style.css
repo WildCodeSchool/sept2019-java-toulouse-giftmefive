@@ -34,7 +34,7 @@ header {
     font-family: Oswald, sans-serif;
 }
 
-a.title {
+.title {
     text-decoration: none;
     color: #25C1BB;
     font-family: Oswald, sans-serif;
@@ -532,7 +532,7 @@ h3.listTitle {
         display: none;
     }
 
-    a.title {
+    .title {
         display: none;
     }
 
