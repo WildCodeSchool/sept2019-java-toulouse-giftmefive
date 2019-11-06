@@ -1,6 +1,6 @@
 package com.wildcodeschool.giftmefive.entity;
 
-public class List {
+public class ListGift {
     private int idList;
     private String listName;
     private String description;
@@ -8,7 +8,7 @@ public class List {
     private String urlShare;
     private int idUser;
 
-    public List(int idList, String listName, String description, String urlImage, String urlShare, int idUser) {
+    public ListGift(int idList, String listName, String description, String urlImage, String urlShare, int idUser) {
         this.idList = idList;
         this.listName = listName;
         this.description = description;
