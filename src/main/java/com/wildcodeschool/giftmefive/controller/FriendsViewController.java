@@ -16,6 +16,7 @@ public class FriendsViewController {
         ListGiftsRepository repo = new ListGiftsRepository();
         out.addAttribute("gifts", repository.findByListGiftsId(id));
         out.addAttribute("nameList",repo.findById(id));
+
         return "friends-view";
     }
 }

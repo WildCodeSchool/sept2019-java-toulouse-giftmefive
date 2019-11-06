@@ -6,17 +6,20 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
     <link rel="stylesheet" href="css/friendsView.css">
     <title th:text="|Ma liste ${nameList.name}|"></title>
 </head>
 <body>
+<header th:replace="header :: header"></header>
 <h1 th:text="${nameList.name}">Nom de la liste</h1>
+<p th:text="${nameList.description}"></p>
 <div class="button_share">
     <input class="button" type="button" value="Partage la liste">
 </div>
 <div class="page">
     <div class="filter">
-        <img src="images/filter-edit-50.png" alt="">
+        <img src="images/filter-edit-50-white.png" alt="">
         <div class="filter_text">
             <p>Préférences</p>
             <p>Prix croissant</p>
@@ -43,5 +46,6 @@
         </div>
     </div>
 </div>
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>
