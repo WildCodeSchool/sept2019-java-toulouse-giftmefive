@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
+    <title>Mon Compte</title>
+</head>
+<body class="bodyPage4">
+<header th:replace="header :: header"></header>
+<section class="sections">
+    <h1>Mon Compte</h1>
+    <img class="avatar2" src="images/avatar.jpg">
+    <form action="enregistre_user" method="post">
+        <!-- Todo lien thymeleaf pour recupere infos user-->
+        <input id="idUser" name="idUser" value="1" type="hidden">
+        <label for="username">username:</label>
+        <input id="username" name="username" placeholder="username" required type="text">
+        <br><br>
+        <label for="password"  >password:</label>
+        <input id="password" name="password" placeholder="password" required type="text">
+        <br><br>
+        <label for="passwordConfirmation" >password:</label>
+        <input id="passwordConfirmation" name="passwordConfirmation" placeholder="Confirme password" required type="text">
+        <br><br>
+        <label for="email">email:</label>
+        <input id="email" name="email" placeholder="email" required type="text">
+        <br><br>
+        <input type="submit" value="Send">
+</section>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>
