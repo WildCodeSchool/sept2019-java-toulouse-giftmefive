@@ -34,7 +34,7 @@ header {
     font-family: Oswald, sans-serif;
 }
 
-a.title {
+.title {
     text-decoration: none;
     color: #25C1BB;
     font-family: Oswald, sans-serif;
@@ -134,6 +134,14 @@ footer a:hover {
     color: #25C1BB;
 }
 
+/* SHARING LIST PAGE */
+
+h1.page-title {
+    color: #25C1BB;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+}
+
 /*****LIST*****/
 
 .myLists {
@@ -167,6 +175,7 @@ footer a:hover {
 .existingLists {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 1px solid #2E323B;
     margin: 1em;
 }
@@ -174,7 +183,7 @@ footer a:hover {
 .createNewList {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: center;
     flex-wrap: wrap;
     margin-bottom: 1em;
@@ -194,8 +203,8 @@ footer a:hover {
 }
 
 .existingLists img {
-    margin: 3vw 0;
-    width: 250px;
+    width: 100%;
+    height: 100%;
 }
 
 h3.listTitle {
@@ -205,6 +214,11 @@ h3.listTitle {
     font-size: 1em;
     color: #2E323B;
     font-family: Oswald, sans-serif;
+}
+
+div.list-title-container {
+    display: flex;
+    flex-direction: column
 }
 
 /*****GIFT LIST*****/
@@ -340,11 +354,114 @@ h3.listTitle {
     flex-wrap: wrap;
 }
 
-/***** MOBILE VERSION (FOR BURGER MENU) *****/
+/*****FAQ and CONTACT*****/
+
+.faqTitlePage, .contactFormTitle {
+    text-align: center;
+    margin: 1em;
+    letter-spacing: .5em;
+    font-size: 2em;
+    color: #25C1BB;
+}
+
+.questionAnswer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.question {
+    font-weight: bold;
+}
+
+.answer {
+    margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.contactFormTitle {
+    text-align: center;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.yourEmail, .yourQuestion {
+    width: 30%;
+    margin: 0.5em;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+.yourQuestion {
+    height: 5em;
+}
+
+.submitContact {
+    background-color: rgb(37, 193, 187);
+    color: #FDFDFD;
+    margin: 0.3em 0 1em 0;
+    padding: 0.7em 1.5em;
+    border-radius: 10px;
+}
+
+/* SHARING POP UP */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 80% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-text {
+    color: #25C1BB;
+    text-align: center;
+}
+
+.myBtn {
+    padding: 0;
+    border: none;
+    background: none;
+
+}
+
+/* MOBILE VERSION (FOR BURGER MENU) */
 
 @media screen and (max-width: 761px) {
 
     /* HEADER */
+
     .title-desktop {
         display: none;
     }
@@ -354,6 +471,7 @@ h3.listTitle {
     }
 
     /* BURGER MENU */
+
     div.title-container {
         align-self: center;
     }
@@ -412,11 +530,11 @@ h3.listTitle {
     }
 
     #menuToggle span:first-child {
-        transform-origin: 0% 0%;
+        transform-origin: 0 0;
     }
 
     #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
+        transform-origin: 0 100%;
     }
 
     #menuToggle input:checked ~ span {
@@ -438,11 +556,10 @@ h3.listTitle {
         position: absolute;
         width: 10em;
         margin: -100px 0 0 -50px;
-        padding: 5em;
-        padding-top: 7em;
+        padding: 7em 5em 5em 5em;
         background: whitesmoke;
         list-style-type: none;
-        transform-origin: 0% 0%;
+        transform-origin: 0 0;
         transform: translate(-100%, 0);
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         box-shadow: #2E323B 0 .5em .5em 0;
@@ -467,11 +584,12 @@ h3.listTitle {
 @media screen and (min-width: 761px) {
 
     /*HEADER DESKTOP */
+
     .home-mobile {
         display: none;
     }
 
-    a.title {
+    .title {
         display: none;
     }
 
@@ -515,6 +633,7 @@ h3.listTitle {
     }
 
     /* BANNIERE DESKTOP */
+
     div.banner-container {
         display: flex;
         flex-direction: column;
@@ -537,6 +656,7 @@ h3.listTitle {
     }
 
     /* ARTICLES DESKTOP */
+
     article.article-container {
         display: flex;
         flex-direction: row;
@@ -643,7 +763,6 @@ h3.listTitle {
     }
 
     /* LIST DESKTOP */
-
     .createNewList {
         flex-direction: row;
         width: 100%;
@@ -670,7 +789,7 @@ h3.listTitle {
 
     .existingLists {
         font-size: 1.5em;
-        width: 30%;
+        width: 25%;
     }
 
     .existingLists i {
@@ -700,5 +819,21 @@ h3.listTitle {
 
     .priceStars {
         padding: 1vw;
+    }
+
+    /* SHARING BUTTON */
+    .myBtn {
+        padding: 0;
+        border: none;
+        background: none;
+        font-size: 1em;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 20% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
     }
 }

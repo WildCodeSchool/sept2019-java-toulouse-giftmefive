@@ -19,35 +19,55 @@
             <a th:href="@{/description-liste}"><i class="material-icons">add_circle_outline</i></a>
             <p>CREER UNE NOUVELLE LISTE</p>
         </section>
-        <section class="existingLists">
-            <h3 class="listTitle">NOEL 2019</h3>
-            <hr class="underListTitle">
-            <a th:href="@{/listes-cadeaux}"><img alt="" src="https://via.placeholder.com/250"></a>
-            <div class="shareDelete">
-                <a href=""><i class="material-icons">share</i></a>
-                <a href=""><i class="material-icons">delete</i></a>
+        <section class="existingLists" th:each="lists: ${lists}">
+            <div class="list-title-container">
+                <h3 class="listTitle" th:text="${lists.listName}"></h3>
+                <hr class="underListTitle">
             </div>
-        </section>
-        <section class="existingLists">
-            <h3 class="listTitle">ANNIVERSAIRE 2018</h3>
-            <hr class="underListTitle">
-            <a href="https://placeholder.com"><img alt="" src="https://via.placeholder.com/250"></a>
-            <div class="shareDelete">
-                <a href=""><i class="material-icons">share</i></a>
-                <a href=""><i class="material-icons">delete</i></a>
+            <div class="img-list-container">
+                <a th:href="@{/listes-cadeaux}"><img alt="" th:src="${lists.urlImage}"></a>
             </div>
-        </section>
-        <section class="existingLists">
-            <h3 class="listTitle">MARIAGE 2017</h3>
-            <hr class="underListTitle">
-            <a href="https://placeholder.com"><img alt="" src="https://via.placeholder.com/250"></a>
             <div class="shareDelete">
-                <a href=""><i class="material-icons">share</i></a>
-                <a href=""><i class="material-icons">delete</i></a>
+                <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
+                </button>
+                <form action="/listes/delete" method="get">
+                    <input type="hidden" name="id" id="id" th:value="${lists.idList}">
+                    <button type="submit" class="myBtn">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </form>
             </div>
         </section>
     </div>
 </div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-text"></p>
+    </div>
+</div>
 <footer th:replace="footer :: footer"></footer>
+<script>
+    var modal = document.getElementById("myModal");
+    var btns = document.getElementsByClassName("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    for (i = 0; i < btns.length; i++) {
+        var btn = btns[i];
+        btn.onclick = function () {
+            var text = document.getElementById("modal-text");
+            text.textContent = this.id;
+            modal.style.display = "block";
+        }
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
+
