@@ -340,7 +340,7 @@ h3.listTitle {
     flex-wrap: wrap;
 }
 
-/* MOBILE VERSION (FOR BURGER MENU) */
+/***** MOBILE VERSION (FOR BURGER MENU) *****/
 
 @media screen and (max-width: 761px) {
 
