@@ -6,9 +6,9 @@ public class RegisterGifts {
     private String url_article;
     private String gift_name;
     private String description_gift;
-    private int price;
+    private Double price;
 
-    public RegisterGifts(String url_image, String url_article, String gift_name, String description_gift, int price) {
+    public RegisterGifts(String url_image, String url_article, String gift_name, String description_gift, Double price) {
         this.url_image = url_image;
         this.url_article = url_article;
         this.gift_name = gift_name;

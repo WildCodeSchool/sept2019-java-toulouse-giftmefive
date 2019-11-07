@@ -11,7 +11,7 @@
 <header th:replace="header :: header"></header>
 <section class="sections">
     <h1>DESCRIPTION DU CADEAU</h1>
-    <form action="listes-cadeaux" class="formForm" method="post">
+    <form action="register-gifts" class="formForm" method="post">
         <div class="displayrow">
             <label class="labelForm" for="urlImage">Lien vers l'image :</label>
             <input class="urlImage" id="urlImage" name="url_image" placeholder="  http://imagedemoncadeau.com"
@@ -31,10 +31,39 @@
                       placeholder="  Le rouge ou le bleu comme vous le souhaitez"></textarea>
         </div>
         <div class="rating">
-            <a href="#1" title="Donner 3 étoiles">★</a>
-            <a href="#2" title="Donner 2 étoiles">★</a>
-            <a href="#3" title="Donner 1 étoile">★</a>
+            <a id="star3" href="#1" title="Donner 3 étoiles">★</a>
+            <a id="star2" href="#2" title="Donner 2 étoiles">★</a>
+            <a id="star1" href="#3" title="Donner 1 étoile">★</a>
         </div>
+        <input id="preferences" type="hidden" name="preferences" value="0">
+        <script type="text/javascript">
+
+            var star1 = document.getElementById("star1");
+            var star2 = document.getElementById("star2");
+            var star3 = document.getElementById("star3");
+
+            var preference = document.getElementById("preferences");
+            star1.onclick = function () {
+                preference.value = "1";
+                star1.classList.add("selected");
+                star2.classList.remove("selected");
+                star3.classList.remove("selected");
+            };
+
+            star2.onclick = function () {
+                preference.value = "2";
+                star1.classList.add("selected");
+                star2.classList.add("selected");
+                star3.classList.remove("selected");
+            };
+
+            star3.onclick = function () {
+                preference.value = "3";
+                star1.classList.add("selected");
+                star2.classList.add("selected");
+                star3.classList.add("selected");
+            };
+        </script>
         <div class="displayrow">
             <label class="labelForm" name="price" for="price">Prix du cadeau en euros :</label>
             <input class="price" id="price" placeholder="  45" type="text">
