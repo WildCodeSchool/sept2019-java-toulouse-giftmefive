@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/formulary.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
-    <head>
-        <meta charset="UTF-8">
-        <title>S'identifier</title>
-    </head>
-    <body class="bodyPage4">
-        <header th:replace="header :: header"></header>
-        <section class="sections">
-        <h1>S'IDENTIFIER</h1>
+<link href="css/style.css" rel="stylesheet">
+<link href="css/formulary.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Tangerine&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>S'identifier</title>
+</head>
+<body class="bodyPage4">
+<header th:replace="header :: header"></header>
+<form class="sections" action="/connexion" method="Post">
+    <h1>S'IDENTIFIER</h1>
+    <div class="displayrow">
         <img class="avatar2" src="images/avatar.jpg">
-            <label for="pseudo">Pseudo</label>
-        <input id="pseudo" class="pseudo" placeholder="Pseudo" type="text">
-            <label for="password">Mot de passe</label>
-        <input id="password" class="password" placeholder="********" type="password">
+    </div>
+    <div class="displayrow">
+        <label class="labelForm" for="username">Pseudo</label>
+        <input class="pseudo" id="username"  name="username" placeholder="  Pseudo" type="text">
+    </div>
+    <div class="displayrow">
+        <label class="labelForm" for="password">Mot de passe</label>
+        <input class="password" id="password"  name="password" placeholder="  ********" type="password">
+    </div>
+    <div class="displayrow">
         <input class="connection" type="submit" value="Connexion">
         <p>OU</p>
         <a class="signUpLink" th:href="@{/inscription}">S'INSCRIRE!</a>
-        </section>
-        <footer th:replace="footer :: footer"></footer>
-    </body>
-
+    </div>
+</form>
+<footer th:replace="footer :: footer"></footer>
+</body>
 </html>

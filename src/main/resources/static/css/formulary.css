@@ -1,16 +1,20 @@
 .sections {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     background-color: lightgray;
     font-family: 'Oswald', sans-serif;
 }
 
 h1 {
-    font-size: 200%;
+    font-size: 1.8em;
     text-align: center;
-    color: #2E323B;
-    margin: 1em 1em;
+    color: #25C1BB;
+    letter-spacing: 0.2em;
+    padding: 1em;
+}
+
+.displayrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .avatar2 {
@@ -20,37 +24,41 @@ h1 {
     padding: 1em;
     border-radius: 50%;
     margin-bottom: 2em;
-    box-shadow: #2E323B 1em 1em 1em;
+    box-shadow: #2E323B 0.5em 0.5em 0.3em;
 }
 
-.formForm{
-    max-width: 5vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pseudo, .password, .passwordConfirmation, .email, .urlImage, .listName, .descriptionList {
+.urlImage, .listName, .urlArticle, .giftName, .price, .pseudo, .password, .passwordConfirmation, .email {
     margin: 1%;
     background-color: rgba(255, 255, 255, 0.5);
+    height: 2em;
+    width: 20em;
+    border-radius: 0.5em;
 }
 
-.label{
-    max-width: 5vw;
+.inputInFlex {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-textarea {
+.labelForm {
+    font-size: 1em;
+    color: #2E323B;
+}
+
+.descriptionGift, .descriptionList {
     height: 15em;
-    width: 80%;
+    width: 20em;
     margin: 1%;
     background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
 }
 
 .rating {
     direction: rtl;
+    display: flex;
+    justify-content: center;
 }
 
 .rating a {
@@ -71,10 +79,9 @@ textarea {
     color: white;
     background-color: rgb(47, 217, 240);
     font-weight: bolder;
-    font-size: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
     padding: 0.5em 1em;
+    margin: 2em;
+    border-radius: 0.5em;
 }
 
 .signUpLink, .alreadySignIn {
@@ -83,6 +90,7 @@ textarea {
     font-size: 1em;
     margin-bottom: 1em;
     margin-top: 1em;
+    color: #25C1BB;
 }
 
 @media screen and (min-width: 761px) {
@@ -99,11 +107,17 @@ textarea {
         font-size: 1.5em;
     }
 
-    input {
-        height: 2em;
+    .labelForm {
+        font-size: 2em;
     }
 
-    .displayrow{
-       min-width: 20%
+    .urlImage, .listName, .urlArticle, .giftName, .price, .pseudo, .password, .passwordConfirmation, .email {
+        margin-top: 1em;
+        font-size: 2em;
+    }
+
+    .descriptionGift, .descriptionList {
+        font-size: 2.8em;
+        border-radius: 1em;
     }
 }

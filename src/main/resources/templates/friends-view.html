@@ -1,47 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/friendsView.css">
-    <title th:text="|Ma liste ${nameList.name}|"></title>
+    <link th:href="@{css/style.css}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Liste de cadeaux vue ami</title>
 </head>
 <body>
-<h1 th:text="${nameList.name}">Nom de la liste</h1>
-<div class="button_share">
-    <input class="button" type="button" value="Partage la liste">
-</div>
+<header th:replace="header :: header"></header>
 <div class="page">
-    <div class="filter">
-        <img src="images/filter-edit-50.png" alt="">
-        <div class="filter_text">
-            <p>Préférences</p>
-            <p>Prix croissant</p>
-            <p>Prix décroissant</p>
-            <p>A-Z</p>
-            <p>Z-A</p>
-            <p>Déjà acheté</p>
-            <p>Encore à offrir</p>
-        </div>
-    </div>
-    <div class="content">
-        <div class="mygiflist" th:each="gifts: ${gifts}">
-            <h2 th:text="${gifts.name}">Nom du cadeau</h2>
-            <img th:src="${gifts.urlImage}" alt="Link">
-            <div class="price">
-                <h3 th:text="|${gifts.price} €|">Prix</h3>
-                <h2>&#x2605</h2>
-                <h2>&#x2605</h2>
-                <h2>&#x2605</h2>
-            </div>
-            <p th:text="${gifts.description}"></p>
-            <a class="button_link_gifts" th:href="${gifts.urlArticle}">Lien Cadeau</a>
-            <input class="button" type="button" value="OFFRIR">
+    <section class="filter">
+        <ul>
+            <li>A-Z</li>
+            <li>€</li>
+            <li><i class="material-icons">star_border</i></li>
+            <li>Déjà acheté</li>
+            <li>Encore à offrir</li>
+        </ul>
+    </section>
+</div>
+<h2 th:text="${nameList.name}" class="giftTitlePage">Nom de la liste</h2>
+<div class="myGifts">
+    <div class="desktopViewAllGift">
+        <div th:each="gifts: ${gifts}" class="allGifts">
+            <section class="existingGiftFriendView">
+                <h3 th:text="${gifts.name}" class="giftTitle">Nom du cadeau</h3>
+                <hr class="underGiftTitle">
+                <img class="imgGiftList" th:src="${gifts.urlImage}" alt="Link">
+                <hr class="underGiftTitle">
+                <div class="priceStars">
+                    <ul>
+                        <li>
+                            <span th:text="|${gifts.price}|"></span>
+                            <i class="material-icons">euro_symbol</i>
+                        </li>
+                        <li><i class="material-icons">star</i><i class="material-icons">star</i><i
+                                class="material-icons">star</i></li>
+                    </ul>
+                </div>
+                <p th:text="${gifts.description}" class="giftDescription"></p>
+                <div class="linkBuy">
+                    <a class="urlArticle" th:href="${gifts.urlArticle}"><i class="material-icons">link</i></a>
+                    <input class="buttonToBuy" type="submit" value="OFFRIR">
+                </div>
+            </section>
         </div>
     </div>
 </div>
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>
