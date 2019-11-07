@@ -21,6 +21,6 @@ public class signInController {
         if (user != null) {
             return "redirect:/";
         }
-        return "signIn.html";
+        return "signIn";
     }
 }
