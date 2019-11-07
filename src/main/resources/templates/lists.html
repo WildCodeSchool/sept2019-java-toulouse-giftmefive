@@ -20,9 +20,13 @@
             <p>CREER UNE NOUVELLE LISTE</p>
         </section>
         <section class="existingLists" th:each="lists: ${lists}">
-            <h3 class="listTitle" th:text="${lists.listName}"></h3>
-            <hr class="underListTitle">
-            <a th:href="@{/listes-cadeaux}"><img alt="" src="https://via.placeholder.com/250"></a>
+            <div class="list-title-container">
+                <h3 class="listTitle" th:text="${lists.listName}"></h3>
+                <hr class="underListTitle">
+            </div>
+            <div class="img-list-container">
+                <a th:href="@{/listes-cadeaux}"><img alt="" th:src="${lists.urlImage}"></a>
+            </div>
             <div class="shareDelete">
                 <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
                 </button>
