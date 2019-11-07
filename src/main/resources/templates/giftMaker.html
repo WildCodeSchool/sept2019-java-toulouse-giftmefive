@@ -11,23 +11,23 @@
 <header th:replace="header :: header"></header>
 <section class="sections">
     <h1>DESCRIPTION DU CADEAU</h1>
-    <form action="registerGift" class="formForm" method="post">
+    <form action="listes-cadeaux" class="formForm" method="post">
         <div class="displayrow">
             <label class="labelForm" for="urlImage">Lien vers l'image :</label>
-            <input class="urlImage" id="urlImage" name="urlImage" placeholder="  http://imagedemoncadeau.com"
+            <input class="urlImage" id="urlImage" name="url_image" placeholder="  http://imagedemoncadeau.com"
                    type="url">
         </div>
         <div class="displayrow">
             <label class="labelForm" for="urlArticle">Lien vers le cadeau :</label>
-            <input class="urlArticle" id="urlArticle" placeholder="  http://lienversmoncadeau.com" type="url">
+            <input class="urlArticle" name="url_article" id="urlArticle" placeholder="  http://lienversmoncadeau.com" type="url">
         </div>
         <div class="displayrow">
             <label class="labelForm" for="giftName">Nom du cadeau :</label>
-            <input class="giftName" id="giftName" placeholder="  Jouet en bois" type="text">
+            <input class="giftName" name="gift_name" id="giftName" placeholder="  Jouet en bois" type="text">
         </div>
         <div class="displayrow">
             <label class="labelForm" for="descriptionGift">Descriptif du cadeau :</label>
-            <textarea class="descriptionGift" id="descriptionGift"
+            <textarea class="descriptionGift" id="descriptionGift" name="description_gift"
                       placeholder="  Le rouge ou le bleu comme vous le souhaitez"></textarea>
         </div>
         <div class="rating">
@@ -36,7 +36,7 @@
             <a href="#3" title="Donner 1 étoile">★</a>
         </div>
         <div class="displayrow">
-            <label class="labelForm" for="price">Prix du cadeau en euros :</label>
+            <label class="labelForm" name="price" for="price">Prix du cadeau en euros :</label>
             <input class="price" id="price" placeholder="  45" type="text">
         </div>
         <div class="displayrow">

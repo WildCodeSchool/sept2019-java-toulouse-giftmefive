@@ -4,7 +4,6 @@ import com.wildcodeschool.giftmefive.model.SignUp;
 import com.wildcodeschool.giftmefive.repository.CreateUserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,7 +15,7 @@ public class CreateUserController {
                              @RequestParam String username,
                              @RequestParam String password,
                              @RequestParam String email) {
-        model.addAttribute("SignIn", CreateUserRepository.save(username, password,
+        model.addAttribute("SignUp", CreateUserRepository.save(username, password,
                 email));
         SignUp save = new SignUp(username, password, email);
 

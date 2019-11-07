@@ -11,22 +11,22 @@
 <header th:replace="header :: header"></header>
 <section class="sections">
     <h1>DESCRIPTION DE LA LISTE</h1>
-    <form action="register-list" method="post">
+    <form action="/register-lists" method="post">
         <div class="formForm">
             <div class="inputInFlex">
                 <label class="labelForm" for="urlImage">Lien vers l'image</label>
-                <input class="urlImage" id="urlImage" name="urlImage"
+                <input class="urlImage" id="urlImage" name="url_image"
                        placeholder="  http://imagerepresentantlaliste.com"
                        type="url">
             </div>
             <div class="inputInFlex">
                 <label class="labelForm" for="listName">Nom de la liste</label>
-                <input class="listName" id="listName" name="listName" placeholder="  Noël" type="text">
+                <input class="listName" id="listName" name="list_name" placeholder="  Noël" type="text">
             </div>
         </div>
         <div class="inputInFlex">
             <label class="labelForm" for="descriptionList">Description de la liste</label>
-            <textarea class="descriptionList" id="descriptionList" name="descriptionList"
+            <textarea class="descriptionList" id="descriptionList" name="description"
                       placeholder="  Pour cette merveilleuse occasion"></textarea>
             <input class="submitList" type="submit" value="FINI !">
         </div>
