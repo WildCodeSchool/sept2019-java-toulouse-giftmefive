@@ -9,25 +9,25 @@
 </head>
 <body class="bodyPage4">
 <header th:replace="header :: header"></header>
-<section class="sections">
+<form class="sections"  action="/connexion"  method="Post">
     <h1>S'IDENTIFIER</h1>
     <div class="displayrow">
         <img class="avatar2" src="images/avatar.jpg">
     </div>
     <div class="displayrow">
-        <label class="labelForm" for="pseudo">Pseudo</label>
-        <input class="pseudo" id="pseudo" placeholder="  Pseudo" type="text">
+        <label class="labelForm" for="username">Pseudo</label>
+        <input class="pseudo" id="username"  name="username" placeholder="  Pseudo" type="text">
     </div>
     <div class="displayrow">
         <label class="labelForm" for="password">Mot de passe</label>
-        <input class="password" id="password" placeholder="  ********" type="password">
+        <input class="password" id="password"  name="password" placeholder="  ********" type="password">
     </div>
     <div class="displayrow">
         <input class="connection" type="submit" value="Connexion">
         <p>OU</p>
         <a class="signUpLink" th:href="@{/inscription}">S'INSCRIRE!</a>
     </div>
-</section>
+</form>
 <footer th:replace="footer :: footer"></footer>
 </body>
 </html>
