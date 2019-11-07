@@ -40,7 +40,6 @@ public class GiftsRepository {
         }
         return null;
     }
-
     public Gift findById(int idGift) {
         try {
             Connection connection = DriverManager.getConnection(

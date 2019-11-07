@@ -38,7 +38,6 @@ public class ListsRepository {
         }
         return null;
     }
-
     public ListGift findById(int idList) {
 
         try {
@@ -63,7 +62,6 @@ public class ListsRepository {
         }
         return null;
     }
-
         public void deleteList(int id) {
             try {
                 Connection connection = DriverManager.getConnection(
