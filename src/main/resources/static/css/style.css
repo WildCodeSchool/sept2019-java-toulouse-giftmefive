@@ -34,7 +34,7 @@ header {
     font-family: Oswald, sans-serif;
 }
 
-.title {
+a.title {
     text-decoration: none;
     color: #25C1BB;
     font-family: Oswald, sans-serif;
@@ -182,7 +182,7 @@ h1.page-title {
 .createNewList {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
     margin-bottom: 1em;
@@ -227,7 +227,11 @@ h3.listTitle {
 
 .giftTitlePage {
     text-align: center;
-    margin-bottom: 7vw;
+    margin: 1em 1em 7vw 1em;
+    letter-spacing: .1em;
+    font-size: 2em;
+    color: rgb(37, 193, 187);
+    font-family: Oswald, sans-serif;
 }
 
 .createNewGift {
@@ -299,6 +303,50 @@ h3.listTitle {
     align-items: center;
 }
 
+/*****Gift List Friend View*****/
+
+.linkBuy {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonToBuy {
+    background-color: rgb(37, 193, 187);
+    border-radius: 5px;
+    margin: 0.4em;
+    font-weight: bold;
+    padding: 0 1em;
+}
+
+.urlArticle {
+    padding: 0.2em 1em;
+}
+
+.giftTitle {
+    text-align: center;
+}
+
+.imgGiftList {
+    max-width: 250px;
+    align-self: center;
+}
+
+.existingGiftFriendView {
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2E323B;
+    margin-bottom: 3vw;
+}
+
+.allGifts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
 
 /*****FAQ and CONTACT*****/
 
@@ -399,7 +447,6 @@ h3.listTitle {
     padding: 0;
     border: none;
     background: none;
-
 }
 
 /* MOBILE VERSION (FOR BURGER MENU) */
@@ -532,7 +579,7 @@ h3.listTitle {
         display: none;
     }
 
-    .title {
+    a.title {
         display: none;
     }
 
@@ -679,8 +726,8 @@ h3.listTitle {
         position: fixed;
         background-color: #2E323B;
         color: #FDFDFD;
-        width: 10%;
-        height: 30vw;
+        width: 10.1%;
+        height: 35vw;
         display: flex;
     }
 
@@ -729,14 +776,40 @@ h3.listTitle {
 
     .existingLists {
         font-size: 1.5em;
-        width: 25%;
+        width: 30%;
     }
 
     .existingLists i {
         font-size: 1.5em;
     }
 
+    /*****Gift List Friend View*****/
+
+    .existingGiftFriendView {
+        width: 300px;
+        padding: 2vw;
+    }
+
+    .desktopViewAllGift {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .linkBuy, .linkBuy .material-icons {
+        font-size: 3vw;
+    }
+
+    .giftDescription {
+        padding: 1.5vw;
+    }
+
+    .priceStars {
+        padding: 1vw;
+    }
+
     /* SHARING BUTTON */
+
     .myBtn {
         padding: 0;
         border: none;
