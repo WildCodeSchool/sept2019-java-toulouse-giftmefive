@@ -1,8 +1,6 @@
 package com.wildcodeschool.giftmefive.repository;
 
 import com.wildcodeschool.giftmefive.model.RegisterGifts;
-import com.wildcodeschool.giftmefive.model.RegisterLists;
-
 import java.sql.*;
 
 public class CreateGiftRepository {
@@ -11,22 +9,24 @@ public class CreateGiftRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public static RegisterGifts save(String url_image, String url_article, String gift_name, String description_gift, int price) {
+    public static RegisterGifts save(String url_image, String url_website, String gift_name, String description,
+                                     int preference, double price) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO Gift (url_image, url_article, gift_name, description_gift, price) VALUES (?, ?, ?, ?, ?)",
+                    "INSERT INTO gift (url_image, url_website, gift_name, description, preference, price, id_list) " + "VALUES (?, ?, ?, ?, ?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS
             );
             statement.setString(1, url_image);
-            statement.setString(2, url_article);
+            statement.setString(2, url_website);
             statement.setString(3, gift_name);
-            statement.setString(4, description_gift);
-            statement.setInt(5, price);
-
-            /*id_user à créer et insert*/
+            statement.setString(4, description);
+            statement.setInt(5, preference);
+            statement.setDouble(6, price);
+            statement.setString(7, "id_list");
+            //TODO set list_id
 
             if (statement.executeUpdate() != 1) {
                 throw new SQLException("failed to insert data");
@@ -36,7 +36,7 @@ public class CreateGiftRepository {
 
             if (generatedKeys.next()) {
                 Long id = generatedKeys.getLong(1);
-                return new RegisterGifts(url_image, url_article, gift_name, description_gift, price);
+                return new RegisterGifts(url_image, url_website, gift_name, description, preference, price);
             } else {
                 throw new SQLException("failed to get inserted id");
             }
@@ -44,5 +44,6 @@ public class CreateGiftRepository {
             e.printStackTrace();
         }
         return null;
+
     }
 }

@@ -13,15 +13,15 @@ public class CreateGiftController {
     @PostMapping("/register-gifts")
     public String registerGifts (Model model,
                          @RequestParam String url_image,
-                         @RequestParam String url_article,
+                         @RequestParam String url_website,
                          @RequestParam String gift_name,
-                         @RequestParam String description_gift,
-                         @RequestParam Integer preferences,
-                         @RequestParam Double price){
-        model.addAttribute("RegisterGifts", CreateGiftRepository.save(url_image, url_article,
-                gift_name, description_gift, price));
-        RegisterGifts save = new RegisterGifts(url_image, url_article, gift_name, description_gift, price);
+                         @RequestParam String description,
+                         @RequestParam Integer preference,
+                         @RequestParam Double price) {
+        model.addAttribute("RegisterGifts", CreateGiftRepository.save(url_image, url_website,
+                gift_name, description, preference, price));
+        RegisterGifts save = new RegisterGifts(url_image, url_website, gift_name, description, preference, price);
 
-        return "redirect:/listes-cadeaux";
+        return "redirect:/index";
     }
 }
