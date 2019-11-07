@@ -34,7 +34,7 @@ header {
     font-family: Oswald, sans-serif;
 }
 
-a.title {
+.title {
     text-decoration: none;
     color: #25C1BB;
     font-family: Oswald, sans-serif;
@@ -134,6 +134,14 @@ footer a:hover {
     color: #25C1BB;
 }
 
+/* SHARING LIST PAGE */
+
+h1.page-title {
+    color: #25C1BB;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+}
+
 /*****LIST*****/
 
 .myLists {
@@ -174,7 +182,7 @@ footer a:hover {
 .createNewList {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     flex-wrap: wrap;
     margin-bottom: 1em;
@@ -291,6 +299,109 @@ h3.listTitle {
     align-items: center;
 }
 
+
+/*****FAQ and CONTACT*****/
+
+.faqTitlePage, .contactFormTitle {
+    text-align: center;
+    margin: 1em;
+    letter-spacing: .5em;
+    font-size: 2em;
+    color: #25C1BB;
+}
+
+.questionAnswer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.question {
+    font-weight: bold;
+}
+
+.answer {
+    margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.contactFormTitle {
+    text-align: center;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.yourEmail, .yourQuestion {
+    width: 30%;
+    margin: 0.5em;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+.yourQuestion {
+    height: 5em;
+}
+
+.submitContact {
+    background-color: rgb(37, 193, 187);
+    color: #FDFDFD;
+    margin: 0.3em 0 1em 0;
+    padding: 0.7em 1.5em;
+    border-radius: 10px;
+}
+
+/* SHARING POP UP */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 80% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-text {
+    color: #25C1BB;
+    text-align: center;
+}
+
+.myBtn {
+    padding: 0;
+    border: none;
+    background: none;
+
+}
+
 /* MOBILE VERSION (FOR BURGER MENU) */
 
 @media screen and (max-width: 761px) {
@@ -363,11 +474,11 @@ h3.listTitle {
     }
 
     #menuToggle span:first-child {
-        transform-origin: 0% 0%;
+        transform-origin: 0 0;
     }
 
     #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
+        transform-origin: 0 100%;
     }
 
     #menuToggle input:checked ~ span {
@@ -389,11 +500,10 @@ h3.listTitle {
         position: absolute;
         width: 10em;
         margin: -100px 0 0 -50px;
-        padding: 5em;
-        padding-top: 7em;
+        padding: 7em 5em 5em 5em;
         background: whitesmoke;
         list-style-type: none;
-        transform-origin: 0% 0%;
+        transform-origin: 0 0;
         transform: translate(-100%, 0);
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         box-shadow: #2E323B 0 .5em .5em 0;
@@ -422,7 +532,7 @@ h3.listTitle {
         display: none;
     }
 
-    a.title {
+    .title {
         display: none;
     }
 
@@ -516,7 +626,6 @@ h3.listTitle {
     }
 
     /* GIFT LIST DESKTOP */
-
     .newGift {
         flex-direction: column;
         justify-content: center;
@@ -594,7 +703,6 @@ h3.listTitle {
     }
 
     /* LIST DESKTOP */
-
     .createNewList {
         flex-direction: row;
         width: 100%;
@@ -621,10 +729,26 @@ h3.listTitle {
 
     .existingLists {
         font-size: 1.5em;
-        width: 30%;
+        width: 25%;
     }
 
     .existingLists i {
         font-size: 1.5em;
+    }
+
+    /* SHARING BUTTON */
+    .myBtn {
+        padding: 0;
+        border: none;
+        background: none;
+        font-size: 1em;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 20% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
     }
 }
