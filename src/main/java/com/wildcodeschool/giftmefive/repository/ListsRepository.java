@@ -1,5 +1,6 @@
 package com.wildcodeschool.giftmefive.repository;
 
+import com.wildcodeschool.giftmefive.entity.Gift;
 import com.wildcodeschool.giftmefive.entity.ListGift;
 
 import java.sql.*;
@@ -32,6 +33,29 @@ public class ListsRepository {
                 lists.add(new ListGift(idList, listName, description, urlImage, urlShare, idUser));
             }
             return lists;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ListGift findById(int idList) {
+        try {
+            Connection connection = DriverManager.getConnection(
+                    DB_URL, DB_USER, DB_PASSWORD
+            );
+            PreparedStatement statement = connection.prepareStatement(
+                    "SELECT * FROM list WHERE id_list = ?;"
+            );
+            statement.setLong(1, idList);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            String listName = resultSet.getString("list_name");
+            String description = resultSet.getString("description");
+            String urlImage = resultSet.getString("url_image");
+            String urlShare = resultSet.getString("url_share");
+            int idUser = resultSet.getInt("id_user");
+            return new ListGift(idList, listName, description, urlImage, urlShare, idUser);
         } catch (SQLException e) {
             e.printStackTrace();
         }
