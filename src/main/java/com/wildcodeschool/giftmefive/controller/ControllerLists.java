@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ControllerLists {
 
     private ListsRepository listsRepository = new ListsRepository();
+
     @GetMapping("/listes")
     public String getList(Model model) {
         model.addAttribute("lists", listsRepository.findAll());
