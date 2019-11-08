@@ -12,13 +12,14 @@ public class Controllers {
         return "index";
     }
 
-    @RequestMapping("/partager-liste")
-    public String listsharing() {
-        return "listsharing";
+    @GetMapping("/listes")
+    public String list() {
+        return "lists";
     }
 
-    @GetMapping("/faq")
-    public String faq() {
-        return "faq";
+    @GetMapping("/listes-cadeaux")
+    public String giftList() {
+        return "gift-list";
     }
 }
+

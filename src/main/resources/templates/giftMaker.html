@@ -12,36 +12,33 @@
 <section class="sections">
     <h1>DESCRIPTION DU CADEAU</h1>
     <form action="registerGift" class="formForm" method="post">
-        <div class="displayrow">
-            <label class="labelForm" for="urlImage">Lien vers l'image :</label>
-            <input class="urlImage" id="urlImage" name="urlImage" placeholder="  http://imagedemoncadeau.com"
-                   type="url">
+        <div>
+            <label for="urlImage">Lien vers l'image :</label>
+            <input class="urlImage" id="urlImage" name="urlImage" placeholder="http://imagedemoncadeau.com" type="url">
         </div>
-        <div class="displayrow">
-            <label class="labelForm" for="urlArticle">Lien vers le cadeau :</label>
-            <input class="urlArticle" id="urlArticle" placeholder="  http://lienversmoncadeau.com" type="url">
+        <div>
+            <label for="urlArticle">Lien vers le cadeau :</label>
+            <input class="urlArticle" id="urlArticle" placeholder="http://lienversmoncadeau.com" type="url">
         </div>
-        <div class="displayrow">
-            <label class="labelForm" for="giftName">Nom du cadeau :</label>
-            <input class="giftName" id="giftName" placeholder="  Jouet en bois" type="text">
+        <div>
+            <label for="giftName">Nom du cadeau :</label>
+            <input class="giftName" id="giftName" placeholder="Jouet en bois" type="text">
         </div>
-        <div class="displayrow">
-            <label class="labelForm" for="descriptionGift">Descriptif du cadeau :</label>
+        <div>
+            <label for="descriptionGift">Descriptif du cadeau :</label>
             <textarea class="descriptionGift" id="descriptionGift"
-                      placeholder="  Le rouge ou le bleu comme vous le souhaitez"></textarea>
+                      placeholder="Le rouge ou le bleu comme vous le souhaitez"></textarea>
         </div>
         <div class="rating">
             <a href="#1" title="Donner 3 étoiles">★</a>
             <a href="#2" title="Donner 2 étoiles">★</a>
             <a href="#3" title="Donner 1 étoile">★</a>
         </div>
-        <div class="displayrow">
-            <label class="labelForm" for="price">Prix du cadeau en euros :</label>
-            <input class="price" id="price" placeholder="  45" type="text">
+        <div>
+            <label for="price">Prix du cadeau en euros :</label>
+            <input class="price" id="price" placeholder="45" type="text">
         </div>
-        <div class="displayrow">
-            <input class="submitGift" type="submit" value="FINI !">
-        </div>
+        <input class="submitGift" type="submit" value="FINI !">
     </form>
 </section>
 <footer th:replace="footer :: footer"></footer>

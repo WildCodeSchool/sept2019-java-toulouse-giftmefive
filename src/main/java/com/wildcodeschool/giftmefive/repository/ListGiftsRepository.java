@@ -7,6 +7,11 @@ import java.util.List;
 
 public class ListGiftsRepository {
 
+    private static List<ListGifts> myList = new ArrayList<ListGifts>() {{
+        add(new ListGifts(1L, "Noel", "Mes cadeaux de reve", "http://via.placeholder.com/540x260"));
+        add(new ListGifts(2L, "Anniversaire", "Mes cadeaux", "http://via.placeholder.com/540x260"));
+    }};
+
     public static void registerInList(String name, String description, String urlImage) {
         Long id = myList.size() + 1L;
         myList.add(new ListGifts(id, name, description, urlImage));
@@ -24,12 +29,4 @@ public class ListGiftsRepository {
         }
         return null;
     }
-
-    private static List<ListGifts> myList = new ArrayList<ListGifts>() {
-        {
-            add(new ListGifts(1L, "Noel", "Mes cadeaux de reve", "http://via.placeholder.com/540x260"));
-            add(new ListGifts(2L, "Anniversaire", "Mes super cadeaux pour mon Aniv", "http://via.placeholder.com/540x260"));
-        }
-    };
-
 }
