@@ -25,4 +25,9 @@ public class ControllerGifts {
         model.addAttribute("list", listGift);
         return "gift-list";
     }
+    @GetMapping("/gift/delete")
+    public String deleteGift(@RequestParam int id) {
+        giftsRepository.deleteGift(id);
+        return "cadeaux/?id=" + id;
+    }
 }
