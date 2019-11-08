@@ -20,7 +20,7 @@ public class signUpController {
     public String callUserUdapte(Model out) {
         //Todo methode recherche user connecté
 
-        return "user_update";
+        return "user-update";
     }
 
     @PostMapping("/enregistre_user")

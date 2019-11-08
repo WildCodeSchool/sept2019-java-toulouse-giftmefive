@@ -2,8 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}">
@@ -20,9 +19,13 @@
             <p>CREER UNE NOUVELLE LISTE</p>
         </section>
         <section class="existingLists" th:each="lists: ${lists}">
-            <h3 class="listTitle" th:text="${lists.listName}"></h3>
-            <hr class="underListTitle">
-            <a th:href="@{/listes-cadeaux}"><img alt="" src="https://via.placeholder.com/250"></a>
+            <div class="list-title-container">
+                <h3 class="listTitle" th:text="${lists.listName}"></h3>
+                <hr class="underListTitle">
+            </div>
+            <div class="img-list-container">
+                <a th:href="@{/listes-cadeaux}"><img alt="" th:src="${lists.urlImage}"></a>
+            </div>
             <div class="shareDelete">
                 <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
                 </button>
@@ -66,4 +69,3 @@
 </script>
 </body>
 </html>
-

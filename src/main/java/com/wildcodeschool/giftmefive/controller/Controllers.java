@@ -17,11 +17,6 @@ public class Controllers {
         return "listsharing";
     }
 
-    @GetMapping("/listes-cadeaux")
-    public String giftList() {
-        return "gift-list";
-    }
-
     @GetMapping("/faq")
     public String faq() {
         return "faq";
