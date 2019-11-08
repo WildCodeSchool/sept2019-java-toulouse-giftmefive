@@ -25,25 +25,25 @@
             <a th:href="@{/description-cadeau}"><i class="material-icons">add_circle_outline</i></a>
             <p>AJOUTER UN CADEAU</p>
         </section>
-        <section class="existingGift" th:each="gifts: ${gifts}">
-            <h3 class="giftTitle" th:text="${gifts.giftName}">Seiko Sport 5</h3>
+        <section class="existingGift" th:each="gift: ${gifts}">
+            <h3 class="giftTitle" th:text="${gift.giftName}">Seiko Sport 5</h3>
             <hr class="underGiftTitle">
-            <a th:href="@{/listes}"><img src="https://via.placeholder.com/250" alt=""></a>
+            <a th:href="@{/listes}"><img th:src="${gift.urlImage}"> alt=""></a>
             <hr class="underGiftTitle">
             <div class="priceStars">
                 <ul>
                     <li>
-                        <span th:text="${gifts.price}"></span>
+                        <span th:text="${gift.price}"></span>
                         <i class="material-icons">euro</i>
                     </li>
-                    <li th:if="${gifts.preference} == 1" class="starOne">
+                    <li th:if="${gift.preference} == 1" class="starOne">
                         <i class="material-icons">star</i>
                     </li>
-                    <li th:if="${gifts.preference} == 2" class="starTwo">
+                    <li th:if="${gift.preference} == 2" class="starTwo">
                         <i class="material-icons">star</i>
                         <i class="material-icons">star</i>
                     </li>
-                    <li th:if="${gifts.preference} == 3" class="starThree">
+                    <li th:if="${gift.preference} == 3" class="starThree">
                         <i class="material-icons">star</i>
                         <i class="material-icons">star</i>
                         <i class="material-icons">star</i>

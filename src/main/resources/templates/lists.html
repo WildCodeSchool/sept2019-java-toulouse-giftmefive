@@ -24,7 +24,8 @@
                 <hr class="underListTitle">
             </div>
             <div class="img-list-container">
-                <a th:href="@{/listes-cadeaux}"><img alt="" th:src="${lists.urlImage}"></a>
+                <a th:href="@{/cadeaux(id=${lists.idList})}">
+                    <img alt="" th:src="${lists.urlImage}"></a>
             </div>
             <div class="shareDelete">
                 <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
