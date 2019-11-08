@@ -39,7 +39,6 @@ public class ListsRepository {
         return null;
     }
     public ListGift findById(int idList) {
-
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -69,6 +68,22 @@ public class ListsRepository {
                 );
                 PreparedStatement statement = connection.prepareStatement(
                         "DELETE FROM list WHERE id_list=?;"
+            );
+            statement.setInt(1, id);
+            if (statement.executeUpdate() != 1) {
+                throw new SQLException("failed to delete data");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void deleteGiftFromList(int id) {
+        try {
+            Connection connection = DriverManager.getConnection(
+                    DB_URL, DB_USER, DB_PASSWORD
+            );
+            PreparedStatement statement = connection.prepareStatement(
+                    "DELETE FROM gift WHERE id_list=?;"
             );
             statement.setInt(1, id);
             if (statement.executeUpdate() != 1) {
