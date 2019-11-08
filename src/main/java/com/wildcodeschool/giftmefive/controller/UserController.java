@@ -9,6 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public class UserController {
 
+    package com.wildcodeschool.giftmefive.controller;
+
+import com.wildcodeschool.giftmefive.entity.User;
+import com.wildcodeschool.giftmefive.repository.UserRepository;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
     @Controller
     public class signInController {
         UserRepository userRepository = new UserRepository();
@@ -24,14 +33,6 @@ public class UserController {
                 return "redirect:/";
             }
             return "signIn";
-        }
-    }
-
-    @Controller
-    public class signUpController {
-        @GetMapping("/inscription")
-        public String callSignIn() {
-            return "signUp.html";
         }
     }
 }
