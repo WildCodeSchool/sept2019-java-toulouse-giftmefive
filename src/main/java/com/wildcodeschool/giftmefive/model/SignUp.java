@@ -1,15 +1,23 @@
 package com.wildcodeschool.giftmefive.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class SignUp {
 
     private String username;
     private String password;
     private String email;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private RegisterGifts gift;
 
     public SignUp(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.gift = gift;
     }
 
     public String getUsername() {
@@ -34,5 +42,13 @@ public class SignUp {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public RegisterGifts getGift() {
+        return gift;
+    }
+
+    public void setGift(RegisterGifts gift) {
+        this.gift = gift;
     }
 }

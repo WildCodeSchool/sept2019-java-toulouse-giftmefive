@@ -1,5 +1,9 @@
 package com.wildcodeschool.giftmefive.entity;
 
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class Gift {
     private int idGift;
     private String giftName;
@@ -10,6 +14,9 @@ public class Gift {
     private String urlWebsite;
     private int idList;
     private int idFriend;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private User user;
 
     public Gift(int idGift, String giftName, String description, float price, int preference, String urlImage,
                 String urlWebsite, int idList, int idFriend) {

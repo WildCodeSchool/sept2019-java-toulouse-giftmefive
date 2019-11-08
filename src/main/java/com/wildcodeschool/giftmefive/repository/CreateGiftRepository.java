@@ -1,6 +1,10 @@
 package com.wildcodeschool.giftmefive.repository;
 
+import com.wildcodeschool.giftmefive.entity.User;
 import com.wildcodeschool.giftmefive.model.RegisterGifts;
+import org.springframework.ui.ModelMap;
+
+import javax.persistence.*;
 import java.sql.*;
 
 public class CreateGiftRepository {
@@ -9,23 +13,24 @@ public class CreateGiftRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public static RegisterGifts save(String url_image, String url_website, String gift_name, String description,
-                                     int preference, double price) {
+    public static RegisterGifts save(String urlImage, String urlWebsite, String giftName, String description,
+                                     int preference, double price, Long idList) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO gift (url_image, url_website, gift_name, description, preference, price, id_list) " + "VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT INTO gift (url_image, url_website, gift_name, description, preference, price, id_list) "
+                            + " VALUES (?, ?, ?, ?, ?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS
             );
-            statement.setString(1, url_image);
-            statement.setString(2, url_website);
-            statement.setString(3, gift_name);
+            statement.setString(1, urlImage);
+            statement.setString(2, urlWebsite);
+            statement.setString(3, giftName);
             statement.setString(4, description);
             statement.setInt(5, preference);
             statement.setDouble(6, price);
-            statement.setString(7, "id_list");
+            statement.setLong(7, idList);
             //TODO set list_id
 
             if (statement.executeUpdate() != 1) {
@@ -36,7 +41,7 @@ public class CreateGiftRepository {
 
             if (generatedKeys.next()) {
                 Long id = generatedKeys.getLong(1);
-                return new RegisterGifts(url_image, url_website, gift_name, description, preference, price);
+                return new RegisterGifts(urlImage, urlWebsite, giftName, description, preference, price, idList);
             } else {
                 throw new SQLException("failed to get inserted id");
             }
@@ -44,6 +49,5 @@ public class CreateGiftRepository {
             e.printStackTrace();
         }
         return null;
-
     }
 }

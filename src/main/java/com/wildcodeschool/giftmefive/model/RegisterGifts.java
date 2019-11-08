@@ -1,80 +1,79 @@
 package com.wildcodeschool.giftmefive.model;
-
 public class RegisterGifts {
 
-    private String url_image;
-    private String url_website;
-    private String gift_name;
+    private String urlImage;
+    private String urlWebsite;
+    private String giftName;
     private String description;
     private Integer preference;
     private Double price;
+    private Long idList;
 
-    public RegisterGifts(String url_image, String url_website, String gift_name, String description, Integer preferences, Double price) {
-        this.url_image = url_image;
-        this.url_website = url_website;
-        this.gift_name = gift_name;
-        this.description = description;
-        this.preference = preferences;
-        this.price = price;
+    public String getUrlImage() {
+        return urlImage;
     }
 
-    public String getUrl_image() {
-
-        return url_image;
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 
-    public void setUrl_image(String url_image) {
-
-        this.url_image = url_image;
+    public String getUrlWebsite() {
+        return urlWebsite;
     }
 
-    public String getUrl_website() {
-
-        return url_website;
+    public void setUrlWebsite(String urlWebsite) {
+        this.urlWebsite = urlWebsite;
     }
 
-    public void setUrl_website(String url_website) {
-
-        this.url_website = url_website;
+    public String getGiftName() {
+        return giftName;
     }
 
-    public String getGift_name() {
-
-        return gift_name;
-    }
-
-    public void setGift_name(String gift_name) {
-
-        this.gift_name = gift_name;
+    public void setGiftName(String giftName) {
+        this.giftName = giftName;
     }
 
     public String getDescription() {
-
         return description;
     }
 
     public void setDescription(String description) {
-
         this.description = description;
     }
 
-    public int getPreferences() {
-
+    public Integer getPreference() {
         return preference;
     }
 
-    public void setPreferences(Integer preferences) {
-
-        this.preference = preferences;
+    public void setPreference(Integer preference) {
+        this.preference = preference;
     }
 
-    public double getPrice() {
-
+    public Double getPrice() {
         return price;
     }
 
     public void setPrice(Double price) {
-
         this.price = price;
+    }
+
+    public Long getIdList() {
+        return idList;
+    }
+
+    public void setIdList(Long idList) {
+        this.idList = idList;
+    }
+
+    public RegisterGifts(String urlImage, String urlWebsite, String giftName, String description, Integer preference, Double price, Long idList) {
+        this.urlImage = urlImage;
+        this.urlWebsite = urlWebsite;
+        this.giftName = giftName;
+        this.description = description;
+        this.preference = preference;
+        this.price = price;
+        this.idList = idList;
+
+
     }
 }

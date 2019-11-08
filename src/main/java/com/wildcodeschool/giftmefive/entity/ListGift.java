@@ -1,5 +1,8 @@
 package com.wildcodeschool.giftmefive.entity;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class ListGift {
     private int idList;
     private String listName;
@@ -7,6 +10,9 @@ public class ListGift {
     private String urlImage;
     private String urlShare;
     private int idUser;
+    @OneToOne(mappedBy = "listGift")
+    @JoinColumn(unique = true)
+    private Gift gift;
 
     public ListGift(int idList, String listName, String description, String urlImage, String urlShare, int idUser) {
         this.idList = idList;
