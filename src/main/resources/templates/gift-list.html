@@ -50,9 +50,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="delete">
-                <a href=""><i class="material-icons">delete</i></a>
-            </div>
+            <form action="/gift/delete" method="get">
+                <input type="hidden" name="id" id="id" th:value="${gifts.idGift}">
+                <button type="submit" class="myBtn">
+                    <i class="material-icons">delete</i>
+                </button>
+            </form>
         </section>
     </div>
 </div>
