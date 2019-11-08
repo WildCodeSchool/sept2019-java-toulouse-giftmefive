@@ -22,28 +22,38 @@
         </ul>
     </section>
 </div>
-<h2 th:text="${nameList.name}" class="giftTitlePage">Nom de la liste</h2>
+<h2 th:text="${list.getListName()}" class="giftTitlePage">Nom de la liste</h2>
 <div class="myGifts">
     <div class="desktopViewAllGift">
-        <div th:each="gifts: ${gifts}" class="allGifts">
+        <div th:each="gift: ${gifts}" class="allGifts">
             <section class="existingGiftFriendView">
-                <h3 th:text="${gifts.name}" class="giftTitle">Nom du cadeau</h3>
+                <h3 th:text="${gift.giftName}" class="giftTitle">Nom du cadeau</h3>
                 <hr class="underGiftTitle">
-                <img class="imgGiftList" th:src="${gifts.urlImage}" alt="Link">
+                <img class="imgGiftList" th:src="${gift.getUrlImage()}" alt="Link">
                 <hr class="underGiftTitle">
                 <div class="priceStars">
                     <ul>
                         <li>
-                            <span th:text="|${gifts.price}|"></span>
+                            <span th:text="|${gift.price}|"></span>
                             <i class="material-icons">euro_symbol</i>
                         </li>
-                        <li><i class="material-icons">star</i><i class="material-icons">star</i><i
-                                class="material-icons">star</i></li>
+                        <li th:if="${gift.preference} == 1" class="starOne">
+                            <i class="material-icons">star</i>
+                        </li>
+                        <li th:if="${gift.preference} == 2" class="starTwo">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </li>
+                        <li th:if="${gift.preference} == 3" class="starThree">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </li>
                     </ul>
                 </div>
-                <p th:text="${gifts.description}" class="giftDescription"></p>
+                <p th:text="${gift.getDescription()}" class="giftDescription"></p>
                 <div class="linkBuy">
-                    <a class="urlArticle" th:href="${gifts.urlArticle}"><i class="material-icons">link</i></a>
+                    <a class="urlArticle" th:href="${gift.getUrlWebsite()}"><i class="material-icons">link</i></a>
                     <input class="buttonToBuy" type="submit" value="OFFRIR">
                 </div>
             </section>
