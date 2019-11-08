@@ -26,7 +26,7 @@ public class ControllerGifts {
         return "gift-list";
     }
     @GetMapping("/gift/delete")
-    public String deleteGift(@RequestParam int idgit , @RequestParam int idList) {
+    public String deleteGift(@RequestParam int id , @RequestParam int idList) {
         giftsRepository.deleteGift(id);
         return "redirect:/cadeaux?id=" + idList;
     }
