@@ -29,7 +29,7 @@ public class CreateUserRepository {
             ResultSet generatedKeys = statement.getGeneratedKeys();
 
             if (generatedKeys.next()) {
-                Long id = generatedKeys.getLong(1);
+                Integer id = generatedKeys.getInt(1);
                 return new SignUp(username, password, email);
             } else {
                 throw new SQLException("failed to get inserted id");

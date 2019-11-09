@@ -1,3 +1,4 @@
+/*
 package com.wildcodeschool.giftmefive.controller;
 
 import com.wildcodeschool.giftmefive.model.RegisterGifts;
@@ -17,3 +18,4 @@ import org.springframework.web.bind.annotation.RequestParam;
             return "giftMaker";
         }
 }
+*/

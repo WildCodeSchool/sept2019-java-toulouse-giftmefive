@@ -19,6 +19,6 @@ public class CreateListsController {
                 description));
         RegisterLists save = new RegisterLists(list_name, url_image, description);
 
-        return "redirect:/listes-cadeaux";
+        return "redirect:/listes";
     }
 }

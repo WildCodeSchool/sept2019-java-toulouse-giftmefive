@@ -2,6 +2,7 @@ package com.wildcodeschool.giftmefive.controller;
 
 import com.wildcodeschool.giftmefive.model.SignUp;
 import com.wildcodeschool.giftmefive.repository.CreateUserRepository;
+import com.wildcodeschool.giftmefive.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
