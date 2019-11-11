@@ -1,6 +1,5 @@
 package com.wildcodeschool.giftmefive.repository;
 
-import com.wildcodeschool.giftmefive.entity.Gift;
 import com.wildcodeschool.giftmefive.entity.ListGift;
 
 import java.sql.*;
@@ -94,7 +93,6 @@ public class ListsRepository {
         }
     }
     public void updateList(int idList, String listName, String description, String urlImage) {
-
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -109,10 +107,8 @@ public class ListsRepository {
             if (statement.executeUpdate() != 1) {
                 throw new SQLException("failed to update data");
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }

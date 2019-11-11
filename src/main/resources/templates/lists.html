@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/formulary.css" th:href="@{css/formulary.css}">
     <meta charset="UTF-8">
     <title>Listes</title>
-
 </head>
 <body>
 <header th:replace="header :: header"></header>
@@ -22,7 +21,6 @@
             <p>CREER UNE NOUVELLE LISTE</p>
         </section>
         <section class="existingLists" th:each="lists: ${lists}">
-
             <div class="list-title-container">
                 <div>
                     <h3 class="listTitle" th:text="${lists.listName}"></h3>
