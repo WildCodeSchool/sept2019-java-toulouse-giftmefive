@@ -32,7 +32,6 @@ public class UserRepository {
     }
 
     public User getByUsername(String username, String password) {
-
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD

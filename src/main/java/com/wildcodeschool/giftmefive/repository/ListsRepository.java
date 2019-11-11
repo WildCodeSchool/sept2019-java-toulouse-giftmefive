@@ -93,4 +93,26 @@ public class ListsRepository {
             e.printStackTrace();
         }
     }
+    public void updateList(int idList, String listName, String description, String urlImage) {
+
+        try {
+            Connection connection = DriverManager.getConnection(
+                    DB_URL, DB_USER, DB_PASSWORD
+            );
+            PreparedStatement statement = connection.prepareStatement(
+                    "UPDATE list SET list_name=?, description=?, url_image=? WHERE id_list=?"
+            );
+            statement.setString(1, listName);
+            statement.setString(2, description);
+            statement.setString(3, urlImage);
+            statement.setInt(4, idList);
+            if (statement.executeUpdate() != 1) {
+                throw new SQLException("failed to update data");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
