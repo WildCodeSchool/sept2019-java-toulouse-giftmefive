@@ -1,18 +1,23 @@
 package com.wildcodeschool.giftmefive.entity;
 
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class Gift {
-    private long idGift;
+    private Long idGift;
     private String giftName;
     private String description;
     private float price;
     private int preference;
     private String urlImage;
     private String urlWebsite;
-    private long idList;
-    private long idFriend;
+    private Long idList;
+    private Long idFriend;
 
     public Gift(Long idGift, String giftName, String description, float price, int preference, String urlImage,
                 String urlWebsite, Long idList, Long idFriend) {
+
         this.idGift = idGift;
         this.giftName = giftName;
         this.description = description;
@@ -24,11 +29,11 @@ public class Gift {
         this.idFriend = idFriend;
     }
 
-    public long getIdGift() {
+    public Long getIdGift() {
         return idGift;
     }
 
-    public void setIdGift(int idGift) {
+    public void setIdGift(Long idGift) {
         this.idGift = idGift;
     }
 
@@ -80,19 +85,19 @@ public class Gift {
         this.urlWebsite = urlWebsite;
     }
 
-    public long getIdList() {
+    public Long getIdList() {
         return idList;
     }
 
-    public void setIdList(int idList) {
+    public void setIdList(Long idList) {
         this.idList = idList;
     }
 
-    public long getIdFriend() {
+    public Long getIdFriend() {
         return idFriend;
     }
 
-    public void setIdFriend(int idFriend) {
+    public void setIdFriend(Long idFriend) {
         this.idFriend = idFriend;
     }
 }
