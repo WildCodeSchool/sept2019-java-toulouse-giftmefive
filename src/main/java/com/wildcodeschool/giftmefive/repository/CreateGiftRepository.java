@@ -1,10 +1,6 @@
 package com.wildcodeschool.giftmefive.repository;
 
-import com.wildcodeschool.giftmefive.entity.User;
 import com.wildcodeschool.giftmefive.model.RegisterGifts;
-import org.springframework.ui.ModelMap;
-
-import javax.persistence.*;
 import java.sql.*;
 
 public class CreateGiftRepository {
@@ -13,8 +9,8 @@ public class CreateGiftRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public static RegisterGifts save(String urlImage, String urlWebsite, String giftName, String description,
-                                     int preference, double price, long idList) {
+    public RegisterGifts save(String urlImage, String urlWebsite, String giftName, String description,
+                                     int preference, double price, Long idList) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -39,7 +35,7 @@ public class CreateGiftRepository {
             ResultSet generatedKeys = statement.getGeneratedKeys();
 
             if (generatedKeys.next()) {
-                long idGift = generatedKeys.getLong(1);
+                Long idGift = generatedKeys.getLong(1);
                 return new RegisterGifts(idGift, urlImage, urlWebsite, giftName, description, preference, price, idList);
             } else {
                 throw new SQLException("failed to get inserted id");

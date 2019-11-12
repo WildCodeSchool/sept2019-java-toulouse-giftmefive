@@ -1,14 +1,14 @@
 package com.wildcodeschool.giftmefive.model;
 public class RegisterGifts {
 
-    private long idGift;
+    private Long idGift;
     private String urlImage;
     private String urlWebsite;
     private String giftName;
     private String description;
     private Integer preference;
     private Double price;
-    private long idList;
+    private Long idList;
 
     public RegisterGifts(long idGift, String urlImage, String urlWebsite, String giftName, String description, Integer preference, Double price, long idList) {
 
@@ -76,11 +76,11 @@ public class RegisterGifts {
         this.price = price;
     }
 
-    public long getIdList() {
+    public Long getIdList() {
         return idList;
     }
 
-    public void setIdList(long idList) {
+    public void setIdList(Long idList) {
         this.idList = idList;
     }
 }

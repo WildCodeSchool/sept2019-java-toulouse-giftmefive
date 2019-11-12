@@ -9,7 +9,7 @@ public class CreateListsRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public static RegisterLists save(String list_name, String description, String url_image) {
+    public static RegisterLists save(String listName, String description, String urlImage) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -18,9 +18,9 @@ public class CreateListsRepository {
                     "INSERT INTO list (list_name, description, url_image, url_share, id_user) VALUES (?, ?, ?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS
             );
-            statement.setString(1, list_name);
+            statement.setString(1, listName);
             statement.setString(2, description);
-            statement.setString(3, url_image);
+            statement.setString(3, urlImage);
             statement.setString(4, "localhost:8080/listes");
             statement.setLong(5, 2);
 
@@ -34,7 +34,7 @@ public class CreateListsRepository {
 
             if (generatedKeys.next()) {
                 Long id = generatedKeys.getLong(1);
-                return new RegisterLists(list_name, description, url_image);
+                return new RegisterLists(listName, description, urlImage);
             } else {
                 throw new SQLException("failed to get inserted id");
             }

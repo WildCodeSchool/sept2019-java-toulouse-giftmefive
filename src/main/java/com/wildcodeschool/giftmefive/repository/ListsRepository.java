@@ -24,12 +24,12 @@ public class ListsRepository {
             List<ListGift> lists = new ArrayList<ListGift>();
             while (resultSet.next()) {
 
-                long idList = resultSet.getLong("id_list");
+                Long idList = resultSet.getLong("id_list");
                 String listName = resultSet.getString("list_name");
                 String description = resultSet.getString("description");
                 String urlImage = resultSet.getString("url_image");
                 String urlShare = resultSet.getString("url_share");
-                long idUser = resultSet.getLong("id_user");
+                Long idUser = resultSet.getLong("id_user");
                 lists.add(new ListGift(idList, listName, description, urlImage, urlShare, idUser));
             }
             return lists;

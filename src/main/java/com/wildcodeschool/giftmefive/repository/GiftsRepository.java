@@ -26,7 +26,7 @@ public class GiftsRepository {
             List<Gift> gifts = new ArrayList<>();
             while (resultSet.next()) {
 
-                long idGift = resultSet.getLong("id_gift");
+                Long idGift = resultSet.getLong("id_gift");
                 String giftName = resultSet.getString("gift_name");
                 String description = resultSet.getString("description");
                 float price = resultSet.getFloat("price");

@@ -12,12 +12,12 @@ public class CreateListsController {
 
     @PostMapping("/register-lists")
     public String signUp(Model model,
-                         @RequestParam String list_name,
-                         @RequestParam String url_image,
+                         @RequestParam String listName,
+                         @RequestParam String urlImage,
                          @RequestParam String description) {
-        model.addAttribute("SignUp", CreateListsRepository.save(list_name, url_image,
+        model.addAttribute("SignUp", CreateListsRepository.save(listName, urlImage,
                 description));
-        RegisterLists save = new RegisterLists(list_name, url_image, description);
+        RegisterLists save = new RegisterLists(listName, urlImage, description);
 
         return "redirect:/listes";
     }

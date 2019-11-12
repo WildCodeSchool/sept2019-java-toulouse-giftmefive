@@ -1,8 +1,7 @@
 package com.wildcodeschool.giftmefive.controller;
 
-import com.wildcodeschool.giftmefive.model.SignUp;
+import com.wildcodeschool.giftmefive.model.User;
 import com.wildcodeschool.giftmefive.repository.CreateUserRepository;
-import com.wildcodeschool.giftmefive.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +17,7 @@ public class CreateUserController {
                              @RequestParam String email) {
         model.addAttribute("SignUp", CreateUserRepository.save(username, password,
                 email));
-        SignUp save = new SignUp(username, password, email);
+        User save = new User(username, password, email);
 
         return "redirect:/listes";
     }

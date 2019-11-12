@@ -2,22 +2,22 @@ package com.wildcodeschool.giftmefive.model;
 
 public class RegisterLists {
 
-    private String list_name;
+    private String listName;
     private String description;
-    private String url_image;
+    private String urlImage;
 
-    public RegisterLists(String list_name, String description, String url_image) {
-        this.list_name = list_name;
+    public RegisterLists(String listName, String description, String urlImage) {
+        this.listName = listName;
         this.description = description;
-        this.url_image = url_image;
+        this.urlImage = urlImage;
     }
 
-    public String getList_name() {
-        return list_name;
+    public String getListName() {
+        return listName;
     }
 
-    public void setList_name(String list_name) {
-        this.list_name = list_name;
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 
     public String getDescription() {
@@ -28,11 +28,11 @@ public class RegisterLists {
         this.description = description;
     }
 
-    public String getUrl_image() {
-        return url_image;
+    public String getUrlImage() {
+        return urlImage;
     }
 
-    public void setUrl_image(String url_image) {
-        this.url_image = url_image;
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 }
