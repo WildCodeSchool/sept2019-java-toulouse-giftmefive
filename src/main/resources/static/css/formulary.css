@@ -69,7 +69,7 @@ h1 {
     margin: 0.2em 0.4em;
 }
 
-.rating a:hover, .rating a:focus, .rating a:hover ~ a, .rating a:focus ~ a {
+.rating a:hover, .rating a:focus, .rating a:hover ~ a, .rating a:focus ~ a, .rating .selected {
     color: #25C1BB;
     cursor: pointer;
 }
@@ -94,6 +94,7 @@ h1 {
 }
 
 @media screen and (min-width: 761px) {
+
     h1 {
         font-size: 300%;
     }
