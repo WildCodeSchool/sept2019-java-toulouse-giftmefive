@@ -11,8 +11,8 @@
 <header th:replace="header :: header"></header>
 <section class="sections">
     <h1>DESCRIPTION DE LA LISTE</h1>
-    <form action="register-list" method="post">
-        <input type="hidden" name="idUser" th:value="${idUser}">
+    <form action="/register-lists" method="post">
+        <input type="hidden" name="idUser" th:value="${userId}">
         <div class="formForm">
             <div class="inputInFlex">
                 <label class="labelForm" for="urlImage">Lien vers l'image</label>
@@ -25,9 +25,10 @@
                 <input class="listName" id="listName" name="listName" placeholder="  Noël" type="text">
             </div>
         </div>
+        <input id="idList" type="hidden" name="idList" value="1">
         <div class="inputInFlex">
             <label class="labelForm" for="descriptionList">Description de la liste</label>
-            <textarea class="descriptionList" id="descriptionList" name="descriptionList"
+            <textarea class="descriptionList" id="descriptionList" name="description"
                       placeholder="  Pour cette merveilleuse occasion"></textarea>
             <input class="submitList" type="submit" value="FINI !">
         </div>
