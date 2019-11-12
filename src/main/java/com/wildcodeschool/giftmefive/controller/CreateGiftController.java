@@ -19,7 +19,7 @@ public class CreateGiftController {
                                 @RequestParam String description,
                                 @RequestParam Integer preference,
                                 @RequestParam Double price,
-                                @RequestParam Long idList) {
+                                @RequestParam int idList) {
         model.addAttribute("RegisterGifts", CreateGiftRepository.save(urlImage, urlWebsite,
                 giftName, description, preference, price, idList));
         RegisterGifts save = new RegisterGifts(urlImage, urlWebsite, giftName, description, preference, price, idList);

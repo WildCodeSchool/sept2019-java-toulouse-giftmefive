@@ -7,7 +7,7 @@ public class RegisterGifts {
     private String description;
     private Integer preference;
     private Double price;
-    private Long idList;
+    private int idList;
 
     public String getUrlImage() {
         return urlImage;
@@ -57,15 +57,15 @@ public class RegisterGifts {
         this.price = price;
     }
 
-    public Long getIdList() {
+    public int getIdList() {
         return idList;
     }
 
-    public void setIdList(Long idList) {
+    public void setIdList(int idList) {
         this.idList = idList;
     }
 
-    public RegisterGifts(String urlImage, String urlWebsite, String giftName, String description, Integer preference, Double price, Long idList) {
+    public RegisterGifts(String urlImage, String urlWebsite, String giftName, String description, Integer preference, Double price, int idList) {
         this.urlImage = urlImage;
         this.urlWebsite = urlWebsite;
         this.giftName = giftName;
