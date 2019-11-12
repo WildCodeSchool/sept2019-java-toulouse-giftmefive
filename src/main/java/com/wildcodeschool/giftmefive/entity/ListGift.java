@@ -11,7 +11,7 @@ public class ListGift {
     private String urlImage;
     private String urlShare;
 
-    private long idUser;
+    private Long idUser;
     @OneToOne(mappedBy = "listGift")
     @JoinColumn(unique = true)
     private Gift gift;

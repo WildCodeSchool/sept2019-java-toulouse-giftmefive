@@ -1,23 +1,23 @@
 package com.wildcodeschool.giftmefive.entity;
 
 public class User {
-    private long idUser;
+    private Long idUser;
     private String username;
     private String password;
     private String email;
 
-    public User(long idUser, String username, String password, String email) {
+    public User(Long idUser, String username, String password, String email) {
         this.idUser = idUser;
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    public long getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(long idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 

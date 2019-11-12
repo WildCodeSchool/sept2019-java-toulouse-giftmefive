@@ -10,7 +10,8 @@ public class RegisterGifts {
     private Double price;
     private Long idList;
 
-    public RegisterGifts(long idGift, String urlImage, String urlWebsite, String giftName, String description, Integer preference, Double price, long idList) {
+    public RegisterGifts(Long idGift, String urlImage, String urlWebsite, String giftName, String description,
+                         Integer preference, Double price, Long idList) {
 
         this.urlImage = urlImage;
         this.urlWebsite = urlWebsite;
@@ -22,9 +23,9 @@ public class RegisterGifts {
         this.idGift = idGift;
     }
 
-    public long getIdGift() { return idGift; }
+    public Long getIdGift() { return idGift; }
 
-    public void setIdGift(long idGift) {
+    public void setIdGift(Long idGift) {
         this.idGift = idGift;
     }
 
