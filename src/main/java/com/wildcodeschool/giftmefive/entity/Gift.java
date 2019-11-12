@@ -1,18 +1,18 @@
 package com.wildcodeschool.giftmefive.entity;
 
 public class Gift {
-    private int idGift;
+    private long idGift;
     private String giftName;
     private String description;
     private float price;
     private int preference;
     private String urlImage;
     private String urlWebsite;
-    private int idList;
-    private int idFriend;
+    private long idList;
+    private long idFriend;
 
-    public Gift(int idGift, String giftName, String description, float price, int preference, String urlImage,
-                String urlWebsite, int idList, int idFriend) {
+    public Gift(Long idGift, String giftName, String description, float price, int preference, String urlImage,
+                String urlWebsite, Long idList, Long idFriend) {
         this.idGift = idGift;
         this.giftName = giftName;
         this.description = description;
@@ -24,7 +24,7 @@ public class Gift {
         this.idFriend = idFriend;
     }
 
-    public int getIdGift() {
+    public long getIdGift() {
         return idGift;
     }
 
@@ -80,7 +80,7 @@ public class Gift {
         this.urlWebsite = urlWebsite;
     }
 
-    public int getIdList() {
+    public long getIdList() {
         return idList;
     }
 
@@ -88,7 +88,7 @@ public class Gift {
         this.idList = idList;
     }
 
-    public int getIdFriend() {
+    public long getIdFriend() {
         return idFriend;
     }
 

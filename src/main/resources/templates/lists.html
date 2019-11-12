@@ -2,10 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}">
+    <link href="css/style.css" rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/formulary.css" th:href="@{css/formulary.css}">
     <meta charset="UTF-8">
     <title>Listes</title>
 </head>
@@ -20,18 +22,27 @@
         </section>
         <section class="existingLists" th:each="lists: ${lists}">
             <div class="list-title-container">
-                <h3 class="listTitle" th:text="${lists.listName}"></h3>
-                <hr class="underListTitle">
+                <div>
+                    <h3 class="listTitle" th:text="${lists.listName}"></h3>
+                    <hr class="underListTitle">
+                </div>
+                <form action="/listes-modification" method="get">
+                    <input type="hidden" name="idList" id="idList" th:value="${lists.idList}">
+                    <button type="submit" class="edit-button">
+                        <i class="material-icons">edit</i>
+                    </button>
+                </form>
             </div>
             <div class="img-list-container">
-                <a th:href="@{/listes-cadeaux}"><img alt="" th:src="${lists.urlImage}"></a>
+                <a th:href="@{/cadeaux(id=${lists.idList})}">
+                    <img alt="" th:src="${lists.urlImage}"></a>
             </div>
             <div class="shareDelete">
                 <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
                 </button>
                 <form action="/listes/delete" method="get">
                     <input type="hidden" name="id" id="id" th:value="${lists.idList}">
-                    <button type="submit" class="myBtn">
+                    <button type="submit" class="delete-button">
                         <i class="material-icons">delete</i>
                     </button>
                 </form>

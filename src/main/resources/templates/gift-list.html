@@ -28,7 +28,7 @@
         <section class="existingGift" th:each="gifts: ${gifts}">
             <h3 class="giftTitle" th:text="${gifts.giftName}">Seiko Sport 5</h3>
             <hr class="underGiftTitle">
-            <a th:href="@{/listes}"><img src="https://via.placeholder.com/250" alt=""></a>
+            <img th:src="${gifts.getUrlImage()}" alt="">
             <hr class="underGiftTitle">
             <div class="priceStars">
                 <ul>
@@ -50,9 +50,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="delete">
-                <a href=""><i class="material-icons">delete</i></a>
-            </div>
+            <form action="/gift/delete" method="get">
+                <input type="hidden" name="id" id="id" th:value="${gifts.idGift}">
+                <input type="hidden" name="idList" id="idList" th:value="${list.getIdList()}">
+                <button type="submit" class="myBtn">
+                    <i class="material-icons">delete</i>
+                </button>
+            </form>
         </section>
     </div>
 </div>

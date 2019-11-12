@@ -151,6 +151,18 @@ h1.page-title {
     margin-right: 10%;
     margin-left: 10%;
 }
+.list-title-container{
+    display: flex;
+    flex-direction: row;
+   justify-content:  space-between;
+}
+
+.edit-button {
+    padding: 0.5em;
+    border: none;
+    background: none;
+    font-size: 1em;
+}
 
 .listTitlePage {
     text-align: center;
@@ -279,6 +291,8 @@ h3.listTitle {
 
 .existingGift img {
     margin: 3vw 0;
+    object-fit: contain;
+    max-height: 500px;
 }
 
 .filter ul {
@@ -752,6 +766,7 @@ h3.listTitle {
     /* LIST DESKTOP */
     .createNewList {
         flex-direction: row;
+        justify-content: flex-start;
         width: 100%;
     }
 
@@ -811,6 +826,13 @@ h3.listTitle {
     /* SHARING BUTTON */
 
     .myBtn {
+        padding: 0;
+        border: none;
+        background: none;
+        font-size: 1em;
+    }
+
+    .delete-button {
         padding: 0;
         border: none;
         background: none;
