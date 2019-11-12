@@ -14,9 +14,6 @@ public class Gift {
     private String urlWebsite;
     private long idList;
     private long idFriend;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true)
-    private User user;
 
     public Gift(long idGift, String giftName, String description, float price, int preference, String urlImage,
                 String urlWebsite, long idList, long idFriend) {

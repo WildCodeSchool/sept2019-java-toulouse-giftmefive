@@ -12,6 +12,7 @@
 <section class="sections">
     <h1>DESCRIPTION DU CADEAU</h1>
     <form action="register-gifts" class="formForm" method="post">
+        <input type="hidden" th:id=${getIdList()} >
         <div class="displayrow">
             <label class="labelForm" for="urlImage">Lien vers l'image :</label>
             <input class="urlImage" id="urlImage" name="urlImage" placeholder="  http://imagedemoncadeau.com"
