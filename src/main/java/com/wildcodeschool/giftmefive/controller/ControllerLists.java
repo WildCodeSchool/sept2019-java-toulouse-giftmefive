@@ -17,7 +17,8 @@ public class ControllerLists {
         return "lists";
     }
     @GetMapping("/listes/delete")
-    public String deleteListe(@RequestParam int id) {
+    public String deleteList(@RequestParam int id) {
+        listsRepository.deleteGiftFromList(id);
         listsRepository.deleteList(id);
         return "redirect:/listes";
     }

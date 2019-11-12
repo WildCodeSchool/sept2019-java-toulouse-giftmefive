@@ -25,7 +25,11 @@ public class ControllerGifts {
         model.addAttribute("list", listGift);
         return "gift-list";
     }
-
+    @GetMapping("/gift/delete")
+    public String deleteGift(@RequestParam int id , @RequestParam int idList) {
+        giftsRepository.deleteGift(id);
+        return "redirect:/cadeaux?id=" + idList;
+    }
     @GetMapping("/cadeaux-ami")
     public String getFriendGift(Model model, @RequestParam int id) {
         ListGift listGift = listsRepository.findById(id);

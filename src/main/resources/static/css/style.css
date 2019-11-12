@@ -754,6 +754,7 @@ h3.listTitle {
     /* LIST DESKTOP */
     .createNewList {
         flex-direction: row;
+        justify-content: flex-start;
         width: 100%;
     }
 
@@ -813,6 +814,13 @@ h3.listTitle {
     /* SHARING BUTTON */
 
     .myBtn {
+        padding: 0;
+        border: none;
+        background: none;
+        font-size: 1em;
+    }
+
+    .delete-button {
         padding: 0;
         border: none;
         background: none;
