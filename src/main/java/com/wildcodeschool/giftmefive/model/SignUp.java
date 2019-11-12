@@ -10,9 +10,6 @@ public class SignUp {
     private String email;
     private long idUser;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "signUp")
-    private List<RegisterLists> lists;
-
     public SignUp(String username, String password, String email) {
         this.username = username;
         this.password = password;
