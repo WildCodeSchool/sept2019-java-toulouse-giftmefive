@@ -6,7 +6,8 @@
           name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}">
+    <link href="css/style.css" rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/formulary.css" th:href="@{css/formulary.css}">
     <meta charset="UTF-8">
     <title>Listes</title>
 </head>
@@ -21,8 +22,16 @@
         </section>
         <section class="existingLists" th:each="lists: ${lists}">
             <div class="list-title-container">
-                <h3 class="listTitle" th:text="${lists.listName}"></h3>
-                <hr class="underListTitle">
+                <div>
+                    <h3 class="listTitle" th:text="${lists.listName}"></h3>
+                    <hr class="underListTitle">
+                </div>
+                <form action="/listes-modification" method="get">
+                    <input type="hidden" name="idList" id="idList" th:value="${lists.idList}">
+                    <button type="submit" class="edit-button">
+                        <i class="material-icons">edit</i>
+                    </button>
+                </form>
             </div>
             <div class="img-list-container">
                 <a th:href="@{/cadeaux(id=${lists.idList})}">

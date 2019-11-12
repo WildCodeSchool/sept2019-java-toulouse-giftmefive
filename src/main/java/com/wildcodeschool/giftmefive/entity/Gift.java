@@ -15,8 +15,9 @@ public class Gift {
     private long idList;
     private long idFriend;
 
-    public Gift(long idGift, String giftName, String description, float price, int preference, String urlImage,
-                String urlWebsite, long idList, long idFriend) {
+    public Gift(Long idGift, String giftName, String description, float price, int preference, String urlImage,
+                String urlWebsite, Long idList, Long idFriend) {
+
         this.idGift = idGift;
         this.giftName = giftName;
         this.description = description;

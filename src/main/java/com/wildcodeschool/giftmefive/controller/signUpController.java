@@ -25,7 +25,8 @@ public class signUpController {
 
     @PostMapping("/enregistre_user")
     public String userUpdate(Model out,
-                             @RequestParam long idUser,
+
+                             @RequestParam Long idUser,
                              @RequestParam String username,
                              @RequestParam String password,
                              @RequestParam String passwordConfirmation,

@@ -12,7 +12,8 @@ public class GiftsRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public List<Gift> findAllById(long idList) {
+    public List<Gift> findAllById(Long idList) {
+
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -24,6 +25,7 @@ public class GiftsRepository {
             ResultSet resultSet = statement.executeQuery();
             List<Gift> gifts = new ArrayList<>();
             while (resultSet.next()) {
+
                 long idGift = resultSet.getLong("id_gift");
                 String giftName = resultSet.getString("gift_name");
                 String description = resultSet.getString("description");
@@ -31,16 +33,21 @@ public class GiftsRepository {
                 int preference = resultSet.getInt("preference");
                 String urlImage = resultSet.getString("url_image");
                 String urlWeb = resultSet.getString("url_website");
-                long idFriend = resultSet.getLong("id_friend");
+                Long idFriend = resultSet.getLong("id_friend");
+
                 gifts.add(new Gift(idGift, giftName, description, price, preference, urlImage, urlWeb, idList, idFriend));
             }
+
             return gifts;
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-    public Gift findById(long idGift) {
+
+    public Gift findById(Long idGift) {
+
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -57,8 +64,9 @@ public class GiftsRepository {
                 int preference = resultSet.getInt("preference");
                 String urlImage = resultSet.getString("url_image");
                 String urlWeb = resultSet.getString("url_website");
-                long idList = resultSet.getLong("id_list");
-                long idFriend = resultSet.getLong("id_friend");
+                Long idList = resultSet.getLong("id_list");
+                Long idFriend = resultSet.getLong("id_friend");
+
                 return new Gift(idGift, giftName, description, price, preference, urlImage, urlWeb, idList, idFriend);
             }
         } catch (SQLException e) {
@@ -66,7 +74,9 @@ public class GiftsRepository {
         }
         return null;
     }
-    public void deleteGift(long id) {
+
+    public void deleteGift(Long id) {
+
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD

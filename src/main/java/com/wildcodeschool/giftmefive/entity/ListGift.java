@@ -4,17 +4,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 public class ListGift {
-    private long idList;
+
+    private Long idList;
     private String listName;
     private String description;
     private String urlImage;
     private String urlShare;
+
     private long idUser;
     @OneToOne(mappedBy = "listGift")
     @JoinColumn(unique = true)
     private Gift gift;
 
-    public ListGift(long idList, String listName, String description, String urlImage, String urlShare, long idUser) {
+    public ListGift(Long idList, String listName, String description, String urlImage, String urlShare, Long idUser) {
+
         this.idList = idList;
         this.listName = listName;
         this.description = description;
@@ -23,11 +26,11 @@ public class ListGift {
         this.idUser = idUser;
     }
 
-    public long getIdList() {
+    public Long getIdList() {
         return idList;
     }
 
-    public void setIdList(long idList) {
+    public void setIdList(Long idList) {
         this.idList = idList;
     }
 
@@ -63,11 +66,11 @@ public class ListGift {
         this.urlShare = urlShare;
     }
 
-    public long getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(long idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 }
