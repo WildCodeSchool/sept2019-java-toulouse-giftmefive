@@ -9,7 +9,7 @@ public class CreateListsRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public static RegisterLists save(String listName, String description, String urlImage) {
+    public RegisterLists save(String listName, String description, String urlImage, Long idUser) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -22,7 +22,7 @@ public class CreateListsRepository {
             statement.setString(2, description);
             statement.setString(3, urlImage);
             statement.setString(4, "localhost:8080/listes");
-            statement.setLong(5, 2);
+            statement.setLong(5, idUser);
 
 /*id_user à créer et insert*/
 

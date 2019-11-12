@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class CreateUserController {
 
+    private CreateUserRepository createUserRepository = new CreateUserRepository();
+
     @PostMapping("/sign-up")
     public String signUp(
                              @RequestParam String username,
                              @RequestParam String password,
                              @RequestParam String email) {
-       CreateUserRepository.save(username, password, email);
+       createUserRepository.save(username, password, email);
 
         return "redirect:/listes";
     }

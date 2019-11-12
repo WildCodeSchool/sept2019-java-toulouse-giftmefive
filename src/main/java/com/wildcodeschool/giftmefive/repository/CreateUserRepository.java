@@ -10,7 +10,7 @@ public class CreateUserRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public static User save(String username, String password, String email) {
+    public User save(String username, String password, String email) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
