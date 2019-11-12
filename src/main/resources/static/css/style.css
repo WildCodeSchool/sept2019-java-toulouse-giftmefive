@@ -151,6 +151,18 @@ h1.page-title {
     margin-right: 10%;
     margin-left: 10%;
 }
+.list-title-container{
+    display: flex;
+    flex-direction: row;
+   justify-content:  space-between;
+}
+
+.edit-button {
+    padding: 0.5em;
+    border: none;
+    background: none;
+    font-size: 1em;
+}
 
 .listTitlePage {
     text-align: center;
