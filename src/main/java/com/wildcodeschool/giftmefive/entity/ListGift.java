@@ -1,14 +1,14 @@
 package com.wildcodeschool.giftmefive.entity;
 
 public class ListGift {
-    private int idList;
+    private Long idList;
     private String listName;
     private String description;
     private String urlImage;
     private String urlShare;
-    private int idUser;
+    private Long idUser;
 
-    public ListGift(int idList, String listName, String description, String urlImage, String urlShare, int idUser) {
+    public ListGift(Long idList, String listName, String description, String urlImage, String urlShare, Long idUser) {
         this.idList = idList;
         this.listName = listName;
         this.description = description;
@@ -17,11 +17,11 @@ public class ListGift {
         this.idUser = idUser;
     }
 
-    public int getIdList() {
+    public Long getIdList() {
         return idList;
     }
 
-    public void setIdList(int idList) {
+    public void setIdList(Long idList) {
         this.idList = idList;
     }
 
@@ -57,11 +57,11 @@ public class ListGift {
         this.urlShare = urlShare;
     }
 
-    public int getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 }
