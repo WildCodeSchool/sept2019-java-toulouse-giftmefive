@@ -18,20 +18,20 @@ public class ControllerLists {
     }
 
     @GetMapping("/listes/delete")
-    public String deleteList(@RequestParam int id) {
+    public String deleteList(@RequestParam Long id) {
         listsRepository.deleteGiftFromList(id);
         listsRepository.deleteList(id);
         return "redirect:/listes";
     }
 
     @GetMapping("/listes-modification")
-    public String callUpdateList(Model out,@RequestParam int idList) {
+    public String callUpdateList(Model out,@RequestParam Long idList) {
         out.addAttribute("List", listsRepository.findById(idList));
         return "list-maker-update";
     }
 
     @GetMapping("/listes/update")
-    public String updateList(@RequestParam int idList,@RequestParam String urlImage,@RequestParam String listName,
+    public String updateList(@RequestParam Long idList,@RequestParam String urlImage,@RequestParam String listName,
                              @RequestParam String descriptionList) {
         listsRepository.updateList(idList,listName,descriptionList,urlImage);
         return "redirect:/listes";

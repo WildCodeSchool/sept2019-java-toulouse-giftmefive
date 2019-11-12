@@ -12,7 +12,7 @@ public class GiftsRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public List<Gift> findAllById(int idList) {
+    public List<Gift> findAllById(Long idList) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -20,18 +20,18 @@ public class GiftsRepository {
             PreparedStatement statement = connection.prepareStatement(
                     "SELECT * FROM gift WHERE id_list = ?;"
             );
-            statement.setInt(1, idList);
+            statement.setLong(1, idList);
             ResultSet resultSet = statement.executeQuery();
             List<Gift> gifts = new ArrayList<>();
             while (resultSet.next()) {
-                int idGift = resultSet.getInt("id_gift");
+                Long idGift = resultSet.getLong("id_gift");
                 String giftName = resultSet.getString("gift_name");
                 String description = resultSet.getString("description");
                 float price = resultSet.getFloat("price");
                 int preference = resultSet.getInt("preference");
                 String urlImage = resultSet.getString("url_image");
                 String urlWeb = resultSet.getString("url_website");
-                int idFriend = resultSet.getInt("id_friend");
+                Long idFriend = resultSet.getLong("id_friend");
                 gifts.add(new Gift(idGift, giftName, description, price, preference, urlImage, urlWeb, idList, idFriend));
             }
             return gifts;
@@ -40,7 +40,7 @@ public class GiftsRepository {
         }
         return null;
     }
-    public Gift findById(int idGift) {
+    public Gift findById(Long idGift) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -57,8 +57,8 @@ public class GiftsRepository {
                 int preference = resultSet.getInt("preference");
                 String urlImage = resultSet.getString("url_image");
                 String urlWeb = resultSet.getString("url_website");
-                int idList = resultSet.getInt("id_list");
-                int idFriend = resultSet.getInt("id_friend");
+                Long idList = resultSet.getLong("id_list");
+                Long idFriend = resultSet.getLong("id_friend");
                 return new Gift(idGift, giftName, description, price, preference, urlImage, urlWeb, idList, idFriend);
             }
         } catch (SQLException e) {
@@ -66,7 +66,7 @@ public class GiftsRepository {
         }
         return null;
     }
-    public void deleteGift(int id) {
+    public void deleteGift(Long id) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -74,7 +74,7 @@ public class GiftsRepository {
             PreparedStatement statement = connection.prepareStatement(
                     "DELETE FROM gift WHERE id_gift=?;"
             );
-            statement.setInt(1, id);
+            statement.setLong(1, id);
             if (statement.executeUpdate() != 1) {
                 throw new SQLException("failed to delete data");
             }
