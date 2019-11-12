@@ -1,6 +1,7 @@
 package com.wildcodeschool.giftmefive.repository;
 
 import com.wildcodeschool.giftmefive.entity.User;
+
 import java.sql.*;
 
 public class UserRepository {
@@ -47,6 +48,30 @@ public class UserRepository {
                 username = resultSet.getString("username");
                 String email = resultSet.getString("email");
                 password = resultSet.getString("password");
+                return new User(id, username, password, email);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public User findById(Long idUser) {
+        try {
+            Connection connection = DriverManager.getConnection(
+                    DB_URL, DB_USER, DB_PASSWORD
+            );
+            PreparedStatement statement = connection.prepareStatement(
+                    "SELECT * FROM user WHERE id_user = ?;"
+            );
+            statement.setLong(1, idUser);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id_user");
+                String username = resultSet.getString("username");
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("password");
                 return new User(id, username, password, email);
             }
         } catch (SQLException e) {

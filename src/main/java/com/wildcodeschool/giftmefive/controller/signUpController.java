@@ -17,9 +17,8 @@ public class signUpController {
     }
 
     @GetMapping("/modification")
-    public String callUserUdapte(Model out) {
-        //Todo methode recherche user connecté
-
+    public String callUserUdapte(Model out, @RequestParam Long id) {
+        out.addAttribute("User", repository.findById(id));
         return "user-update";
     }
 
@@ -32,9 +31,9 @@ public class signUpController {
                              @RequestParam String email
     ) {
         if (!password.equals(passwordConfirmation)) {
-            return "redirect:/modification";
+            return "redirect:/modification?id=" + idUser;
         }
         out.addAttribute("user", repository.save(idUser, username, password, email));
-        return "redirect:/";
+        return "redirect:/modification?id=" + idUser;
     }
 }
