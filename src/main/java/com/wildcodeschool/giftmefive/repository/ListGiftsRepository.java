@@ -9,7 +9,6 @@ public class ListGiftsRepository {
 
     public static void registerInList(String name, String description, String urlImage) {
         Long id = myList.size() + 1L;
-
     }
 
     public List<ListGifts> findAll() {
@@ -27,7 +26,6 @@ public class ListGiftsRepository {
 
     private static List<ListGifts> myList = new ArrayList<ListGifts>() {
         {
-
         }
     };
 
