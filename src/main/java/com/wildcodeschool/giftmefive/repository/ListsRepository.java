@@ -12,14 +12,15 @@ public class ListsRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public List<ListGift> findAll() {
+    public List<ListGift> findAll(Long idUser) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                    "SELECT * FROM list;"
+                    "SELECT * FROM list WHERE id_user = ?;"
             );
+            statement.setLong(1, idUser);
             ResultSet resultSet = statement.executeQuery();
             List<ListGift> lists = new ArrayList<ListGift>();
             while (resultSet.next()) {
@@ -28,7 +29,7 @@ public class ListsRepository {
                 String description = resultSet.getString("description");
                 String urlImage = resultSet.getString("url_image");
                 String urlShare = resultSet.getString("url_share");
-                long idUser = resultSet.getLong("id_user");
+                idUser = resultSet.getLong("id_user");
                 lists.add(new ListGift(idList, listName, description, urlImage, urlShare, idUser));
             }
             return lists;

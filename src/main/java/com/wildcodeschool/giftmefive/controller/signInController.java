@@ -21,7 +21,7 @@ public class signInController {
     public String connexion(HttpSession session, @RequestParam String username, @RequestParam String password) {
         User user = userRepository.getByUsername(username, password);
         if (user != null) {
-            int idUser = user.getIdUser();
+            long idUser = user.getIdUser();
             session.setAttribute("user", user);
                 return "redirect:/";
         }
