@@ -73,7 +73,5 @@ public class RegisterGifts {
         this.preference = preference;
         this.price = price;
         this.idList = idList;
-
-
     }
 }
