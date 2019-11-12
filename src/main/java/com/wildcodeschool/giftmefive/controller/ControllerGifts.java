@@ -18,7 +18,7 @@ public class ControllerGifts {
     private ListsRepository listsRepository = new ListsRepository();
 
     @GetMapping("/cadeaux")
-    public String getGift(Model model, @RequestParam int id) {
+    public String getGift(Model model, @RequestParam long id) {
         ListGift listGift = listsRepository.findById(id);
         List<Gift> gifts = giftsRepository.findAllById(id);
         model.addAttribute("gifts", gifts);
@@ -26,12 +26,12 @@ public class ControllerGifts {
         return "gift-list";
     }
     @GetMapping("/gift/delete")
-    public String deleteGift(@RequestParam int id , @RequestParam int idList) {
+    public String deleteGift(@RequestParam long id , @RequestParam long idList) {
         giftsRepository.deleteGift(id);
         return "redirect:/cadeaux?id=" + idList;
     }
     @GetMapping("/cadeaux-ami")
-    public String getFriendGift(Model model, @RequestParam int id) {
+    public String getFriendGift(Model model, @RequestParam long id) {
         ListGift listGift = listsRepository.findById(id);
         List<Gift> gifts = giftsRepository.findAllById(id);
         model.addAttribute("gifts", gifts);

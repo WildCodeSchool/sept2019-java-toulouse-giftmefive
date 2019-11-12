@@ -8,7 +8,7 @@ public class SignUp {
     private String username;
     private String password;
     private String email;
-    private Integer idUser;
+    private long idUser;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "signUp")
     private List<RegisterLists> lists;
@@ -45,11 +45,11 @@ public class SignUp {
         this.email = email;
     }
 
-    public Integer getIdUser() {
+    public long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(Integer idUser) {
+    public void setIdUser(long idUser) {
         this.idUser = idUser;
     }
 

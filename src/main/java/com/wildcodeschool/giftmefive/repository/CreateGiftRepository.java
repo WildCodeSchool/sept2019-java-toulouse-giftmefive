@@ -14,7 +14,7 @@ public class CreateGiftRepository {
     private final static String DB_PASSWORD = "Greg.321";
 
     public static RegisterGifts save(String urlImage, String urlWebsite, String giftName, String description,
-                                     int preference, double price, Long idList) {
+                                     int preference, double price, long idList) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -28,10 +28,9 @@ public class CreateGiftRepository {
             statement.setString(2, urlWebsite);
             statement.setString(3, giftName);
             statement.setString(4, description);
-            statement.setInt(5, preference);
+            statement.setLong(5, preference);
             statement.setDouble(6, price);
             statement.setLong(7, idList);
-            //TODO set list_id
 
             if (statement.executeUpdate() != 1) {
                 throw new SQLException("failed to insert data");
@@ -40,8 +39,8 @@ public class CreateGiftRepository {
             ResultSet generatedKeys = statement.getGeneratedKeys();
 
             if (generatedKeys.next()) {
-                Long id = generatedKeys.getLong(1);
-                return new RegisterGifts(urlImage, urlWebsite, giftName, description, preference, price, idList);
+                long idGift = generatedKeys.getLong(1);
+                return new RegisterGifts(idGift, urlImage, urlWebsite, giftName, description, preference, price, idList);
             } else {
                 throw new SQLException("failed to get inserted id");
             }

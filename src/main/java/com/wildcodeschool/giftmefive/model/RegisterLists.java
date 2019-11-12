@@ -1,20 +1,10 @@
 package com.wildcodeschool.giftmefive.model;
 
-import com.wildcodeschool.giftmefive.entity.User;
-
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-
 public class RegisterLists {
 
     private String list_name;
     private String description;
     private String url_image;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user")
-    private SignUp signUp;
 
     public RegisterLists(String list_name, String description, String url_image) {
         this.list_name = list_name;

@@ -9,7 +9,7 @@ public class UserRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public User save(int idUser, String username, String password, String email) {
+    public User save(long idUser, String username, String password, String email) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -20,7 +20,7 @@ public class UserRepository {
             statement.setString(1, username);
             statement.setString(2, password);
             statement.setString(3, email);
-            statement.setInt(4, idUser);
+            statement.setLong(4, idUser);
             if (statement.executeUpdate() != 1) {
                 throw new SQLException("failed to update data");
             }
@@ -44,7 +44,7 @@ public class UserRepository {
             statement.setString(2, password);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                int id = resultSet.getInt("id_user");
+                long id = resultSet.getLong("id_user");
                 username = resultSet.getString("username");
                 String email = resultSet.getString("email");
                 password = resultSet.getString("password");

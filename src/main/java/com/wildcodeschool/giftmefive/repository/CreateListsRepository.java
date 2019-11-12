@@ -22,7 +22,7 @@ public class CreateListsRepository {
             statement.setString(2, description);
             statement.setString(3, url_image);
             statement.setString(4, "localhost:8080/listes");
-            statement.setInt(5, 2);
+            statement.setLong(5, 2);
 
 /*id_user à créer et insert*/
 

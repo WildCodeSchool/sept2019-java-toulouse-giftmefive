@@ -19,10 +19,9 @@ public class CreateGiftController {
                                 @RequestParam String description,
                                 @RequestParam Integer preference,
                                 @RequestParam Double price,
-                                @RequestParam int idList) {
+                                @RequestParam long idList) {
         model.addAttribute("RegisterGifts", CreateGiftRepository.save(urlImage, urlWebsite,
                 giftName, description, preference, price, idList));
-        RegisterGifts save = new RegisterGifts(urlImage, urlWebsite, giftName, description, preference, price, idList);
 
         return "redirect:/index";
     }

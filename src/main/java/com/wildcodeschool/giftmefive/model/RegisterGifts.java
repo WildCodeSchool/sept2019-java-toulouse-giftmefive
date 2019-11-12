@@ -1,13 +1,32 @@
 package com.wildcodeschool.giftmefive.model;
 public class RegisterGifts {
 
+    private long idGift;
     private String urlImage;
     private String urlWebsite;
     private String giftName;
     private String description;
     private Integer preference;
     private Double price;
-    private int idList;
+    private long idList;
+
+    public RegisterGifts(long idGift, String urlImage, String urlWebsite, String giftName, String description, Integer preference, Double price, long idList) {
+
+        this.urlImage = urlImage;
+        this.urlWebsite = urlWebsite;
+        this.giftName = giftName;
+        this.description = description;
+        this.preference = preference;
+        this.price = price;
+        this.idList = idList;
+        this.idGift = idGift;
+    }
+
+    public long getIdGift() { return idGift; }
+
+    public void setIdGift(long idGift) {
+        this.idGift = idGift;
+    }
 
     public String getUrlImage() {
         return urlImage;
@@ -57,21 +76,11 @@ public class RegisterGifts {
         this.price = price;
     }
 
-    public int getIdList() {
+    public long getIdList() {
         return idList;
     }
 
-    public void setIdList(int idList) {
-        this.idList = idList;
-    }
-
-    public RegisterGifts(String urlImage, String urlWebsite, String giftName, String description, Integer preference, Double price, int idList) {
-        this.urlImage = urlImage;
-        this.urlWebsite = urlWebsite;
-        this.giftName = giftName;
-        this.description = description;
-        this.preference = preference;
-        this.price = price;
+    public void setIdList(long idList) {
         this.idList = idList;
     }
 }
