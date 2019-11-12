@@ -23,12 +23,13 @@ public class ListsRepository {
             ResultSet resultSet = statement.executeQuery();
             List<ListGift> lists = new ArrayList<ListGift>();
             while (resultSet.next()) {
+
                 Long idList = resultSet.getLong("id_list");
                 String listName = resultSet.getString("list_name");
                 String description = resultSet.getString("description");
                 String urlImage = resultSet.getString("url_image");
                 String urlShare = resultSet.getString("url_share");
-                long idUser = resultSet.getLong("id_user");
+                Long idUser = resultSet.getLong("id_user");
                 lists.add(new ListGift(idList, listName, description, urlImage, urlShare, idUser));
             }
             return lists;
@@ -37,7 +38,9 @@ public class ListsRepository {
         }
         return null;
     }
+
     public ListGift findById(Long idList) {
+
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -54,19 +57,22 @@ public class ListsRepository {
             String urlImage = resultSet.getString("url_image");
             String urlShare = resultSet.getString("url_share");
             Long idUser = resultSet.getLong("id_user");
+
             return new ListGift(idList, listName, description, urlImage, urlShare, idUser);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-        public void deleteList(Long id) {
-            try {
-                Connection connection = DriverManager.getConnection(
-                        DB_URL, DB_USER, DB_PASSWORD
-                );
-                PreparedStatement statement = connection.prepareStatement(
-                        "DELETE FROM list WHERE id_list=?;"
+
+    public void deleteList(Long id) {
+
+        try {
+            Connection connection = DriverManager.getConnection(
+                    DB_URL, DB_USER, DB_PASSWORD
+            );
+            PreparedStatement statement = connection.prepareStatement(
+                    "DELETE FROM list WHERE id_list=?;"
             );
             statement.setLong(1, id);
             if (statement.executeUpdate() != 1) {
@@ -76,7 +82,9 @@ public class ListsRepository {
             e.printStackTrace();
         }
     }
+
     public void deleteGiftFromList(Long id) {
+
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -92,6 +100,7 @@ public class ListsRepository {
             e.printStackTrace();
         }
     }
+
     public void updateList(Long idList, String listName, String description, String urlImage) {
         try {
             Connection connection = DriverManager.getConnection(

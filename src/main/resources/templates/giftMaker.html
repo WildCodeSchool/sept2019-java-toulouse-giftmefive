@@ -11,7 +11,8 @@
 <header th:replace="header :: header"></header>
 <section class="sections">
     <h1>DESCRIPTION DU CADEAU</h1>
-    <form action="registerGift" class="formForm" method="post">
+    <form action="register-gifts" class="formForm" method="post">
+        <input type="hidden" th:value="${listId}" name="idList">
         <div class="displayrow">
             <label class="labelForm" for="urlImage">Lien vers l'image :</label>
             <input class="urlImage" id="urlImage" name="urlImage" placeholder="  http://imagedemoncadeau.com"
@@ -19,25 +20,54 @@
         </div>
         <div class="displayrow">
             <label class="labelForm" for="urlArticle">Lien vers le cadeau :</label>
-            <input class="urlArticle" id="urlArticle" placeholder="  http://lienversmoncadeau.com" type="url">
+            <input class="urlArticle" name="urlWebsite" id="urlArticle" placeholder="  http://lienversmoncadeau.com" type="url">
         </div>
         <div class="displayrow">
             <label class="labelForm" for="giftName">Nom du cadeau :</label>
-            <input class="giftName" id="giftName" placeholder="  Jouet en bois" type="text">
+            <input class="giftName" name="giftName" id="giftName" placeholder="  Jouet en bois" type="text">
         </div>
         <div class="displayrow">
             <label class="labelForm" for="descriptionGift">Descriptif du cadeau :</label>
-            <textarea class="descriptionGift" id="descriptionGift"
+            <textarea class="descriptionGift" id="descriptionGift" name="description"
                       placeholder="  Le rouge ou le bleu comme vous le souhaitez"></textarea>
         </div>
         <div class="rating">
-            <a href="#1" title="Donner 3 étoiles">★</a>
-            <a href="#2" title="Donner 2 étoiles">★</a>
-            <a href="#3" title="Donner 1 étoile">★</a>
+            <a id="star3" href="#1" title="Donner 3 étoiles">★</a>
+            <a id="star2" href="#2" title="Donner 2 étoiles">★</a>
+            <a id="star1" href="#3" title="Donner 1 étoile">★</a>
         </div>
+        <input id="preference" type="hidden" name="preference" value="0">
+        <script type="text/javascript">
+
+            var star1 = document.getElementById("star1");
+            var star2 = document.getElementById("star2");
+            var star3 = document.getElementById("star3");
+            var preference = document.getElementById("preference");
+            star1.onclick = function () {
+                preference.value = "1";
+                star1.classList.add("selected");
+                star2.classList.remove("selected");
+                star3.classList.remove("selected");
+            };
+
+            star2.onclick = function () {
+                preference.value = "2";
+                star1.classList.add("selected");
+                star2.classList.add("selected");
+                star3.classList.remove("selected");
+            };
+
+            star3.onclick = function () {
+                preference.value = "3";
+                star1.classList.add("selected");
+                star2.classList.add("selected");
+                star3.classList.add("selected");
+            };
+
+        </script>
         <div class="displayrow">
             <label class="labelForm" for="price">Prix du cadeau en euros :</label>
-            <input class="price" id="price" placeholder="  45" type="text">
+            <input class="price" id="price" placeholder="  45" type="text" name="price">
         </div>
         <div class="displayrow">
             <input class="submitGift" type="submit" value="FINI !">

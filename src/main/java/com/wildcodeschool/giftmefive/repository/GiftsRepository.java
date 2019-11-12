@@ -13,6 +13,7 @@ public class GiftsRepository {
     private final static String DB_PASSWORD = "Greg.321";
 
     public List<Gift> findAllById(Long idList) {
+
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -24,6 +25,7 @@ public class GiftsRepository {
             ResultSet resultSet = statement.executeQuery();
             List<Gift> gifts = new ArrayList<>();
             while (resultSet.next()) {
+
                 Long idGift = resultSet.getLong("id_gift");
                 String giftName = resultSet.getString("gift_name");
                 String description = resultSet.getString("description");
@@ -32,15 +34,20 @@ public class GiftsRepository {
                 String urlImage = resultSet.getString("url_image");
                 String urlWeb = resultSet.getString("url_website");
                 Long idFriend = resultSet.getLong("id_friend");
+
                 gifts.add(new Gift(idGift, giftName, description, price, preference, urlImage, urlWeb, idList, idFriend));
             }
+
             return gifts;
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
+
     public Gift findById(Long idGift) {
+
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -59,6 +66,7 @@ public class GiftsRepository {
                 String urlWeb = resultSet.getString("url_website");
                 Long idList = resultSet.getLong("id_list");
                 Long idFriend = resultSet.getLong("id_friend");
+
                 return new Gift(idGift, giftName, description, price, preference, urlImage, urlWeb, idList, idFriend);
             }
         } catch (SQLException e) {
@@ -66,7 +74,9 @@ public class GiftsRepository {
         }
         return null;
     }
+
     public void deleteGift(Long id) {
+
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD

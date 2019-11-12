@@ -1,24 +1,15 @@
-package com.wildcodeschool.giftmefive.entity;
+package com.wildcodeschool.giftmefive.model;
 
 public class User {
-    private Long idUser;
+
     private String username;
     private String password;
     private String email;
 
-    public User(Long idUser, String username, String password, String email) {
-        this.idUser = idUser;
+    public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
-    }
-
-    public Long getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
     }
 
     public String getUsername() {
