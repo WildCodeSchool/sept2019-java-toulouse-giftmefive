@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
         @GetMapping("/description-cadeau")
 
-        public String giftDescription(Model model, @RequestParam Long idList) {
+        public String giftDescription(Model model, @RequestParam Integer idList) {
             model.addAttribute()
             return "giftMaker";
         }

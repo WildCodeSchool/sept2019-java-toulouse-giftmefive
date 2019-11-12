@@ -1,23 +1,24 @@
 package com.wildcodeschool.giftmefive.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.List;
 
 public class SignUp {
 
     private String username;
     private String password;
     private String email;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true)
-    private RegisterGifts gift;
+    private Integer idUser;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "signUp")
+    private List<RegisterLists> lists;
 
     public SignUp(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.gift = gift;
+        this.idUser = idUser;
+        this.lists = lists;
     }
 
     public String getUsername() {
@@ -44,11 +45,19 @@ public class SignUp {
         this.email = email;
     }
 
-    public RegisterGifts getGift() {
-        return gift;
+    public Integer getIdUser() {
+        return idUser;
     }
 
-    public void setGift(RegisterGifts gift) {
-        this.gift = gift;
+    public void setIdUser(Integer idUser) {
+        this.idUser = idUser;
+    }
+
+    public List<RegisterLists> getLists() {
+        return lists;
+    }
+
+    public void setLists(List<RegisterLists> lists) {
+        this.lists = lists;
     }
 }
