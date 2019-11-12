@@ -3,7 +3,6 @@ package com.wildcodeschool.giftmefive.controller;
 import com.wildcodeschool.giftmefive.model.User;
 import com.wildcodeschool.giftmefive.repository.CreateUserRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -11,13 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CreateUserController {
 
     @PostMapping("/sign-up")
-    public String signUp(Model model,
+    public String signUp(
                              @RequestParam String username,
                              @RequestParam String password,
                              @RequestParam String email) {
-        model.addAttribute("SignUp", CreateUserRepository.save(username, password,
-                email));
-        User save = new User(username, password, email);
+       CreateUserRepository.save(username, password, email);
 
         return "redirect:/listes";
     }
