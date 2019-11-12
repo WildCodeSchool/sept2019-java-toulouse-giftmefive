@@ -16,6 +16,7 @@
     <form action="/listes/update" method="Get">
         <div class="formForm">
             <input type="hidden" name="idList" id="idList" th:value="${List.idList}">
+            <input type="hidden" name="idUser" id="idUser" th:value="${List.idUser}">
             <div class="inputInFlex">
                 <label class="labelForm" for="urlImage">Lien vers l'image</label>
                 <input class="urlImage" id="urlImage" name="urlImage" th:value="${List.urlImage}"
