@@ -19,7 +19,7 @@
             <ul id="menu">
                 <li><a class="title-desktop" th:href="@{/}">GIFT ME 5</a></li>
                 <li><a class="home-mobile" th:href="@{/}">ACCUEIL</a></li>
-                <li><a class="link-desktop" th:href="@{/identification}">S'IDENTIFIER</a></li>
+                <li><a class="link-desktop" th:href="@{/identification}"  th:if="${session.user == null}">S'IDENTIFIER</a></li>
                 <!-- Todo condition thymeleaf: si pas de user connecte redirction connecxion -->
                 <li><a class="link-desktop" th:href="@{/modification}">MON COMPTE</a></li>
                 <li><a class="link-desktop" th:href="@{/listes}">MES LISTES</a></li>
