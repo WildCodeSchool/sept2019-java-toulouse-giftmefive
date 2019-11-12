@@ -22,7 +22,7 @@
                 <li><a class="link-desktop" th:href="@{/identification}"  th:if="${session.user == null}">S'IDENTIFIER</a></li>
                 <!-- Todo condition thymeleaf: si pas de user connecte redirction connecxion -->
                 <li><a class="link-desktop" th:href="@{/modification}">MON COMPTE</a></li>
-                <li><a class="link-desktop"  th:if="${session.user == null}" th:href="@{/identification}">MES LISTES</a></li>
+                <li><a class="link-desktop" th:if="${session.user == null}" th:href="@{/identification}">MES LISTES</a></li>
                 <li><a class="link-desktop" th:unless="${session.user == null}" th:href="@{/listes(id=${session.user.getIdUser()})}" >MES LISTES</a></li>
                 <li><a class="link-desktop" href="#">PARTAGER</a></li>
             </ul>
