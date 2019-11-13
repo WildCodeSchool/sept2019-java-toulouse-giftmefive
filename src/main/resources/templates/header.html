@@ -21,6 +21,8 @@
                 <li><a class="home-mobile" th:href="@{/}">ACCUEIL</a></li>
                 <li><a class="link-desktop" th:href="@{/identification}"
                        th:if="${session.user == null}">S'IDENTIFIER</a></li>
+                <li><a class="link-desktop" th:href="@{/se-deconnecter}"
+                       th:unless="${session.user == null}">SE DECONNECTER</a></li>
                 <li><a class="link-desktop" th:if="${session.user == null}" th:href="@{/identification}">MON COMPTE</a>
                 </li>
                 <li><a class="link-desktop" th:unless="${session.user == null}"
