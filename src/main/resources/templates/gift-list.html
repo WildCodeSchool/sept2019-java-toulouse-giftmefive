@@ -25,25 +25,33 @@
             <a th:href="@{/description-cadeau(id=${list.getIdList()})}"><i class="material-icons">add_circle_outline</i></a>
             <p>AJOUTER UN CADEAU</p>
         </section>
-        <section class="existingGift" th:each="gifts: ${gifts}">
-            <h3 class="giftTitle" th:text="${gifts.giftName}">Seiko Sport 5</h3>
-            <hr class="underGiftTitle">
-            <img th:src="${gifts.getUrlImage()}" alt="">
+        <section class="existingGift" th:each="Gifts: ${gifts}">
+            <div>
+                <h3 class="giftTitle" th:text="${Gifts.giftName}">Seiko Sport 5</h3>
+                <hr class="underGiftTitle">
+            </div>
+            <form action="/gift-modification" method="get">
+                <input type="hidden" name="idGift" id="idGift" th:value="${Gifts.idGift}">
+                <button type="submit" class="edit-button">
+                    <i class="material-icons">edit</i>
+                </button>
+            </form>
+            <img th:src="${Gifts.getUrlImage()}" alt="">
             <hr class="underGiftTitle">
             <div class="priceStars">
                 <ul>
                     <li>
-                        <span th:text="${gifts.price}"></span>
+                        <span th:text="${Gifts.price}"></span>
                         <i class="material-icons">euro</i>
                     </li>
-                    <li th:if="${gifts.preference} == 1" class="starOne">
+                    <li th:if="${Gifts.preference} == 1" class="starOne">
                         <i class="material-icons">star</i>
                     </li>
-                    <li th:if="${gifts.preference} == 2" class="starTwo">
+                    <li th:if="${Gifts.preference} == 2" class="starTwo">
                         <i class="material-icons">star</i>
                         <i class="material-icons">star</i>
                     </li>
-                    <li th:if="${gifts.preference} == 3" class="starThree">
+                    <li th:if="${Gifts.preference} == 3" class="starThree">
                         <i class="material-icons">star</i>
                         <i class="material-icons">star</i>
                         <i class="material-icons">star</i>
@@ -51,7 +59,7 @@
                 </ul>
             </div>
             <form action="/gift/delete" method="get">
-                <input type="hidden" name="id" id="id" th:value="${gifts.idGift}">
+                <input type="hidden" name="id" id="id" th:value="${Gifts.idGift}">
                 <input type="hidden" name="idList" id="idList" th:value="${list.getIdList()}">
                 <button type="submit" class="myBtn">
                     <i class="material-icons">delete</i>

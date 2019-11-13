@@ -41,7 +41,6 @@ public class ListsRepository {
     }
 
     public ListGift findById(Long idList) {
-
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -58,7 +57,6 @@ public class ListsRepository {
             String urlImage = resultSet.getString("url_image");
             String urlShare = resultSet.getString("url_share");
             Long idUser = resultSet.getLong("id_user");
-
             return new ListGift(idList, listName, description, urlImage, urlShare, idUser);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,7 +65,6 @@ public class ListsRepository {
     }
 
     public void deleteList(Long id) {
-
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -85,7 +82,6 @@ public class ListsRepository {
     }
 
     public void deleteGiftFromList(Long id) {
-
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD

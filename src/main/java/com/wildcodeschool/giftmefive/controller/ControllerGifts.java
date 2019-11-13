@@ -43,4 +43,17 @@ public class ControllerGifts {
         model.addAttribute("list", listGift);
         return "friends-view";
     }
+    @GetMapping("/gift-modification")
+    public String callUpdateGift(Model out, @RequestParam Long idGift) {
+        out.addAttribute("Gift", giftsRepository.findById(idGift));
+        return "gift-maker-update";
+    }
+
+    @GetMapping("/gift/update")
+    public String updateGift(@RequestParam Long idGift, @RequestParam String giftName, @RequestParam String description,
+                             @RequestParam float price, @RequestParam int preference, @RequestParam String urlImage,
+                             @RequestParam String urlWebsite, @RequestParam Long idList) {
+        giftsRepository.updateGift(idGift, giftName, description, price,preference,urlImage,urlWebsite);
+        return "redirect:/cadeaux?id=" + idList;
+    }
 }
