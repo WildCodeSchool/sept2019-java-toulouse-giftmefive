@@ -68,11 +68,11 @@ public class UserRepository {
 
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                int id = resultSet.getInt("id_user");
+                Long id = resultSet.getLong("id_user");
                 String username = resultSet.getString("username");
                 String email = resultSet.getString("email");
                 String password = resultSet.getString("password");
-                return new User(idUser, username, password, email);
+                return new User(id, username, password, email);
             }
         } catch (SQLException e) {
             e.printStackTrace();
