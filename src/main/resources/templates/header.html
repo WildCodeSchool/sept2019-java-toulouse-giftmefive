@@ -21,6 +21,8 @@
                 <li><a class="home-mobile" th:href="@{/}">ACCUEIL</a></li>
                 <li><a class="link-desktop" th:href="@{/identification}"
                        th:if="${session.user == null}">S'IDENTIFIER</a></li>
+                <li><a class="link-desktop" th:href="@{/se-deconnecter}"
+                       th:unless="${session.user == null}">SE DECONNECTER</a></li>
                 <li><a class="link-desktop" th:if="${session.user == null}" th:href="@{/identification}">MON COMPTE</a>
                 </li>
                 <li><a class="link-desktop" th:unless="${session.user == null}"
@@ -37,7 +39,7 @@
     </div>
     <div class="avatar-container">
         <!-- Todo condition thymeleaf: si pas de user connecte redirction connecxion -->
-        <a class="avatarlink" th:href="@{/modification}"><img class="avatar" src="images/userguest.png"></a>
+        <a class="avatarlink" th:href="@{/modification}" ><img class="avatar" src="images/userguest.png"></a>
     </div>
 </header>
 </body>

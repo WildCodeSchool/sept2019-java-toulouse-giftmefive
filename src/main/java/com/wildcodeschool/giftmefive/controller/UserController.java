@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -22,6 +24,13 @@ public class UserController {
             return "redirect:/";
         }
         return "signIn";
+    }
+
+    @GetMapping("se-deconnecter")
+    public String deconnection(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        return "index";
     }
 
     @GetMapping("/identification")

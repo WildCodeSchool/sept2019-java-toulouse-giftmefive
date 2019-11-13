@@ -24,8 +24,6 @@ public class CreateListsRepository {
             statement.setString(4, "localhost:8080/cadeaux-ami?id=");
             statement.setLong(5, idUser);
 
-/*id_user à créer et insert*/
-
             if (statement.executeUpdate() != 1) {
                 throw new SQLException("failed to insert data");
             }
