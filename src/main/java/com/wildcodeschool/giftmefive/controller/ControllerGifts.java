@@ -44,6 +44,7 @@ public class ControllerGifts {
         model.addAttribute("list", listGift);
         return "friends-view";
     }
+
     @GetMapping("/gift-modification")
     public String callUpdateGift(Model out, @RequestParam Long idGift) {
         out.addAttribute("Gift", giftsRepository.findById(idGift));
