@@ -13,8 +13,8 @@ public class CreateListsController {
 
     @GetMapping("/liste")
     public String giftDescription(Model model,
-                                  @RequestParam Long id) {
-        model.addAttribute("userId", id);
+                                  @RequestParam Long idUser) {
+        model.addAttribute("userId", idUser);
         return "listMaker";
     }
 
