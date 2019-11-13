@@ -38,7 +38,7 @@
                     <img alt="" th:src="${lists.urlImage}"></a>
             </div>
             <div class="shareDelete">
-                <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
+                <button th:id=|${lists.urlShare}${lists.idList}| class="myBtn"><i class="material-icons">share</i>
                 </button>
                 <form action="/listes/delete" method="get">
                     <input type="hidden" name="id" id="id" th:value="${lists.idList}">
