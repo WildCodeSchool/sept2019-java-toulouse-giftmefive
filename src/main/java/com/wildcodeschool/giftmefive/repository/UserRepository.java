@@ -72,7 +72,7 @@ public class UserRepository {
                 String username = resultSet.getString("username");
                 String email = resultSet.getString("email");
                 String password = resultSet.getString("password");
-                return new User(id, username, password, email);
+                return new User(idUser, username, password, email);
             }
         } catch (SQLException e) {
             e.printStackTrace();
