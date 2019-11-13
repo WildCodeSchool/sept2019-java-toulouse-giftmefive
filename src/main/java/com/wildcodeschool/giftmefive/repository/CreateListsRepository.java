@@ -21,7 +21,7 @@ public class CreateListsRepository {
             statement.setString(1, listName);
             statement.setString(2, description);
             statement.setString(3, urlImage);
-            statement.setString(4, "localhost:8080/listes");
+            statement.setString(4, "localhost:8080/cadeaux-ami?id=");
             statement.setLong(5, idUser);
 
 /*id_user à créer et insert*/
