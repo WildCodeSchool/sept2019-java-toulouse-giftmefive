@@ -7,6 +7,7 @@ import com.wildcodeschool.giftmefive.repository.ListsRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -55,5 +56,11 @@ public class ControllerGifts {
                              @RequestParam String urlWebsite, @RequestParam Long idList) {
         giftsRepository.updateGift(idGift, giftName, description, price,preference,urlImage,urlWebsite);
         return "redirect:/cadeaux?id=" + idList;
+    }
+
+    @GetMapping("/gift-offert")
+    public String UpdateGiftOffert(Model out, @RequestParam Long idGift, @RequestParam Long idUser,  @RequestParam Long idList) {
+        giftsRepository.updateGiftOffert(idGift,idUser);
+        return "redirect:/cadeaux-ami?id=" + idList ;
     }
 }

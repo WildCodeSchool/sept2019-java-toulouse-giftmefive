@@ -60,7 +60,6 @@ public class GiftsRepository {
                 String urlWeb = resultSet.getString("url_website");
                 Long idList = resultSet.getLong("id_list");
                 Long idFriend = resultSet.getLong("id_friend");
-
                 return new Gift(idGift, giftName, description, price, preference, urlImage, urlWeb, idList, idFriend);
             }
         } catch (SQLException e) {
@@ -103,6 +102,23 @@ public class GiftsRepository {
             statement.setString(5, urlImage);
             statement.setString(6, urlWebsite);
             statement.setLong(7, idGift);
+            if (statement.executeUpdate() != 1) {
+                throw new SQLException("failed to update data");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateGiftOffert(Long idGift, Long idUser) {
+        try {
+            Connection connection = DriverManager.getConnection(
+                    DB_URL, DB_USER, DB_PASSWORD
+            );
+            PreparedStatement statement = connection.prepareStatement(
+                    "UPDATE gift SET id_friend=? WHERE id_gift=?"
+            );
+            statement.setLong(1, idUser);
+            statement.setLong(2, idGift);
             if (statement.executeUpdate() != 1) {
                 throw new SQLException("failed to update data");
             }
