@@ -10,7 +10,7 @@ public class CreateUserRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public User save(String username, String password, String email) {
+    public User save(String username, String password, String email, Long idUser) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
@@ -31,7 +31,7 @@ public class CreateUserRepository {
 
             if (generatedKeys.next()) {
                 Long id = generatedKeys.getLong(1);
-                return new User(username, password, email);
+                return new User(username, password, email, idUser);
             } else {
                 throw new SQLException("failed to get inserted id");
             }

@@ -1,6 +1,8 @@
 package com.wildcodeschool.giftmefive.controller;
 import com.wildcodeschool.giftmefive.repository.CreateListsRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -8,6 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CreateListsController {
 
     private CreateListsRepository createListsRepository = new CreateListsRepository();
+
+    @GetMapping("/liste")
+    public String giftDescription(Model model,
+                                  @RequestParam Long id) {
+        model.addAttribute("userId", id);
+        return "listMaker";
+    }
 
     @PostMapping("/register-lists")
     public String signUp(
@@ -18,6 +27,6 @@ public class CreateListsController {
         createListsRepository.save(listName, urlImage,
                 description, idUser);
 
-        return "redirect:/listes";
+        return "redirect:/listes?id=" + idUser;
     }
 }
