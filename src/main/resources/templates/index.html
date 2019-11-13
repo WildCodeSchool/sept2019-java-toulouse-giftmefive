@@ -14,7 +14,10 @@
     <img class="banner" src="/images/banner1.jpg">
     <img class="bannerdesktop" src="/images/banner1desktop.jpg">
 </div>
-<a class="no-decoration" href=""><p class="createbutton">CREER VOTRE LISTE !</p></a>
+<a class="no-decoration" th:if="${session.user == null}" th:href="@{/identification}"><p class="createbutton">CREER
+    VOTRE LISTE !</p></a>
+<a class="no-decoration" th:unless="${session.user == null}"
+   th:href="@{/listes(id=${session.user.getIdUser()})}"><p class="createbutton">CREER VOTRE LISTE !</p></a>
 <article class="article-container">
     <div class="article">
         <div class="imagearticles-container">
