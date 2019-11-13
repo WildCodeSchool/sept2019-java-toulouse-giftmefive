@@ -15,8 +15,9 @@ public class CreateUserController {
     public String signUp(
                              @RequestParam String username,
                              @RequestParam String password,
-                             @RequestParam String email) {
-       createUserRepository.save(username, password, email);
+                             @RequestParam String email,
+                             @RequestParam Long idUser) {
+       createUserRepository.save(username, password, email, idUser);
 
         return "redirect:/listes";
     }

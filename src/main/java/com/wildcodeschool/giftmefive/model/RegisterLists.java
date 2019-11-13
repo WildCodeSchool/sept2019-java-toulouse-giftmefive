@@ -5,11 +5,13 @@ public class RegisterLists {
     private String listName;
     private String description;
     private String urlImage;
+    private Long idUser;
 
-    public RegisterLists(String listName, String description, String urlImage) {
+    public RegisterLists(String listName, String description, String urlImage, Long idUser) {
         this.listName = listName;
         this.description = description;
         this.urlImage = urlImage;
+        this.idUser = idUser;
     }
 
     public String getListName() {
@@ -34,5 +36,13 @@ public class RegisterLists {
 
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
+    }
+
+    public Long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 }

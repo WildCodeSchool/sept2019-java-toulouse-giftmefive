@@ -33,8 +33,7 @@ public class CreateListsRepository {
             ResultSet generatedKeys = statement.getGeneratedKeys();
 
             if (generatedKeys.next()) {
-                Long id = generatedKeys.getLong(1);
-                return new RegisterLists(listName, description, urlImage);
+                return new RegisterLists(listName, description, urlImage, idUser);
             } else {
                 throw new SQLException("failed to get inserted id");
             }
