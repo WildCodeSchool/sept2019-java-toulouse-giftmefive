@@ -17,7 +17,7 @@
     <h2 class="listTitlePage">MES LISTES</h2>
     <div class="createNewList">
         <section class="newList">
-            <a th:href="@{/description-liste}"><i class="material-icons">add_circle_outline</i></a>
+            <a th:href="@{/liste(idUser=${session.user.getIdUser()})}"><i class="material-icons">add_circle_outline</i></a>
             <p>CREER UNE NOUVELLE LISTE</p>
         </section>
         <section class="existingLists" th:each="lists: ${lists}">
