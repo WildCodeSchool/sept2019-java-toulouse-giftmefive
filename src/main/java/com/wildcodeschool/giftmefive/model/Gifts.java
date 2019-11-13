@@ -1,8 +1,5 @@
 package com.wildcodeschool.giftmefive.model;
 
-import com.wildcodeschool.giftmefive.entity.User;
-
-import javax.persistence.OneToOne;
 
 public class Gifts {
     private Long id;
