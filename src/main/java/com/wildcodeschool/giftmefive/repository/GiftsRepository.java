@@ -12,13 +12,13 @@ public class GiftsRepository {
     private final static String DB_USER = "greg";
     private final static String DB_PASSWORD = "Greg.321";
 
-    public List<Gift> findAllById(Long idList) {
+    public List<Gift> findAllById(Long idList,  String sqlFiltre) {
         try {
             Connection connection = DriverManager.getConnection(
                     DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                    "SELECT * FROM gift WHERE id_list = ?;"
+                    sqlFiltre
             );
             statement.setLong(1, idList);
             ResultSet resultSet = statement.executeQuery();

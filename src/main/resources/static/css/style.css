@@ -746,7 +746,12 @@ h3.listTitle {
         display: flex;
     }
 
-    .filter ul li i {
+    .filter ul li i  {
+        color: #FDFDFD;
+        font-size: 40px;
+    }
+
+    .filter ul li a  {
         color: #FDFDFD;
         font-size: 40px;
     }
