@@ -149,10 +149,11 @@ h1.page-title {
     margin-right: 10%;
     margin-left: 10%;
 }
-.list-title-container{
+
+.list-title-container {
     display: flex;
     flex-direction: row;
-   justify-content:  space-between;
+    justify-content: space-between;
 }
 
 .modification-liste {
@@ -512,7 +513,7 @@ a.Pseudolink {
         text-decoration: none;
         color: #2E323B;
         font-family: Oswald, sans-serif;
-        font-size: 1.5em;
+        font-size: 1.4em;
         align-self: center;
     }
 
@@ -598,7 +599,7 @@ a.Pseudolink {
     }
 
     #menu li {
-        padding: .5em;
+        padding: .4em;
         font-size: 1em;
     }
 
@@ -643,7 +644,7 @@ a.Pseudolink {
         text-decoration: none;
         color: white;
         font-family: Oswald, sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
         align-self: center;
         margin-right: 2em;
     }
@@ -771,12 +772,12 @@ a.Pseudolink {
         display: flex;
     }
 
-    .filter ul li i  {
+    .filter ul li i {
         color: #FDFDFD;
         font-size: 40px;
     }
 
-    .filter ul li a  {
+    .filter ul li a {
         color: #FDFDFD;
         font-size: 25px;
     }
@@ -826,7 +827,7 @@ a.Pseudolink {
     }
 
     .material-icons.listicon {
-        font-size: 5em;
+        font-size: 7em;
     }
 
     .existingLists i {
@@ -834,12 +835,11 @@ a.Pseudolink {
     }
 
     .listplus {
-        border:none;
+        border: none;
         align-self: center;
     }
 
     /*****Gift List Friend View*****/
-
     .existingGiftFriendView {
         width: 300px;
         padding: 2vw;
@@ -864,7 +864,6 @@ a.Pseudolink {
     }
 
     /* SHARING BUTTON */
-
     .myBtn {
         padding: 0;
         border: none;
