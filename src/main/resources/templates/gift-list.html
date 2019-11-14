@@ -13,34 +13,51 @@
 <header th:replace="header :: header"></header>
 <section class="filter">
     <ul>
-        <li><a text="az" th:href="@{/cadeaux(id=${list.getIdList()},filtre=${1})}">A-Z</a></li>
-        <li><a text="€" th:href="@{/cadeaux(id=${list.getIdList()},filtre=${3})}">€</a></li>
-        <li><a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></a></li>
+        <th:block th:switch="${filtreAz}">
+            <li th:case="false">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${1})}">A-Z</a>
+            </li>
+            <li th:case="true">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${2})}">Z-A</a>
+            </li>
+        </th:block>
+        <th:block th:switch="${filtrePrice}">
+            <li th:case="true">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${3})}">€ + -</a>
+            </li>
+            <li th:case="false">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${4})}">€ - +</a>
+            </li>
+        </th:block>
+        <th:block th:switch="${filtrePreference}">
+            <li th:case="false">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></a>
+            </li>
+            <li th:case="true">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${6})}"><i class="material-icons">star_border</i></a>
+            </li>
+        </th:block>
     </ul>
 </section>
 <div class="myGifts">
     <h2 class="giftTitlePage" th:text="${list.getListName()}">NOEL 2019</h2>
     <div class="createNewGift">
-        <section class="newGift">
+        <section class="existingGift listplus">
             <a th:href="@{/description-cadeau(id=${list.getIdList()})}"><i class="material-icons">add_circle_outline</i></a>
             <p>AJOUTER UN CADEAU</p>
         </section>
         <section class="existingGift" th:each="gift: ${gifts}">
-            <div class="list-title-container">
             <div>
                 <h3 class="giftTitle" th:text="${gift.giftName}">Seiko Sport 5</h3>
                 <hr class="underGiftTitle">
             </div>
-            <form action="/gift-modification" method="get">
+            <form action="/gift-modification" method="get" class="modification-liste">
                 <input type="hidden" name="idGift" id="idGift" th:value="${gift.idGift}">
                 <button type="submit" class="edit-button">
                     <i class="material-icons">edit</i>
                 </button>
             </form>
-            </div>
-            <div class="img-list-container">
             <img th:src="${gift.getUrlImage()}" alt="">
-            </div>
             <hr class="underGiftTitle">
             <div class="priceStars">
                 <ul>
@@ -65,7 +82,7 @@
             <form action="/gift/delete" method="get">
                 <input type="hidden" name="id" id="id" th:value="${gift.idGift}">
                 <input type="hidden" name="idList" id="idList" th:value="${list.getIdList()}">
-                <button type="submit" class="myBtn">
+                <button th:unless="${gift.idFriend!=0}" type="submit" class="myBtn">
                     <i class="material-icons">delete</i>
                 </button>
             </form>

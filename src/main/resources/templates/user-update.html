@@ -12,14 +12,11 @@
 <body class="bodyPage4">
 <header th:replace="header :: header"></header>
 <form class="sections" action="enregistre_user" method="post">
-    <h1>Mon Compte</h1>
+    <h1>MON COMPTE</h1>
     <input id="idUser" name="idUser" th:value="${User.idUser}" type="hidden">
-    <div class="displayrow">
-        <img class="avatar2" src="images/avatar.jpg">
-    </div>
     <div class="label">
         <div class="displayrow">
-            <label class="labelForm" for="username">Pseudo</label>
+            <label class="labelForm" for="username">Pseudo :</label>
             <input class="pseudo" id="username" name="username" th:value="${User.username}" placeholder="  Oki31"
                    type="text">
         </div>

@@ -10,10 +10,7 @@
 <body class="bodyPage4">
 <header th:replace="header :: header"></header>
 <section class="sections">
-    <h1>INSCRIPTION</h1>
-    <div class="displayrow">
-    <img class="avatar2" src="images/avatar.jpg">
-    </div>
+    <h1>CREER UN COMPTE</h1>
     <form action="/sign-up" method="post">
     <div class="label">
         <input type="hidden" id="idUser" name="idUser">
@@ -37,7 +34,7 @@
     <div class="displayrow">
         <input class="signUp" type="submit" value="S'INSCRIRE">
     <p>OU</p>
-    <a class="alreadySignIn" th:href="@{/identification}">J'ai déjà un compte</a>
+    <a class="alreadySignIn" th:href="@{/identification}">J'AI DÉJÀ UN COMPTE</a>
     </div>
     </form>
 </section>

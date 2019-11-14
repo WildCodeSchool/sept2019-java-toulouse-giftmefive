@@ -14,11 +14,38 @@
 <div class="page">
     <section class="filter">
         <ul>
-            <li>A-Z</li>
-            <li>€</li>
-            <li><i class="material-icons">star_border</i></li>
-            <li>Déjà acheté</li>
-            <li>Encore à offrir</li>
+            <th:block th:switch="${filtreAz}">
+                <li th:case="false">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${1})}">A-Z</a>
+                </li>
+                <li th:case="true">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${2})}">Z-A</a>
+                </li>
+            </th:block>
+            <th:block th:switch="${filtrePrice}">
+                <li th:case="true">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${3})}">€ + -</a>
+                </li>
+                <li th:case="false">
+                    <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${4})}">€ - +</a>
+                </li>
+            </th:block>
+            <th:block th:switch="${filtrePreference}">
+                <li th:case="false">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></a>
+                </li>
+                <li th:case="true">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${6})}"><i class="material-icons">star_border</i></a>
+                </li>
+            </th:block>
+            <th:block th:switch="${filtreOffert}">
+                <li th:case="false">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${7})}">A</a>
+                </li>
+                <li th:case="true">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${8})}">Off</a>
+                </li>
+            </th:block>
         </ul>
     </section>
 </div>
@@ -55,7 +82,7 @@
                 <div class="linkBuy">
                     <a class="urlArticle" th:href="${gift.getUrlWebsite()}"><i class="material-icons">link</i></a>
                     <a class="buttonToBuy" th:href="@{/identification}"  th:if="${session.user == null}">Offrir</a>
-                    <a class="buttonToBuy" th:href="@{/gift-offert(idUser=${session.user.idUser},idGift=${gift.idGift},idList=${gift.idList})}" th:if="${gift.idFriend == 0 and session.user != null}">Offrir</a>
+                    <a class="buttonToBuy" th:href="@{/gift-offert(idUser=${session.user.idUser},idGift=${gift.idGift},idList=${gift.idList})}" th:if="${gift.getIdFriend()== 0 and session.user != null}">Offrir</a>
                 </div>
             </section>
         </div>
