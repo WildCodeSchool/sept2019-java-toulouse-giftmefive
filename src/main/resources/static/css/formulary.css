@@ -1,6 +1,7 @@
 html, body {
     margin : 0;
     padding: 0;
+    font-family: Oswald, sans-serif;
 }
 
 .sections {
@@ -62,6 +63,7 @@ h1 {
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
+    border-color: rgba(37, 193, 185, 0.5);
 }
 
 .rating {
@@ -113,11 +115,6 @@ h1 {
 
 @media screen and (min-width: 761px) {
 
-    h1 {
-        font-size: 2em;
-        padding: 2em;
-    }
-
     .signUp, .connection, .submitList, .submitGift, .button-signUp {
         font-size: 1.5em;
         margin: 2em;
@@ -138,8 +135,9 @@ h1 {
 
     .descriptionGift, .descriptionList {
         font-size: 1.5em;
-        border-radius: 1em;
-        width: 18em;
+        border-radius: 0.5em;
+        width: 19em;
+        border-color: rgba(37, 193, 185, 0.5);
     }
 
     section.signin {

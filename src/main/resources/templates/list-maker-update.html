@@ -4,8 +4,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/formulary.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/formulary.css" th:href="@{css/formulary.css}">
     <meta charset="UTF-8">
     <title>Description de la liste</title>
 </head>
@@ -32,7 +34,7 @@
             <label class="labelForm" for="descriptionList">Description de la liste</label>
             <textarea class="descriptionList" id="descriptionList" name="descriptionList" th:text="${List.description}"
                       placeholder="  Pour cette merveilleuse occasion"></textarea>
-            <input class="submitList" type="submit" value="FINI !">
+            <input class="submitList" type="submit" value="ENREGISTRER">
         </div>
     </form>
 </section>
