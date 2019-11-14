@@ -26,6 +26,7 @@
             <p>AJOUTER UN CADEAU</p>
         </section>
         <section class="existingGift" th:each="gift: ${gifts}">
+            <div class="list-title-container">
             <div>
                 <h3 class="giftTitle" th:text="${gift.giftName}">Seiko Sport 5</h3>
                 <hr class="underGiftTitle">
@@ -36,7 +37,10 @@
                     <i class="material-icons">edit</i>
                 </button>
             </form>
+            </div>
+            <div class="img-list-container">
             <img th:src="${gift.getUrlImage()}" alt="">
+            </div>
             <hr class="underGiftTitle">
             <div class="priceStars">
                 <ul>
