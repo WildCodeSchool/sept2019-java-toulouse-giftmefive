@@ -196,8 +196,9 @@ h1.page-title {
 .existingLists {
     display: flex;
     flex-direction: column;
-    border: 1px solid #2E323B;
+    border: 1px solid #25C1BB;
     margin: 1em;
+    border-radius: 10px;
 }
 
 .createNewList {
@@ -403,6 +404,7 @@ h3.listTitle {
 
 .question {
     font-weight: bold;
+    color: #25C1BB;
 }
 
 .answer {
@@ -420,11 +422,22 @@ h3.listTitle {
     align-items: center;
 }
 
-.yourEmail, .yourQuestion {
-    width: 30%;
+.yourEmail {
     margin: 0.5em;
     border-radius: 10px;
     padding: 0.5em;
+    font-size: 1.5em;
+    width: 19em;
+    border-color: rgba(37, 193, 185, 0.5);
+}
+
+.yourQuestion {
+    margin: 0.5em;
+    border-radius: 10px;
+    padding: 0.5em;
+    font-size: 1.5em;
+    width: 26em;
+    border-color: rgba(37, 193, 185, 0.5);
 }
 
 .yourQuestion {
@@ -432,8 +445,8 @@ h3.listTitle {
 }
 
 .submitContact {
-    background-color: rgb(37, 193, 187);
-    color: #FDFDFD;
+    background-color: #25C1BB;
+    color: white;
     margin: 0.3em 0 1em 0;
     padding: 0.7em 1.5em;
     border-radius: 10px;
