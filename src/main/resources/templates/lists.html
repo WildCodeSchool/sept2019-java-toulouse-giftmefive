@@ -22,11 +22,11 @@
         </section>
         <section class="existingLists" th:each="lists: ${lists}">
             <div class="list-title-container">
-                <div>
+                <div class="list-gift-container">
                     <h3 class="listTitle" th:text="${lists.listName}"></h3>
                     <hr class="underListTitle">
                 </div>
-                <form action="/listes-modification" method="get">
+                <form action="/listes-modification" method="get" class="modification-liste">
                     <input type="hidden" name="idList" id="idList" th:value="${lists.idList}">
                     <button type="submit" class="edit-button">
                         <i class="material-icons">edit</i>
