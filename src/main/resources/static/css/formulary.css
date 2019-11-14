@@ -131,6 +131,7 @@ h1 {
     .urlImage, .listName, .urlArticle, .giftName, .price, .pseudo, .password, .passwordConfirmation, .email {
         margin-top: 1em;
         font-size: 1em;
+        margin-bottom: 0;
     }
 
     .descriptionGift, .descriptionList {
