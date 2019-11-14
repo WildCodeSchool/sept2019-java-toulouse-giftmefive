@@ -1,12 +1,19 @@
+html, body {
+    margin : 0;
+    padding: 0;
+}
+
 .sections {
-    background-color: lightgray;
     font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     font-size: 1.8em;
     text-align: center;
-    color: #25C1BB;
+    color: rgb(37, 193, 187);
     letter-spacing: 0.2em;
     padding: 1em;
 }
@@ -15,6 +22,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .avatar2 {
