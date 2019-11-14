@@ -19,6 +19,6 @@ public class CreateUserController {
                              @RequestParam Long idUser) {
        createUserRepository.save(username, password, email, idUser);
 
-        return "redirect:/listes";
+        return "signIn";
     }
 }

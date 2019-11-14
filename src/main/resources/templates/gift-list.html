@@ -82,7 +82,7 @@
             <form action="/gift/delete" method="get">
                 <input type="hidden" name="id" id="id" th:value="${gift.idGift}">
                 <input type="hidden" name="idList" id="idList" th:value="${list.getIdList()}">
-                <button type="submit" class="myBtn">
+                <button th:unless="${gift.idFriend!=0}" type="submit" class="myBtn">
                     <i class="material-icons">delete</i>
                 </button>
             </form>

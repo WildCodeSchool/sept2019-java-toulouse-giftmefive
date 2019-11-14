@@ -464,6 +464,11 @@ h3.listTitle {
     background: none;
 }
 
+a.Pseudolink {
+    color: white;
+    margin-left: 1rem;
+}
+
 /* MOBILE VERSION (FOR BURGER MENU) */
 
 @media screen and (max-width: 761px) {
