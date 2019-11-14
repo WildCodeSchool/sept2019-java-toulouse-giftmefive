@@ -23,7 +23,6 @@ public class ControllerGifts {
         boolean filtreAz = true;
         boolean filtrePrice = true;
         boolean filtrePreference = true;
-
         switch (filtre) {
             case 0:
                 sql = "SELECT * FROM gift WHERE id_list = ?;";
@@ -53,7 +52,6 @@ public class ControllerGifts {
                 filtrePreference = false;
                 break;
             default:
-
         }
         ListGift listGift = listsRepository.findById(id);
         List<Gift> gifts = giftsRepository.findAllById(id, sql);
