@@ -42,16 +42,16 @@
 <div class="myGifts">
     <h2 class="giftTitlePage" th:text="${list.getListName()}">NOEL 2019</h2>
     <div class="createNewGift">
-        <section class="newGift">
+        <section class="existingGift listplus">
             <a th:href="@{/description-cadeau(id=${list.getIdList()})}"><i class="material-icons">add_circle_outline</i></a>
             <p>AJOUTER UN CADEAU</p>
         </section>
         <section class="existingGift" th:each="gift: ${gifts}">
-            <div>
+            <div class="list-gift-container">
                 <h3 class="giftTitle" th:text="${gift.giftName}">Seiko Sport 5</h3>
                 <hr class="underGiftTitle">
             </div>
-            <form action="/gift-modification" method="get">
+            <form action="/gift-modification" method="get" class="modification-liste">
                 <input type="hidden" name="idGift" id="idGift" th:value="${gift.idGift}">
                 <button type="submit" class="edit-button">
                     <i class="material-icons">edit</i>

@@ -7,7 +7,6 @@ body {
     color: #2E323B;
     font-size: 1em;
     font-family: 'Oswald', sans-serif;
-    background-color: whitesmoke;
 }
 
 a {
@@ -85,7 +84,6 @@ article.article-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: whitesmoke;
     padding-top: 1em;
 }
 
@@ -157,6 +155,16 @@ h1.page-title {
    justify-content:  space-between;
 }
 
+.modification-liste {
+    position: absolute;
+}
+
+.list-gift-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 .edit-button {
     padding: 0.5em;
     border: none;
@@ -225,6 +233,19 @@ h3.listTitle {
     font-size: 1em;
     color: #2E323B;
     font-family: Oswald, sans-serif;
+}
+
+.material-icons.listicon {
+    font-size: 7em;
+}
+
+.listplus {
+    border: none;
+}
+
+.delete-button {
+    border: none;
+    background-color: white;
 }
 
 /*****GIFT LIST*****/
@@ -669,7 +690,6 @@ a.Pseudolink {
         display: flex;
         flex-direction: row;
         align-items: baseline;
-        background-color: whitesmoke;
     }
 
     div.article {
@@ -758,7 +778,7 @@ a.Pseudolink {
 
     .filter ul li a  {
         color: #FDFDFD;
-        font-size: 40px;
+        font-size: 25px;
     }
 
     .priceStars ul {
@@ -800,13 +820,22 @@ a.Pseudolink {
         font-size: 3em;
     }
 
-    .existingLists {
+    .existingLists, .existingGift {
         font-size: 1.5em;
-        width: 30%;
+        width: 29%;
+    }
+
+    .material-icons.listicon {
+        font-size: 7em;
     }
 
     .existingLists i {
         font-size: 1.5em;
+    }
+
+    .listplus {
+        border:none;
+        align-self: center;
     }
 
     /*****Gift List Friend View*****/
