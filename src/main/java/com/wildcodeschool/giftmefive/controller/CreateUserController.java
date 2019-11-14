@@ -15,10 +15,14 @@ public class CreateUserController {
     public String signUp(
                              @RequestParam String username,
                              @RequestParam String password,
+                             @RequestParam String passwordConfirmation,
                              @RequestParam String email,
                              @RequestParam Long idUser) {
        createUserRepository.save(username, password, email, idUser);
 
-        return "redirect:/listes";
+        if (!password.equals(passwordConfirmation)) {
+            return "inscription";
+        }
+        return "signIn" ;
     }
 }
