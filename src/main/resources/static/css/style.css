@@ -245,7 +245,7 @@ h3.listTitle {
 
 .existingGift.listplus {
     border: none;
-    margin: 2em 0;
+    align-self: center;
 }
 
 .existingGift.listplus a i {
@@ -260,6 +260,11 @@ h3.listTitle {
 .delete-button {
     border: none;
     background-color: white;
+}
+
+.existingLists.listplus {
+    border: none;
+    align-self: center;
 }
 
 /*****GIFT LIST*****/
@@ -286,7 +291,6 @@ h3.listTitle {
     flex-direction: column;
     justify-content: flex-start;
     text-align: center;
-    flex-wrap: wrap;
 }
 
 .newGift {
@@ -311,7 +315,7 @@ h3.listTitle {
 
 .delete-gift {
     text-align: right;
-    padding: 0.2em 0.8em;
+    padding: 0.2em 0.35em;
 }
 
 .delete {
@@ -731,6 +735,11 @@ a.Pseudolink {
     }
 
     /* GIFT LIST DESKTOP */
+
+    .myGifts {
+        margin-right: 0;
+    }
+
     .newGift {
         flex-direction: column;
         justify-content: center;
@@ -746,6 +755,7 @@ a.Pseudolink {
 
     .createNewGift {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .newGift i:hover, .delete i:hover {
@@ -762,7 +772,8 @@ a.Pseudolink {
 
     .existingGift {
         padding: 2vw;
-        width: 300px;
+        width: 24%;
+        margin: 1em 2em 1em 0;
     }
 
     .filter ul {
@@ -812,6 +823,25 @@ a.Pseudolink {
         margin-right: 5.5vw;
     }
 
+    .myBtn.deletebtn i, .edit-button i {
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .banner-title-gift {
+        display: flex;
+    }
+
+    .edit-button {
+        padding: 0;
+    }
+
+    .list-title-gift {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
     /* LIST DESKTOP */
     .createNewList {
         flex-direction: row;
@@ -838,7 +868,7 @@ a.Pseudolink {
         font-size: 3em;
     }
 
-    .existingLists, .existingGift {
+    .existingLists {
         font-size: 1.5em;
         width: 29%;
     }
@@ -849,11 +879,6 @@ a.Pseudolink {
 
     .existingLists i {
         font-size: 1.5em;
-    }
-
-    .listplus {
-        border: none;
-        align-self: center;
     }
 
     /*****Gift List Friend View*****/

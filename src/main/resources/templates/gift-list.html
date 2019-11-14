@@ -47,16 +47,18 @@
             <p>AJOUTER UN CADEAU</p>
         </section>
         <section class="existingGift" th:each="gift: ${gifts}">
-            <div>
+            <div class="banner-title-gift">
+                <div class="list-title-gift">
                 <h3 class="giftTitle" th:text="${gift.giftName}">Seiko Sport 5</h3>
                 <hr class="underGiftTitle">
-            </div>
+                </div>
             <form action="/gift-modification" method="get" class="modification-liste">
                 <input type="hidden" name="idGift" id="idGift" th:value="${gift.idGift}">
                 <button type="submit" class="edit-button">
                     <i class="material-icons">edit</i>
                 </button>
             </form>
+            </div>
             <img th:src="${gift.getUrlImage()}" alt="">
             <hr class="underGiftTitle">
             <div class="priceStars">
@@ -82,7 +84,7 @@
             <form action="/gift/delete" method="get" class="delete-gift">
                 <input type="hidden" name="id" id="id" th:value="${gift.idGift}">
                 <input type="hidden" name="idList" id="idList" th:value="${list.getIdList()}">
-                <button th:unless="${gift.idFriend!=0}" type="submit" class="myBtn">
+                <button th:unless="${gift.idFriend!=0}" type="submit" class="myBtn deletebtn">
                     <i class="material-icons">delete</i>
                 </button>
             </form>
