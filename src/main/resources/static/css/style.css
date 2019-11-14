@@ -235,6 +235,19 @@ h3.listTitle {
     font-family: Oswald, sans-serif;
 }
 
+.material-icons.listicon {
+    font-size: 7em;
+}
+
+.listplus {
+    border: none;
+}
+
+.delete-button {
+    border: none;
+    background-color: white;
+}
+
 /*****GIFT LIST*****/
 
 .myGifts {
@@ -760,7 +773,7 @@ h3.listTitle {
 
     .filter ul li a  {
         color: #FDFDFD;
-        font-size: 40px;
+        font-size: 25px;
     }
 
     .priceStars ul {
@@ -802,7 +815,7 @@ h3.listTitle {
         font-size: 3em;
     }
 
-    .existingLists {
+    .existingLists, .existingGift {
         font-size: 1.5em;
         width: 29%;
     }
