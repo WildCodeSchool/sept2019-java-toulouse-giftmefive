@@ -14,7 +14,7 @@
 <body>
 <header th:replace="header :: header"></header>
 <div class="myLists">
-    <h2 class="listTitlePage">MES LISTES</h2>
+    <h1>MES LISTES</h1>
     <div class="createNewList">
         <section class="existingLists listplus">
             <a th:href="@{/liste(idUser=${session.user.getIdUser()})}"><i class="material-icons listicon">add_circle_outline</i></a>
