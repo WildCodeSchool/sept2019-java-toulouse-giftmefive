@@ -26,9 +26,6 @@ public class ControllerGifts {
         switch (filtre) {
             case 0:
                 sql = "SELECT * FROM gift WHERE id_list = ?;";
-                filtreAz = true;
-                filtrePrice = true;
-                filtrePreference = true;
                 break;
             case 1:
                 sql = "SELECT * FROM gift WHERE id_list = ? order by gift_name asc;";

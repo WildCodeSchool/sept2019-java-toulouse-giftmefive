@@ -13,9 +13,30 @@
 <header th:replace="header :: header"></header>
 <section class="filter">
     <ul>
-        <li><a text="az" th:href="@{/cadeaux(id=${list.getIdList()},filtre=${1})}">A-Z</a></li>
-        <li><a text="€" th:href="@{/cadeaux(id=${list.getIdList()},filtre=${3})}">€</a></li>
-        <li><a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></a></li>
+        <th:block th:switch="${filtreAz}">
+            <li th:case="false">
+               <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${1})}">A-Z</a>
+            </li>
+            <li th:case="true">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${2})}">Z-A</a>
+            </li>
+        </th:block>
+        <th:block th:switch="${filtrePrice}">
+            <li th:case="true">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${3})}">€ + -</a>
+            </li>
+            <li th:case="false">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${4})}">€ - +</a>
+            </li>
+        </th:block>
+        <th:block th:switch="${filtrePreference}">
+            <li th:case="false">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></a>
+            </li>
+            <li th:case="true">
+                <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${6})}"><i class="material-icons">star_border</i></a>
+            </li>
+        </th:block>
     </ul>
 </section>
 <div class="myGifts">
