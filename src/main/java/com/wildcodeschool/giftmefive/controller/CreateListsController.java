@@ -20,12 +20,12 @@ public class CreateListsController {
 
     @PostMapping("/register-lists")
     public String signUp(
-                         @RequestParam String listName,
-                         @RequestParam String urlImage,
-                         @RequestParam String description,
-                         @RequestParam Long idUser) {
-        createListsRepository.save(listName, urlImage,
-                description, idUser);
+            @RequestParam String listName,
+            @RequestParam(defaultValue = "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80") String urlImage,
+            @RequestParam String description,
+            @RequestParam Long idUser) {
+        createListsRepository.save(listName,
+                description, urlImage, idUser);
 
         return "redirect:/listes?id=" + idUser;
     }

@@ -20,9 +20,10 @@ public class CreateUserController {
                              @RequestParam Long idUser) {
        createUserRepository.save(username, password, email, idUser);
 
-        if (!password.equals(passwordConfirmation)) {
+       if (!password.equals(passwordConfirmation)) {
             return "inscription";
         }
+
         return "signIn" ;
     }
 }

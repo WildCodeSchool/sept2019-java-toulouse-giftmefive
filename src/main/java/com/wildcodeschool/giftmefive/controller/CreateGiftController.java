@@ -27,7 +27,7 @@ public class CreateGiftController {
 
     @PostMapping("/register-gifts")
     public String registerGifts(
-                                @RequestParam String urlImage,
+                                @RequestParam(defaultValue = "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80") String urlImage,
                                 @RequestParam String urlWebsite,
                                 @RequestParam String giftName,
                                 @RequestParam String description,
