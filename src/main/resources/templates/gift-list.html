@@ -13,9 +13,9 @@
 <header th:replace="header :: header"></header>
 <section class="filter">
     <ul>
-        <li>A-Z</li>
-        <li>€</li>
-        <li><i class="material-icons">star_border</i></li>
+        <li><a text="az" th:href="@{/cadeaux(id=${list.getIdList()},filtre=${1})}">A-Z</a></li>
+        <li><a text="€" th:href="@{/cadeaux(id=${list.getIdList()},filtre=${3})}">€</a></li>
+        <li><a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></a></li>
     </ul>
 </section>
 <div class="myGifts">

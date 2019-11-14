@@ -7,7 +7,6 @@ import com.wildcodeschool.giftmefive.repository.ListsRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -19,12 +18,48 @@ public class ControllerGifts {
     private ListsRepository listsRepository = new ListsRepository();
 
     @GetMapping("/cadeaux")
-    public String getGift(Model model, @RequestParam Long id) {
-
+    public String getGift(Model model, @RequestParam Long id, @RequestParam(defaultValue = "0") int filtre) {
+        String sql = "SELECT * FROM gift WHERE id_list = ?;";
+        boolean filtreAz = true;
+        boolean filtrePrice = true;
+        boolean filtrePreference = true;
+        switch (filtre) {
+            case 0:
+                sql = "SELECT * FROM gift WHERE id_list = ?;";
+                filtreAz = true;
+                filtrePrice = true;
+                filtrePreference = true;
+                break;
+            case 1:
+                sql = "SELECT * FROM gift WHERE id_list = ? order by gift_name asc;";
+                break;
+            case 2:
+                sql = "SELECT * FROM gift WHERE id_list = ? order by gift_name desc;";
+                filtreAz = false;
+                break;
+            case 3:
+                sql = "SELECT * FROM gift WHERE id_list = ? order by price desc;";
+                filtrePrice = false;
+                break;
+            case 4:
+                sql = "SELECT * FROM gift WHERE id_list = ? order by price asc;";
+                break;
+            case 5:
+                sql = "SELECT * FROM gift WHERE id_list = ? order by preference asc;";
+                break;
+            case 6:
+                sql = "SELECT * FROM gift WHERE id_list = ? order by preference desc;";
+                filtrePreference = false;
+                break;
+            default:
+        }
         ListGift listGift = listsRepository.findById(id);
-        List<Gift> gifts = giftsRepository.findAllById(id);
+        List<Gift> gifts = giftsRepository.findAllById(id, sql);
         model.addAttribute("gifts", gifts);
         model.addAttribute("list", listGift);
+        model.addAttribute("filtreAz", filtreAz);
+        model.addAttribute("filtrePrice", filtrePrice);
+        model.addAttribute("filtrePreference", filtrePreference);
         return "gift-list";
     }
 
@@ -36,10 +71,28 @@ public class ControllerGifts {
     }
 
     @GetMapping("/cadeaux-ami")
-    public String getFriendGift(Model model, @RequestParam Long id) {
+    public String getFriendGift(Model model, @RequestParam Long id, @RequestParam(defaultValue = "0") int filtre) {
 
+        String sql = "SELECT * FROM gift WHERE id_list = ?;";
+
+        switch (filtre) {
+            case 0:
+                sql = "SELECT * FROM gift WHERE id_list = ?;";
+                break;
+            case 1:
+                sql = "SELECT * FROM gift WHERE id_list = ?;";
+                break;
+            case 2:
+                sql = "SELECT * FROM gift WHERE id_list = ?;";
+                break;
+            case 3:
+                sql = "SELECT * FROM gift WHERE id_list = ?;";
+                break;
+            default:
+                // code block
+        }
         ListGift listGift = listsRepository.findById(id);
-        List<Gift> gifts = giftsRepository.findAllById(id);
+        List<Gift> gifts = giftsRepository.findAllById(id, sql);
         model.addAttribute("gifts", gifts);
         model.addAttribute("list", listGift);
         return "friends-view";
