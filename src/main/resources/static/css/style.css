@@ -804,11 +804,20 @@ h3.listTitle {
 
     .existingLists {
         font-size: 1.5em;
-        width: 30%;
+        width: 29%;
+    }
+
+    .material-icons.listicon {
+        font-size: 7em;
     }
 
     .existingLists i {
         font-size: 1.5em;
+    }
+
+    .listplus {
+        border:none;
+        align-self: center;
     }
 
     /*****Gift List Friend View*****/
