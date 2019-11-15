@@ -15,7 +15,7 @@
 <header th:replace="header :: header"></header>
 <div class="myLists">
     <h1>MES LISTES</h1>
-    <div class="createNewList">
+<div class="topList">
         <section class="existingLists listplus">
             <a th:href="@{/liste(idUser=${session.user.getIdUser()})}"><i class="material-icons listicon">add_circle_outline</i></a>
             <p>CREER UNE NOUVELLE LISTE</p>
@@ -33,6 +33,8 @@
               </section>
           </form>
       </section>
+</div>
+    <div class="createNewList">
         <section class="existingLists" th:each="lists: ${lists}">
             <div class="list-title-container">
                 <div class="list-gift-container">

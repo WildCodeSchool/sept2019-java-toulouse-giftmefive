@@ -867,6 +867,12 @@ a.Pseudolink {
     }
 
     /* LIST DESKTOP */
+    .topList {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     .createNewList {
         flex-direction: row;
         justify-content: flex-start;
