@@ -309,13 +309,14 @@ h3.listTitle {
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    border: 1px solid #2E323B;
+    border: 1px solid rgb(37, 193, 187);
+    border-radius: 10px;
     margin: 1em;
 }
 
 .delete-gift {
     text-align: right;
-    padding: 0.2em 0.35em;
+    padding: 0.2em 0.8em;
 }
 
 .delete {
@@ -359,6 +360,10 @@ h3.listTitle {
 .priceStars ul li {
     display: flex;
     align-items: center;
+}
+
+.banner-title-gift {
+    display: flex;
 }
 
 /*****Gift List Friend View*****/
@@ -828,10 +833,6 @@ a.Pseudolink {
         cursor: pointer;
     }
 
-    .banner-title-gift {
-        display: flex;
-    }
-
     .edit-button {
         padding: 0;
     }
@@ -840,6 +841,11 @@ a.Pseudolink {
         display: flex;
         flex-direction: column;
         margin: auto;
+    }
+
+    .delete-gift {
+        text-align: right;
+        padding: 0.2em 0.35em;
     }
 
     /* LIST DESKTOP */
