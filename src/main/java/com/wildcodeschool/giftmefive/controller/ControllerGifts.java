@@ -140,4 +140,5 @@ public class ControllerGifts {
         giftsRepository.updateGiftOffert(idGift,idUser);
         return "redirect:/cadeaux-ami?id=" + idList ;
     }
+
 }
