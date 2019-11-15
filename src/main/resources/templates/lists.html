@@ -20,6 +20,19 @@
             <a th:href="@{/liste(idUser=${session.user.getIdUser()})}"><i class="material-icons listicon">add_circle_outline</i></a>
             <p>CREER UNE NOUVELLE LISTE</p>
         </section>
+      <section>
+          <form class="sections" action="/cadeaux-ami" method="Get">
+              <section class="signin">
+                  <div class="displayrow">
+                      <label class="labelForm" for="id">Recherche une liste ami</label>
+                      <input class="pseudo" name="id" placeholder="  index liste ami" type="text">
+                  </div>
+                  <div class="displaycol">
+                      <input class="connection" type="submit" value="RECHERCHE">
+                  </div>
+              </section>
+          </form>
+      </section>
         <section class="existingLists" th:each="lists: ${lists}">
             <div class="list-title-container">
                 <div class="list-gift-container">
