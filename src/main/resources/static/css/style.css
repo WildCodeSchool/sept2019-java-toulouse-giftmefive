@@ -181,6 +181,10 @@ h1.page-title {
     font-size: 1em;
 }
 
+.rechercher {
+    margin-top:1em;
+}
+
 .listTitlePage {
     text-align: center;
     margin: 1em;
@@ -279,6 +283,37 @@ h3.listTitle {
 .existingLists.listplus {
     border: none;
     align-self: center;
+    text-align: center;
+}
+
+.existingLists.listplus p {
+    margin-bottom: 1.5em;
+}
+
+.labelFormTop {
+    margin-bottom: 2em;
+}
+
+.displaycolfriend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.connection.rechercher {
+    padding: 0.5em 2em;
+    color: white;
+    background-color: rgb(37, 193, 187);
+    font-weight: bolder;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 3em;
+}
+
+.signinfriend {
+    margin: 3em;
 }
 
 /*****GIFT LIST*****/
@@ -889,6 +924,19 @@ a.Pseudolink {
     }
 
     /* LIST DESKTOP */
+    .topList {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .labelFormTop {
+        font-size: 1.5em;
+        text-align: center;
+        width: 20em;
+        margin-top: 1em;
+    }
+
     .createNewList {
         flex-direction: row;
         justify-content: flex-start;
