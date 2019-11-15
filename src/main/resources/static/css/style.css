@@ -45,9 +45,6 @@ a.title {
 div.avatar-container {
     margin-top: .3em;
     width: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 img.avatar {
@@ -582,8 +579,10 @@ h3.listTitle {
 }
 
 a.Pseudolink {
-    color: white;
-    margin-left: 1rem;
+    color: rgb(37, 193, 187);
+    font-family: Oswald;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 /* MOBILE VERSION (FOR BURGER MENU) */
