@@ -383,9 +383,7 @@ h3.listTitle {
 
 .buttonToBuy {
     border-radius: 5px;
-    margin: 0.4em;
     padding: 0 1em;
-    color: white;
 }
 
 .urlArticle {
@@ -932,6 +930,10 @@ a.Pseudolink {
 
     .priceStars {
         padding: 1vw;
+    }
+
+    .existingGift.ami-view {
+        width: 26%;
     }
 
     /* SHARING BUTTON */
