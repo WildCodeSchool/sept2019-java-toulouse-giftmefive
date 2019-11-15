@@ -232,8 +232,9 @@ h1.page-title {
 }
 
 .existingLists img {
-    max-width: 80%;
-    height: auto;
+    max-width: 100%;
+    height: 100%;
+    object-fit: fill;
 }
 
 h3.listTitle {
@@ -344,6 +345,7 @@ h3.listTitle {
     margin: 3vw 0;
     object-fit: contain;
     max-height: 500px;
+    align-self: center;
 }
 
 .filter ul {
@@ -894,11 +896,11 @@ a.Pseudolink {
 
     .existingLists {
         font-size: 1.5em;
-        width: 29%;
+        width: 20%;
     }
 
     .material-icons.listicon {
-        font-size: 7em;
+        font-size: 5em;
     }
 
     .existingLists i {
