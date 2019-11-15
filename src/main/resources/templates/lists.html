@@ -48,9 +48,9 @@
                     </button>
                 </form>
             </div>
-            <div class="img-list-container">
+            <div class="imagegiftlistcontainer">
                 <a th:href="@{/cadeaux(id=${lists.idList})}">
-                    <img alt="" th:src="${lists.urlImage}"></a>
+                    <img class="imgGiftList" alt="" th:src="${lists.urlImage}"></a>
             </div>
             <div class="shareDelete">
                 <button th:id=|${lists.urlShare}${lists.idList}| class="myBtn"><i class="material-icons">share</i>
