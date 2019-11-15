@@ -32,7 +32,8 @@
             </th:block>
             <th:block th:switch="${filtrePreference}">
                 <li th:case="false">
-                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></a>
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></br>
+                        <i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></a>
                 </li>
                 <li th:case="true">
                     <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${6})}"><i class="material-icons">star_border</i></a>
@@ -40,54 +41,58 @@
             </th:block>
             <th:block th:switch="${filtreOffert}">
                 <li th:case="false">
-                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${7})}">A</a>
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${7})}">&#127873</a>
                 </li>
                 <li th:case="true">
-                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${8})}">Off</a>
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${8})}">Déjà &#127873</a>
                 </li>
             </th:block>
         </ul>
     </section>
 </div>
-<h2 th:text="${list.getListName()}" class="giftTitlePage">Nom de la liste</h2>
 <div class="myGifts">
-    <div class="desktopViewAllGift">
-        <div th:each="gift: ${gifts}" class="allGifts">
-            <section class="existingGiftFriendView">
-                <h3 th:text="${gift.giftName}" class="giftTitle">Nom du cadeau</h3>
-                <hr class="underGiftTitle">
-                <img class="imgGiftList" th:src="${gift.getUrlImage()}" alt="Link">
-                <hr class="underGiftTitle">
-                <div class="priceStars">
-                    <ul>
-                        <li>
-                            <span th:text="|${gift.price}|"></span>
-                            <i class="material-icons">euro_symbol</i>
-                        </li>
-                        <li th:if="${gift.preference} == 1" class="starOne">
-                            <i class="material-icons">star</i>
-                        </li>
-                        <li th:if="${gift.preference} == 2" class="starTwo">
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                        </li>
-                        <li th:if="${gift.preference} == 3" class="starThree">
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                        </li>
-                    </ul>
+<h2 th:text="${list.getListName()}" class="giftTitlePage">Nom de la liste</h2>
+    <div class="createNewGift">
+            <div th:each="gift: ${gifts}" class="existingGift">
+                    <div class="list-title-gift">
+                            <h3 th:text="${gift.giftName}" class="giftTitle">Nom du cadeau</h3>
+                            <hr class="underGiftTitle">
+                    </div>
+                            <img class="imgGiftList" th:src="${gift.getUrlImage()}" alt="Link">
+                            <hr class="underGiftTitle">
                 </div>
-                <p th:text="${gift.getDescription()}" class="giftDescription"></p>
-                <div class="linkBuy">
-                    <a class="urlArticle" th:href="${gift.getUrlWebsite()}"><i class="material-icons">link</i></a>
-                    <a class="buttonToBuy" th:href="@{/identification}"  th:if="${session.user == null}">Offrir</a>
-                    <a class="buttonToBuy" th:href="@{/gift-offert(idUser=${session.user.idUser},idGift=${gift.idGift},idList=${gift.idList})}" th:if="${gift.getIdFriend()== 0 and session.user != null}">Offrir</a>
-                </div>
-            </section>
-        </div>
+                            <div class="priceStars">
+                                <ul>
+                                    <li>
+                                        <span th:text="|${gift.price}|"></span>
+                                        <i class="material-icons">euro_symbol</i>
+                                    </li>
+                                    <li th:if="${gift.preference} == 1" class="starOne">
+                                        <i class="material-icons">star</i>
+                                    </li>
+                                    <li th:if="${gift.preference} == 2" class="starTwo">
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                    </li>
+                                    <li th:if="${gift.preference} == 3" class="starThree">
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p th:text="${gift.getDescription()}" class="giftDescription"></p>
+                            <div class="linkBuy">
+                                <a class="urlArticle" th:href="${gift.getUrlWebsite()}"><i
+                                        class="material-icons">link</i></a>
+                                <a class="buttonToBuy" th:href="@{/identification}" th:if="${session.user == null}">&#127873</a>
+                                <a class="buttonToBuy"
+                                   th:href="@{/gift-offert(idUser=${session.user.idUser},idGift=${gift.idGift},idList=${gift.idList})}"
+                                   th:if="${gift.getIdFriend()== 0 and session.user != null}">Offrir</a>
+                            </div>
+            </div>
+                        </section>
     </div>
-</div>
-<footer th:replace="footer :: footer"></footer>
+            <footer th:replace="footer :: footer"></footer>
 </body>
 </html>
