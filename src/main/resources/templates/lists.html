@@ -17,18 +17,18 @@
     <h1>MES LISTES</h1>
 <div class="topList">
         <section class="existingLists listplus">
-            <a th:href="@{/liste(idUser=${session.user.getIdUser()})}"><i class="material-icons listicon">add_circle_outline</i></a>
             <p>CREER UNE NOUVELLE LISTE</p>
+            <a th:href="@{/liste(idUser=${session.user.getIdUser()})}"><i class="material-icons listicon">add_circle_outline</i></a>
         </section>
       <section>
           <form class="sections" action="/cadeaux-ami" method="Get">
-              <section class="signin">
+              <section class="signinfriend">
                   <div class="displayrow">
-                      <label class="labelForm" for="id">Recherche une liste ami</label>
+                      <label class="labelFormTop" for="id">RECHERCHER LA LISTE D'UN AMI</label>
                       <input class="pseudo" name="id" placeholder="  index liste ami" type="text">
                   </div>
-                  <div class="displaycol">
-                      <input class="connection" type="submit" value="RECHERCHE">
+                  <div class="displaycolfriend">
+                      <input class="connection rechercher" type="submit" value="RECHERCHE">
                   </div>
               </section>
           </form>
