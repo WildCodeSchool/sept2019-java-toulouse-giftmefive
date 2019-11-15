@@ -242,12 +242,6 @@ h1.page-title {
     color: rgb(37, 193, 187);
 }
 
-.existingLists img {
-    max-width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
-
 h3.listTitle {
     text-align: center;
     margin: 1em;
