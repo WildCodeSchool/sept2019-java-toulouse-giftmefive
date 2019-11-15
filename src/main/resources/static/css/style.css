@@ -145,6 +145,11 @@ h1.page-title {
 
 /*****LIST*****/
 
+.img-list-container {
+    width: 100%;
+    height: 100%;
+}
+
 .myLists {
     display: flex;
     flex-direction: column;
@@ -227,8 +232,9 @@ h1.page-title {
 }
 
 .existingLists img {
-    margin: 3vw 0;
-    width: 250px;
+    max-width: 100%;
+    height: 100%;
+    object-fit: fill;
 }
 
 h3.listTitle {
@@ -336,9 +342,9 @@ h3.listTitle {
 }
 
 .existingGift img {
-    margin: 3vw 0;
-    object-fit: contain;
-    max-height: 500px;
+    max-width: 100%;
+    height: 100%;
+    object-fit: fill;
 }
 
 .filter ul {
@@ -793,9 +799,8 @@ a.Pseudolink {
     }
 
     .existingGift {
-        padding: 2vw;
-        width: 24%;
-        margin: 1em 2em 1em 0;
+        font-size: 1.5em;
+        width: 20%;
     }
 
     .filter ul {
@@ -893,11 +898,11 @@ a.Pseudolink {
 
     .existingLists {
         font-size: 1.5em;
-        width: 29%;
+        width: 20%;
     }
 
     .material-icons.listicon {
-        font-size: 7em;
+        font-size: 5em;
     }
 
     .existingLists i {
