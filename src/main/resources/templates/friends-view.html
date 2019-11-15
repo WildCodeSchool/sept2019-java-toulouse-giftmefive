@@ -84,7 +84,7 @@
             <div class="linkBuy">
                 <a class="urlArticle" th:href="${gift.getUrlWebsite()}"><i class="material-icons">link</i></a>
                 <a class="buttonToBuy" th:href="@{/identification}"  th:if="${session.user == null}">&#127873</a>
-                <a class="buttonToBuy" th:href="@{/gift-offert(idUser=${session.user.idUser},idGift=${gift.idGift},idList=${gift.idList})}" th:if="${gift.getIdFriend()== 0 and session.user != null}">Offrir</a>
+                <a class="buttonToBuy" th:href="@{/gift-offert(idUser=${session.user.idUser},idGift=${gift.idGift},idList=${gift.idList})}" th:if="${gift.getIdFriend()== 0 and session.user != null}">&#127873</a>
             </div>
         </section>
     </div>
