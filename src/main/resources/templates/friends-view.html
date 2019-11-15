@@ -52,13 +52,15 @@
 </div>
 <div class="myGifts">
     <h2 class="giftTitlePage" th:text="${list.getListName()}">Nom de la liste</h2>
-    <div class="createNewGift">
+    <div class="createNewGift friend">
         <section class="existingGift ami-view" th:each="gift: ${gifts}">
             <div class="list-title-gift">
                 <h3 class="giftTitle" th:text="${gift.giftName}">Nom du cadeau</h3>
                 <hr class="underGiftTitle">
             </div>
+            <div class="containerfriend">
             <img alt="Link" class="imgGiftList" th:src="${gift.getUrlImage()}">
+            </div>
             <hr class="underGiftTitle">
             <div class="priceStars">
                 <ul>
