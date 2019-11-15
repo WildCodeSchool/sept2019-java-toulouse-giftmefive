@@ -342,10 +342,9 @@ h3.listTitle {
 }
 
 .existingGift img {
-    margin: 3vw 0;
-    object-fit: contain;
-    max-height: 500px;
-    align-self: center;
+    max-width: 100%;
+    height: 100%;
+    object-fit: fill;
 }
 
 .filter ul {
@@ -796,9 +795,8 @@ a.Pseudolink {
     }
 
     .existingGift {
-        padding: 2vw;
-        width: 24%;
-        margin: 1em 2em 1em 0;
+        font-size: 1.5em;
+        width: 20%;
     }
 
     .filter ul {
