@@ -45,6 +45,9 @@ a.title {
 div.avatar-container {
     margin-top: .3em;
     width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 img.avatar {
@@ -241,13 +244,28 @@ h3.listTitle {
     font-size: 7em;
 }
 
-.listplus {
+.existingGift.listplus {
     border: none;
+    align-self: center;
+}
+
+.existingGift.listplus a i {
+    font-size: 4em;
+}
+
+.giftTitle {
+    text-align: center;
+    padding: 0 1.5em;
 }
 
 .delete-button {
     border: none;
     background-color: white;
+}
+
+.existingLists.listplus {
+    border: none;
+    align-self: center;
 }
 
 /*****GIFT LIST*****/
@@ -274,7 +292,6 @@ h3.listTitle {
     flex-direction: column;
     justify-content: flex-start;
     text-align: center;
-    flex-wrap: wrap;
 }
 
 .newGift {
@@ -293,9 +310,14 @@ h3.listTitle {
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    border: 1px solid #2E323B;
+    border: 1px solid rgb(37, 193, 187);
+    border-radius: 10px;
     margin: 1em;
-    width: 30%;
+}
+
+.delete-gift {
+    text-align: right;
+    padding: 0.2em 0.8em;
 }
 
 .delete {
@@ -339,6 +361,10 @@ h3.listTitle {
 .priceStars ul li {
     display: flex;
     align-items: center;
+}
+
+.banner-title-gift {
+    display: flex;
 }
 
 /*****Gift List Friend View*****/
@@ -727,6 +753,11 @@ a.Pseudolink {
     }
 
     /* GIFT LIST DESKTOP */
+
+    .myGifts {
+        margin-right: 0;
+    }
+
     .newGift {
         flex-direction: column;
         justify-content: center;
@@ -742,6 +773,7 @@ a.Pseudolink {
 
     .createNewGift {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .newGift i:hover, .delete i:hover {
@@ -758,7 +790,8 @@ a.Pseudolink {
 
     .existingGift {
         padding: 2vw;
-        width: 300px;
+        width: 24%;
+        margin: 1em 2em 1em 0;
     }
 
     .filter ul {
@@ -808,6 +841,26 @@ a.Pseudolink {
         margin-right: 5.5vw;
     }
 
+    .myBtn.deletebtn i, .edit-button i {
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .edit-button {
+        padding: 0;
+    }
+
+    .list-title-gift {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .delete-gift {
+        text-align: right;
+        padding: 0.2em 0.35em;
+    }
+
     /* LIST DESKTOP */
     .createNewList {
         flex-direction: row;
@@ -834,7 +887,7 @@ a.Pseudolink {
         font-size: 3em;
     }
 
-    .existingLists, .existingGift {
+    .existingLists {
         font-size: 1.5em;
         width: 29%;
     }
@@ -845,11 +898,6 @@ a.Pseudolink {
 
     .existingLists i {
         font-size: 1.5em;
-    }
-
-    .listplus {
-        border: none;
-        align-self: center;
     }
 
     /*****Gift List Friend View*****/
