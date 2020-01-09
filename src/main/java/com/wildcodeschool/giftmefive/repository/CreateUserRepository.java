@@ -1,7 +1,9 @@
 package com.wildcodeschool.giftmefive.repository;
 
+import com.google.common.hash.Hashing;
 import com.wildcodeschool.giftmefive.model.User;
 
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
 
 public class CreateUserRepository {
@@ -20,6 +22,9 @@ public class CreateUserRepository {
                     Statement.RETURN_GENERATED_KEYS
             );
             statement.setString(1, username);
+            password = Hashing.sha256()
+                    .hashString(password, StandardCharsets.UTF_8)
+                    .toString();
             statement.setString(2, password);
             statement.setString(3, email);
 

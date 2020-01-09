@@ -1,7 +1,9 @@
 package com.wildcodeschool.giftmefive.repository;
 
+import com.google.common.hash.Hashing;
 import com.wildcodeschool.giftmefive.entity.User;
 
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
 
 public class UserRepository {
@@ -19,6 +21,9 @@ public class UserRepository {
                     "UPDATE user SET username=?, password=?, email=? WHERE id_user=?"
             );
             statement.setString(1, username);
+            password = Hashing.sha256()
+                    .hashString(password, StandardCharsets.UTF_8)
+                    .toString();
             statement.setString(2, password);
             statement.setString(3, email);
             statement.setLong(4, idUser);
@@ -41,6 +46,9 @@ public class UserRepository {
                     "SELECT * FROM user WHERE username = ? AND password = ?;"
             );
             statement.setString(1, username);
+            password = Hashing.sha256()
+                    .hashString(password, StandardCharsets.UTF_8)
+                    .toString();
             statement.setString(2, password);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {

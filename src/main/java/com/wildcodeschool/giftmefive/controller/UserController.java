@@ -57,7 +57,7 @@ public class UserController {
                              @RequestParam String passwordConfirmation,
                              @RequestParam String email
     ) {
-        if (!password.equals(passwordConfirmation)) {
+        if (password.isEmpty() || !password.equals(passwordConfirmation)) {
             return "redirect:/modification?id=" + idUser;
         }
         out.addAttribute("user", repository.save(idUser, username, password, email));
