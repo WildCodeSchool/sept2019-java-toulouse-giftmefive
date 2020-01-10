@@ -11,7 +11,7 @@
 <header th:replace="header :: header"></header>
 <section class="sections">
     <h1>CREER UN COMPTE</h1>
-    <form action="/sign-up" method="post">
+    <form th:action="@{/sign-up}" method="post">
     <div class="label">
         <input type="hidden" id="idUser" name="idUser">
         <div class="displayrow">
