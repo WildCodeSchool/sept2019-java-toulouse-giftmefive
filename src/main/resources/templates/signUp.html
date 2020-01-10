@@ -10,33 +10,33 @@
 <body class="bodyPage4">
 <header th:replace="header :: header"></header>
 <section class="sections">
-    <h1>INSCRIPTION</h1>
-    <div class="displayrow">
-    <img class="avatar2" src="images/avatar.jpg">
-    </div>
+    <h1>CREER UN COMPTE</h1>
+    <form th:action="@{/sign-up}" method="post">
     <div class="label">
+        <input type="hidden" id="idUser" name="idUser">
         <div class="displayrow">
-            <label class="labelForm" for="pseudo">Pseudo :</label>
-            <input class="pseudo" id="pseudo" placeholder="  Oki31" type="text">
+            <label class="labelForm" for="pseudo">Pseudo</label>
+            <input class="pseudo" id="pseudo" placeholder="  Pseudo" type="text" name="username">
         </div>
         <div class="displayrow">
-            <label class="labelForm" for="password">Mot de passe :</label>
-            <input class="password" id="password" placeholder="  *******" type="password">
+            <label class="labelForm" for="password">Mot de passe</label>
+            <input class="password" id="password" placeholder="  Mot de passe" type="password" name="password">
         </div>
         <div class="displayrow">
-            <label class="labelForm" for="passwordConfirmation">Confirmation du mot de passe :</label>
-            <input class="passwordConfirmation" id="passwordConfirmation" placeholder="  ********" type="password">
+            <label class="labelForm" for="passwordConfirmation">Confirmation du mot de passe</label>
+            <input class="passwordConfirmation" id="passwordConfirmation" placeholder="  Mot de passe" type="password" name="repeatPassword">
         </div>
         <div class="displayrow">
-            <label class="labelForm" for="email">Email :</label>
-            <input class="email" id="email" placeholder="  Email" type="email">
+            <label class="labelForm" for="email">Email</label>
+            <input class="email" id="email" placeholder="  Email" type="email" name="email">
         </div>
     </div>
     <div class="displayrow">
-    <input class="signUp" type="submit" value="S'INSCRIRE">
+        <input class="signUp" type="submit" value="S'INSCRIRE">
     <p>OU</p>
-    <a class="alreadySignIn" th:href="@{/identification}">J'ai déjà un compte</a>
+    <a class="alreadySignIn" th:href="@{/identification}">J'AI DÉJÀ UN COMPTE</a>
     </div>
+    </form>
 </section>
 <footer th:replace="footer :: footer"></footer>
 </body>

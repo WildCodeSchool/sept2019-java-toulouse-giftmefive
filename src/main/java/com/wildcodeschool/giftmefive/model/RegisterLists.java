@@ -1,32 +1,17 @@
-package com.wildcodeschool.giftmefive.entity;
+package com.wildcodeschool.giftmefive.model;
 
+public class RegisterLists {
 
-public class ListGift {
-
-    private Long idList;
     private String listName;
     private String description;
     private String urlImage;
-    private String urlShare;
     private Long idUser;
-    private Gift gift;
 
-    public ListGift(Long idList, String listName, String description, String urlImage, String urlShare, Long idUser) {
-
-        this.idList = idList;
+    public RegisterLists(String listName, String description, String urlImage, Long idUser) {
         this.listName = listName;
         this.description = description;
         this.urlImage = urlImage;
-        this.urlShare = urlShare;
         this.idUser = idUser;
-    }
-
-    public Long getIdList() {
-        return idList;
-    }
-
-    public void setIdList(Long idList) {
-        this.idList = idList;
     }
 
     public String getListName() {
@@ -51,14 +36,6 @@ public class ListGift {
 
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
-    }
-
-    public String getUrlShare() {
-        return urlShare;
-    }
-
-    public void setUrlShare(String urlShare) {
-        this.urlShare = urlShare;
     }
 
     public Long getIdUser() {

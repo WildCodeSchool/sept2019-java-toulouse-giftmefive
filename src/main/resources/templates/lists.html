@@ -6,33 +6,58 @@
           name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}">
+    <link href="css/style.css" rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/formulary.css" th:href="@{css/formulary.css}">
     <meta charset="UTF-8">
     <title>Listes</title>
 </head>
 <body>
 <header th:replace="header :: header"></header>
 <div class="myLists">
-    <h2 class="listTitlePage">MES LISTES</h2>
-    <div class="createNewList">
-        <section class="newList">
-            <a th:href="@{/description-liste}"><i class="material-icons">add_circle_outline</i></a>
+    <h1>MES LISTES</h1>
+<div class="topList">
+        <section class="existingLists listplus">
             <p>CREER UNE NOUVELLE LISTE</p>
+            <a th:href="@{/liste(idUser=${session.user.getIdUser()})}"><i class="material-icons listicon">add_circle_outline</i></a>
         </section>
+      <section>
+          <form class="sections" action="/cadeaux-ami" method="Get">
+              <section class="signinfriend">
+                  <div class="displayrow">
+                      <label class="labelFormTop" for="id">RECHERCHER LA LISTE D'UN AMI</label>
+                      <input class="pseudo" name="id" placeholder="  index liste ami" type="text">
+                  </div>
+                  <div class="displaycolfriend">
+                      <input class="connection rechercher" type="submit" value="RECHERCHE">
+                  </div>
+              </section>
+          </form>
+      </section>
+</div>
+    <div class="createNewList">
         <section class="existingLists" th:each="lists: ${lists}">
             <div class="list-title-container">
-                <h3 class="listTitle" th:text="${lists.listName}"></h3>
-                <hr class="underListTitle">
+                <div class="list-gift-container">
+                    <h3 class="listTitle" th:text="${lists.listName}"></h3>
+                    <hr class="underListTitle">
+                </div>
+                <form action="/listes-modification" method="get" class="modification-liste">
+                    <input type="hidden" name="idList" id="idList" th:value="${lists.idList}">
+                    <button type="submit" class="edit-button">
+                        <i class="material-icons">edit</i>
+                    </button>
+                </form>
             </div>
-            <div class="img-list-container">
+            <div class="imagegiftlistcontainer">
                 <a th:href="@{/cadeaux(id=${lists.idList})}">
-                    <img alt="" th:src="${lists.urlImage}"></a>
+                    <img class="imgGiftList" alt="" th:src="${lists.urlImage}"></a>
             </div>
             <div class="shareDelete">
-                <button th:id=|${lists.urlShare}/${lists.idList}| class="myBtn"><i class="material-icons">share</i>
+                <button th:id=|${lists.urlShare}${lists.idList}| class="myBtn"><i class="material-icons">share</i>
                 </button>
                 <form action="/listes/delete" method="get">
                     <input type="hidden" name="id" id="id" th:value="${lists.idList}">
+                    <input type="hidden" name="idUser" id="idUser" th:value="${lists.idUser}">
                     <button type="submit" class="delete-button">
                         <i class="material-icons">delete</i>
                     </button>

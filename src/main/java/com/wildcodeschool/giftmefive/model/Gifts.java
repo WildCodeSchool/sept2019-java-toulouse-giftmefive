@@ -1,5 +1,6 @@
 package com.wildcodeschool.giftmefive.model;
 
+
 public class Gifts {
     private Long id;
     private Long listGiftsId;

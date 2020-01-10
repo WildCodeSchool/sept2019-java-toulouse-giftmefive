@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CTangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link th:href="@{css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/style.css}">
     <meta charset="UTF-8">
     <title>Liste de cadeaux vue ami</title>
 </head>
@@ -14,51 +14,83 @@
 <div class="page">
     <section class="filter">
         <ul>
-            <li>A-Z</li>
-            <li>€</li>
-            <li><i class="material-icons">star_border</i></li>
-            <li>Déjà acheté</li>
-            <li>Encore à offrir</li>
+            <th:block th:switch="${filtreAz}">
+                <li th:case="false">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${1})}">A-Z</a>
+                </li>
+                <li th:case="true">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${2})}">Z-A</a>
+                </li>
+            </th:block>
+            <th:block th:switch="${filtrePrice}">
+                <li th:case="true">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${3})}">€ + -</a>
+                </li>
+                <li th:case="false">
+                    <a th:href="@{/cadeaux(id=${list.getIdList()},filtre=${4})}">€ - +</a>
+                </li>
+            </th:block>
+            <th:block th:switch="${filtrePreference}">
+                <li th:case="false">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${5})}"><i class="material-icons">star_border</i></br>
+                        <i class="material-icons">star_border</i></br><i class="material-icons">star_border</i></a>
+                </li>
+                <li th:case="true">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${6})}"><i class="material-icons">star_border</i></a>
+                </li>
+            </th:block>
+            <th:block th:switch="${filtreOffert}">
+                <li th:case="false">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${7})}">&#127873</a>
+                </li>
+                <li th:case="true">
+                    <a th:href="@{/cadeaux-ami(id=${list.getIdList()},filtre=${8})}">Déjà &#127873</a>
+                </li>
+            </th:block>
         </ul>
     </section>
 </div>
-<h2 th:text="${list.getListName()}" class="giftTitlePage">Nom de la liste</h2>
 <div class="myGifts">
-    <div class="desktopViewAllGift">
-        <div th:each="gift: ${gifts}" class="allGifts">
-            <section class="existingGiftFriendView">
-                <h3 th:text="${gift.giftName}" class="giftTitle">Nom du cadeau</h3>
+    <h2 class="giftTitlePage" th:text="${list.getListName()}">Nom de la Liste</h2>
+    <div class="createNewGift friend">
+        <section class="existingGift ami-view" th:each="gift: ${gifts}">
+            <div class="list-title-gift">
+                <h3 class="giftTitle" th:text="${gift.giftName}">Nom du cadeau</h3>
                 <hr class="underGiftTitle">
-                <img class="imgGiftList" th:src="${gift.getUrlImage()}" alt="Link">
-                <hr class="underGiftTitle">
-                <div class="priceStars">
-                    <ul>
-                        <li>
-                            <span th:text="|${gift.price}|"></span>
-                            <i class="material-icons">euro_symbol</i>
-                        </li>
-                        <li th:if="${gift.preference} == 1" class="starOne">
-                            <i class="material-icons">star</i>
-                        </li>
-                        <li th:if="${gift.preference} == 2" class="starTwo">
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                        </li>
-                        <li th:if="${gift.preference} == 3" class="starThree">
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                        </li>
-                    </ul>
-                </div>
-                <p th:text="${gift.getDescription()}" class="giftDescription"></p>
-                <div class="linkBuy">
-                    <a class="urlArticle" th:href="${gift.getUrlWebsite()}"><i class="material-icons">link</i></a>
-                    <input class="buttonToBuy" type="submit" value="OFFRIR">
-                </div>
-            </section>
-        </div>
+            </div>
+            <div class="containerfriend">
+            <img alt="Link" class="imgGiftList" th:src="${gift.getUrlImage()}">
+            </div>
+            <hr class="underGiftTitle">
+            <div class="priceStars">
+                <ul>
+                    <li>
+                        <span th:text="|${gift.price}|"></span>
+                        <i class="material-icons">euro_symbol</i>
+                    </li>
+                    <li th:if="${gift.preference} == 1" class="starOne">
+                        <i class="material-icons">star</i>
+                    </li>
+                    <li th:if="${gift.preference} == 2" class="starTwo">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </li>
+                    <li th:if="${gift.preference} == 3" class="starThree">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </li>
+                </ul>
+            </div>
+            <p th:text="${gift.getDescription()}" class="giftDescription"></p>
+            <div class="linkBuy">
+                <a class="urlArticle" th:href="${gift.getUrlWebsite()}"><i class="material-icons">link</i></a>
+                <a class="buttonToBuy" th:href="@{/identification}"  th:if="${session.user == null}">&#127873</a>
+                <a class="buttonToBuy" th:href="@{/gift-offert(idUser=${session.user.idUser},idGift=${gift.idGift},idList=${gift.idList})}" th:if="${gift.getIdFriend()== 0 and session.user != null}">&#127873</a>
+            </div>
+        </section>
     </div>
+</div>
 </div>
 <footer th:replace="footer :: footer"></footer>
 </body>

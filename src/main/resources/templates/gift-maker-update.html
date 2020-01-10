@@ -11,24 +11,25 @@
 <header th:replace="header :: header"></header>
 <section class="sections">
     <h1>DESCRIPTION DU CADEAU</h1>
-    <form action="register-gifts" class="formForm" method="post">
-        <input type="hidden" th:value="${listId}" name="idList">
+    <form action="/gift/update" class="formForm" method="Get">
+        <input type="hidden" name="idGift" id="idGift" th:value="${Gift.idGift}">
+        <input type="hidden" name="idList" id="idList" th:value="${Gift.idList}">
         <div class="displayrow">
             <label class="labelForm" for="urlImage">Lien vers l'image :</label>
-            <input class="urlImage" id="urlImage" name="urlImage" placeholder="  http://imagedemoncadeau.com"
+            <input class="urlImage" id="urlImage" name="urlImage" th:value="${Gift.urlImage}" placeholder="  http://imagedemoncadeau.com"
                    type="url">
         </div>
         <div class="displayrow">
-            <label class="labelForm" for="urlArticle">Lien vers le cadeau :</label>
-            <input class="urlArticle" name="urlWebsite" id="urlArticle" placeholder="  http://lienversmoncadeau.com" type="url">
+            <label class="labelForm" for="urlWebsite">Lien vers le cadeau :</label>
+            <input class="urlArticle" name="urlWebsite" th:value="${Gift.urlWebsite}" id="urlWebsite" placeholder="  http://lienversmoncadeau.com" type="url">
         </div>
         <div class="displayrow">
             <label class="labelForm" for="giftName">Nom du cadeau :</label>
-            <input class="giftName" name="giftName" id="giftName" placeholder="  Jouet en bois" type="text">
+            <input class="giftName" name="giftName" id="giftName" th:value="${Gift.giftName}" placeholder="  Jouet en bois" type="text">
         </div>
         <div class="displayrow">
             <label class="labelForm" for="descriptionGift">Descriptif du cadeau :</label>
-            <textarea class="descriptionGift" id="descriptionGift" name="description"
+            <textarea class="descriptionGift" id="descriptionGift" name="description" th:text="${Gift.description}"
                       placeholder="  Le rouge ou le bleu comme vous le souhaitez"></textarea>
         </div>
         <div class="rating">
@@ -36,9 +37,8 @@
             <a id="star2" href="#2" title="Donner 2 étoiles">★</a>
             <a id="star1" href="#3" title="Donner 1 étoile">★</a>
         </div>
-        <input id="preference" type="hidden" name="preference" value="0">
+        <input id="preference" type="hidden" name="preference" th:value="${Gift.preference}">
         <script type="text/javascript">
-
             var star1 = document.getElementById("star1");
             var star2 = document.getElementById("star2");
             var star3 = document.getElementById("star3");
@@ -49,25 +49,22 @@
                 star2.classList.remove("selected");
                 star3.classList.remove("selected");
             };
-
             star2.onclick = function () {
                 preference.value = "2";
                 star1.classList.add("selected");
                 star2.classList.add("selected");
                 star3.classList.remove("selected");
             };
-
             star3.onclick = function () {
                 preference.value = "3";
                 star1.classList.add("selected");
                 star2.classList.add("selected");
                 star3.classList.add("selected");
             };
-
         </script>
         <div class="displayrow">
             <label class="labelForm" for="price">Prix du cadeau en euros :</label>
-            <input class="price" id="price" placeholder="  45" type="text" name="price">
+            <input class="price" id="price" placeholder="  45" type="text" name="price" th:value="${Gift.price}">
         </div>
         <div class="displayrow">
             <input class="submitGift" type="submit" value="ENREGISTRER">

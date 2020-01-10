@@ -7,7 +7,6 @@ body {
     color: #2E323B;
     font-size: 1em;
     font-family: 'Oswald', sans-serif;
-    background-color: whitesmoke;
 }
 
 a {
@@ -85,7 +84,6 @@ article.article-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: whitesmoke;
     padding-top: 1em;
 }
 
@@ -144,12 +142,44 @@ h1.page-title {
 
 /*****LIST*****/
 
+.img-list-container {
+    width: 100%;
+    height: 100%;
+}
+
 .myLists {
     display: flex;
     flex-direction: column;
     align-content: space-around;
     margin-right: 10%;
     margin-left: 10%;
+}
+
+.list-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modification-liste {
+    position: absolute;
+}
+
+.list-gift-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.edit-button {
+    padding: 0.5em;
+    border: none;
+    background: none;
+    font-size: 1em;
+}
+
+.rechercher {
+    margin-top:1em;
 }
 
 .listTitlePage {
@@ -175,8 +205,16 @@ h1.page-title {
 .existingLists {
     display: flex;
     flex-direction: column;
-    border: 1px solid #2E323B;
+    border: 1px solid #25C1BB;
     margin: 1em;
+    border-radius: 10px;
+}
+
+.imagegiftlistcontainer {
+    font-size: 1.5em;
+    width: 100%;
+    height: 5em;
+    display: flex;
 }
 
 .createNewList {
@@ -201,11 +239,6 @@ h1.page-title {
     color: rgb(37, 193, 187);
 }
 
-.existingLists img {
-    margin: 3vw 0;
-    width: 250px;
-}
-
 h3.listTitle {
     text-align: center;
     margin: 1em;
@@ -213,6 +246,65 @@ h3.listTitle {
     font-size: 1em;
     color: #2E323B;
     font-family: Oswald, sans-serif;
+}
+
+.material-icons.listicon {
+    font-size: 7em;
+}
+
+.existingGift.listplus {
+    border: none;
+    align-self: center;
+}
+
+.existingGift.listplus a i {
+    font-size: 4em;
+}
+
+.giftTitle {
+    text-align: center;
+    padding: 0 1.5em;
+}
+
+.delete-button {
+    border: none;
+    background-color: white;
+}
+
+.existingLists.listplus {
+    border: none;
+    align-self: center;
+    text-align: center;
+}
+
+.existingLists.listplus p {
+    margin-bottom: 1.5em;
+}
+
+.labelFormTop {
+    margin-bottom: 2em;
+}
+
+.displaycolfriend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.connection.rechercher {
+    padding: 0.5em 2em;
+    color: white;
+    background-color: rgb(37, 193, 187);
+    font-weight: bolder;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 3em;
+}
+
+.signinfriend {
+    margin: 3em;
 }
 
 /*****GIFT LIST*****/
@@ -237,9 +329,8 @@ h3.listTitle {
 .createNewGift {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: center;
-    flex-wrap: wrap;
 }
 
 .newGift {
@@ -258,8 +349,14 @@ h3.listTitle {
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    border: 1px solid #2E323B;
-    margin-bottom: 3vw;
+    border: 1px solid rgb(37, 193, 187);
+    border-radius: 10px;
+    margin: 1em;
+}
+
+.delete-gift {
+    text-align: right;
+    padding: 0.2em 0.8em;
 }
 
 .delete {
@@ -278,9 +375,9 @@ h3.listTitle {
 }
 
 .existingGift img {
-    margin: 3vw 0;
+    width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    max-height: 500px;
 }
 
 .filter ul {
@@ -305,6 +402,10 @@ h3.listTitle {
     align-items: center;
 }
 
+.banner-title-gift {
+    display: flex;
+}
+
 /*****Gift List Friend View*****/
 
 .linkBuy {
@@ -314,10 +415,7 @@ h3.listTitle {
 }
 
 .buttonToBuy {
-    background-color: rgb(37, 193, 187);
     border-radius: 5px;
-    margin: 0.4em;
-    font-weight: bold;
     padding: 0 1em;
 }
 
@@ -330,16 +428,29 @@ h3.listTitle {
 }
 
 .imgGiftList {
-    max-width: 250px;
-    align-self: center;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.containerfriend {
+    font-size: 1.5em;
+    width: 100%;
+    height: 5em;
+    display: flex;
+}
+
+.createNewGift.friend {
+    justify-content: center;
 }
 
 .existingGiftFriendView {
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    border: 1px solid #2E323B;
-    margin-bottom: 3vw;
+    border: 1px solid rgb(37, 193, 187);
+    border-radius: 10px;
+    margin: 1em;
 }
 
 .allGifts {
@@ -348,6 +459,10 @@ h3.listTitle {
     justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
+}
+
+.urlArticle i {
+    font-size: 2em;
 }
 
 /*****FAQ and CONTACT*****/
@@ -368,6 +483,7 @@ h3.listTitle {
 
 .question {
     font-weight: bold;
+    color: #25C1BB;
 }
 
 .answer {
@@ -385,11 +501,22 @@ h3.listTitle {
     align-items: center;
 }
 
-.yourEmail, .yourQuestion {
-    width: 30%;
+.yourEmail {
     margin: 0.5em;
     border-radius: 10px;
     padding: 0.5em;
+    font-size: 1.5em;
+    width: 19em;
+    border-color: rgba(37, 193, 185, 0.5);
+}
+
+.yourQuestion {
+    margin: 0.5em;
+    border-radius: 10px;
+    padding: 0.5em;
+    font-size: 1.5em;
+    width: 26em;
+    border-color: rgba(37, 193, 185, 0.5);
 }
 
 .yourQuestion {
@@ -397,8 +524,8 @@ h3.listTitle {
 }
 
 .submitContact {
-    background-color: rgb(37, 193, 187);
-    color: #FDFDFD;
+    background-color: #25C1BB;
+    color: white;
     margin: 0.3em 0 1em 0;
     padding: 0.7em 1.5em;
     border-radius: 10px;
@@ -451,6 +578,13 @@ h3.listTitle {
     background: none;
 }
 
+a.Pseudolink {
+    color: rgb(37, 193, 187);
+    font-family: Oswald;
+    font-size: 1.5em;
+    text-align: center;
+}
+
 /* MOBILE VERSION (FOR BURGER MENU) */
 
 @media screen and (max-width: 761px) {
@@ -473,7 +607,7 @@ h3.listTitle {
         text-decoration: none;
         color: #2E323B;
         font-family: Oswald, sans-serif;
-        font-size: 1.5em;
+        font-size: 1.4em;
         align-self: center;
     }
 
@@ -559,7 +693,7 @@ h3.listTitle {
     }
 
     #menu li {
-        padding: .5em;
+        padding: .4em;
         font-size: 1em;
     }
 
@@ -604,7 +738,7 @@ h3.listTitle {
         text-decoration: none;
         color: white;
         font-family: Oswald, sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
         align-self: center;
         margin-right: 2em;
     }
@@ -651,7 +785,6 @@ h3.listTitle {
         display: flex;
         flex-direction: row;
         align-items: baseline;
-        background-color: whitesmoke;
     }
 
     div.article {
@@ -675,6 +808,11 @@ h3.listTitle {
     }
 
     /* GIFT LIST DESKTOP */
+
+    .myGifts {
+        margin-right: 0;
+    }
+
     .newGift {
         flex-direction: column;
         justify-content: center;
@@ -690,6 +828,7 @@ h3.listTitle {
 
     .createNewGift {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .newGift i:hover, .delete i:hover {
@@ -706,7 +845,8 @@ h3.listTitle {
 
     .existingGift {
         padding: 2vw;
-        width: 300px;
+        width: 24%;
+        margin: 1em 2em 1em 0;
     }
 
     .filter ul {
@@ -738,6 +878,11 @@ h3.listTitle {
         font-size: 40px;
     }
 
+    .filter ul li a {
+        color: #FDFDFD;
+        font-size: 25px;
+    }
+
     .priceStars ul {
         justify-content: space-between;
         padding: 0;
@@ -751,10 +896,43 @@ h3.listTitle {
         margin-right: 5.5vw;
     }
 
+    .myBtn.deletebtn i, .edit-button i {
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .edit-button {
+        padding: 0;
+    }
+
+    .list-title-gift {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .delete-gift {
+        text-align: right;
+        padding: 0.2em 0.35em;
+    }
+
     /* LIST DESKTOP */
+    .topList {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .labelFormTop {
+        font-size: 1.5em;
+        text-align: center;
+        width: 20em;
+        margin-top: 1em;
+    }
+
     .createNewList {
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         width: 100%;
     }
 
@@ -779,7 +957,13 @@ h3.listTitle {
 
     .existingLists {
         font-size: 1.5em;
-        width: 30%;
+        width: 20%;
+        padding: 2vw;
+        margin: 1em 2em 1em 0;
+    }
+
+    .material-icons.listicon {
+        font-size: 5em;
     }
 
     .existingLists i {
@@ -787,10 +971,10 @@ h3.listTitle {
     }
 
     /*****Gift List Friend View*****/
-
     .existingGiftFriendView {
         width: 300px;
         padding: 2vw;
+        margin: 1em 2em 1em 0;
     }
 
     .desktopViewAllGift {
@@ -812,7 +996,6 @@ h3.listTitle {
     }
 
     /* SHARING BUTTON */
-
     .myBtn {
         padding: 0;
         border: none;
